@@ -4,7 +4,7 @@
 * {
     font-family: "Source Sans Pro";
     font-size: 12px;
-    transition: .2s ease-in-out;
+    transition: .3s ease-in-out;
     line-height: 1;
 }
 
@@ -280,9 +280,9 @@ a.product-anchor {
 
     .special-title {
         color: #bcbcbc;
-        font-size: 14px;
+        font-size: 7px;
         font-weight: @fw-Semibold;
-        letter-spacing: 4.2px;
+        letter-spacing: 2.1px;
 
         &.text-white {
             color: white;
@@ -295,7 +295,7 @@ a.product-anchor {
 
     h2.title {
         margin: 0;
-        font-size: 58px;
+        font-size: 29px;
         font-weight: @fw-ExtraLight;
         letter-spacing: -1.16px;
     }
@@ -304,7 +304,7 @@ a.product-anchor {
         color: @text-gray-dark;
         font-size: 24px;
         line-height: 1.2;
-        letter-spacing: 2.4px;
+        letter-spacing: -0.48px;
 
         &.text-white {
             color: white;
@@ -319,7 +319,7 @@ a.product-anchor {
     }
 
     p {
-        font-size: 14px;
+        font-size: 7px;
         line-height: 1.5;
     }
 }
@@ -356,6 +356,32 @@ a.product-anchor {
 
 
 
+/*--------------------------------------------------------
+** Animation                                             
+--------------------------------------------------------*/
+@keyframes anim-favbar1 {
+    from {
+        opacity: 0;
+        bottom: -10%;
+    }
+
+    to {
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+@keyframes anim-favbar2 {
+    from {
+        opacity: 0;
+        bottom: -10%;
+    }
+
+    to {
+        opacity: 1;
+        bottom: 9.4%;
+    }
+}
 
 /*--------------------------------------------------------
 ** Header                                              
@@ -537,28 +563,27 @@ nav.navbar {
         color: white;
 
         .special-title {
-            width: 277px;
-            height: 28px;
+            width: 167px;
+            height: 14px;
             background: @text-gray-dark;
             text-align: center;
-            line-height: 28px;
+            line-height: 14px;
         }
 
         .bold-title {
             margin-top: 5px;
             font-family: @font1;
-            font-size: 58px;
+            font-size: 29px;
             font-weight: bold;
         }
 
         p {
             margin-bottom: 20px;
-
         }
 
         .price {
             font-family: @font1;
-            font-size: 30px;
+            font-size: 15px;
         }
     }
 
@@ -760,9 +785,9 @@ nav.navbar {
         margin-right: 2px;
         border: 0;
         border: 2px solid #D2D2D2;
-        border-radius: 8.5px;
-        width: 17px;
-        height: 17px;
+        border-radius: 6px;
+        width: 12px;
+        height: 12px;
         background: none;
 
         &.active {
@@ -798,12 +823,19 @@ nav.navbar {
         }
     }
 
-    .block2 .special-title,
-    .block3 .special-title {
-        padding-right: 4px;
-        font-size: 16px;
-        line-height: 1.6;
-        letter-spacing: 4.8px;
+    .block2 .product-info,
+    .block3 .product-info {
+        h3.title {
+            font-size: 17px;
+            letter-spacing: 1.7px;
+        }
+
+        .special-title {
+            padding-right: 4px;
+            font-size: 12px;
+            line-height: 1.6;
+            letter-spacing: 3.6px;
+        }
     }
 
     .block2 {
@@ -937,7 +969,13 @@ nav.navbar {
         .special-title {
             margin-left: 4px;
             margin-bottom: 4px;
-            letter-spacing: 4.8px;
+            font-size: 11px;
+            letter-spacing: 3.3px;
+        }
+
+        h3.title {
+            font-size: 17px;
+            letter-spacing: 1.7px;
         }
     }
 
@@ -984,9 +1022,26 @@ nav.navbar {
     }
 
     .card {
+
+        .card-img-top {
+            position: relative;
+
+            &:hover {
+
+                .favorite-bar,
+                .favorite-bar2 {
+                    display: block;
+                    animation-duration: 0.5s;
+                }
+
+                .favorite-bar{ animation-name: anim-favbar1; }
+                .favorite-bar2{ animation-name: anim-favbar2; }
+            }
+        }
+
         .stars {
             position: absolute;
-            top: 55.5%;
+            bottom: 7.4%;
             left: 10.3%;
         }
 
@@ -1019,8 +1074,9 @@ nav.navbar {
         }
 
         .favorite-bar {
+            display: none;
             position: absolute;
-            bottom: 31%;
+            bottom: 0;
             width: 100%;
             background: white;
 
@@ -1060,9 +1116,10 @@ nav.navbar {
         }
 
         .favorite-bar2 {
+            display: none;
             position: absolute;
             left: 50%;
-            bottom: 40%;
+            bottom: 9.4%;
             margin: 0 auto;
             width: 77%;
             background: white;
@@ -1439,51 +1496,53 @@ nav.navbar {
 ** Media Query                                              
 --------------------------------------------------------*/
 
-/*----- Width < 376 -----*/
-@media(max-width:375px) {
-    .feature1 {
-        .block1 .product-info {
-            transform-origin: bottom left;
-            transform: scale(0.5);
-        }
-    }
-
-    .feature2 {
-        .block1 {
-            .product-info {
-                transform-origin: top left;
-                transform: scale(0.4);
-                width: 153%;
-            }
-
-            .carousel-indicators li {
-                transform-origin: bottom left;
-                transform: scale(0.7);
-            }
-        }
-
-        .block2 .product-info,
-        .block3 .product-info {
-            transform-origin: top right;
-            transform: scale(0.7);
-            width: 105%;
-        }
-
-    }
-
-    .other-products .product-info {
-        transform-origin: top left;
-        transform: scale(0.7);
-        width: 153%;
-    }
-}
-
-
 /*----- Width > 575 sm-----*/
 @media(min-width: 576px) {
 
-    /*--- Content ---*/
+    /*--------------------
+    ** Feature Block ---*/
+    //font size 放大2倍
+    .product-info {
+        .special-title {
+            font-size: 14px;
+            letter-spacing: 4.2px;
+        }
+
+        h2.title {
+            font-size: 58px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+
+    /*--------------------
+    ** Content ---------*/
+
+    /*-- Feature 1 --*/
+
     .feature1 {
+        .block1 .product-info {
+            .special-title {
+                //width, height 放大兩倍
+                width: 277px;
+                height: 28px;
+                line-height: 28px;
+            }
+
+            //font size 放大2倍
+            .bold-title {
+                font-size: 58px;
+            }
+
+            //font size 放大2倍
+            .price {
+                font-size: 30px;
+            }
+        }
+
         .fb2 {
             padding-right: 10px;
         }
@@ -1491,6 +1550,17 @@ nav.navbar {
         .feature-big-block {
             padding-left: 10px;
         }
+    }
+
+
+    /*-- Feature 2 --*/
+
+    /* Feature Carousel */
+    // width, height 放大1.4倍
+    .carousel-indicators li {
+        border-radius: 8.5px;
+        width: 17px;
+        height: 17px;
     }
 
     .feature2 {
@@ -1503,13 +1573,35 @@ nav.navbar {
             padding-left: 10px;
         }
 
+        //font size 縮小0.5倍
         .block2 .product-info,
         .block3 .product-info {
-            transform-origin: top right;
-            transform: scale(0.5);
-            width: 126%;
+            h3.title {
+                font-size: 12px;
+                letter-spacing: 1.2px;
+            }
+
+            .special-title {
+                font-size: 8px;
+                letter-spacing: 2.4px;
+            }
         }
     }
+
+    /* Other Products */
+    //font size 放大1.4倍
+    .other-products .product-info {
+        .special-title {
+            font-size: 16px;
+            letter-spacing: 4.8px;
+        }
+
+        h3.title {
+            font-size: 24px;
+            letter-spacing: 2.4px;
+        }
+    }
+
 
     /* Recommend Products */
     .recommend-products {
@@ -1558,9 +1650,6 @@ nav.navbar {
         }
 
         .card {
-            .stars {
-                top: 64.5%
-            }
 
             .card-title {
                 font-size: 14px;
@@ -1587,7 +1676,6 @@ nav.navbar {
             }
 
             .favorite-bar {
-                bottom: 23%;
 
                 .cart,
                 .favorite,
@@ -1606,8 +1694,6 @@ nav.navbar {
             }
 
             .favorite-bar2 {
-                bottom: 30%;
-
                 li {
                     &.bounded::after {
                         font-size: 17px;
@@ -1637,21 +1723,23 @@ nav.navbar {
     }
 
 
-    /*--- Footer ---*/
+    /*--------------------
+    ** Footer ----------*/
     #footer {
         .top {
 
             /* Services */
+            ////font size 縮小0.7倍
             .services .service-item .info {
-                transform-origin: left;
-                transform: scale(0.7);
 
                 h5.title {
-                    width: 152%;
+                    font-size: 10px;
+                    letter-spacing: 0.8px;
                 }
 
                 p {
-                    width: 175%;
+                    font-size: 8px;
+                    letter-spacing: 0.64px;
                 }
             }
 
@@ -1682,28 +1770,22 @@ nav.navbar {
     }
 
 
-   /*--- Content ---*/
+    /*--- Content ---*/
 
     /* Feature 2 */
     .feature2 {
 
+        //font size 縮小0.8倍
         .block2 .product-info,
         .block3 .product-info {
-            transform: scale(1);
-            width: 100%;
-        }
-    }
-
-
-    /* BEST SELLER */
-    .best-seller {
-        .card {
-            .stars {
-                top: 61.5%;
+            h3.title {
+                font-size: 19px;
+                letter-spacing: 1.9px;
             }
 
-            .favorite-bar {
-                bottom: 25%;
+            .special-title {
+                font-size: 13px;
+                letter-spacing: 3.9px;
             }
         }
     }
@@ -1806,28 +1888,29 @@ nav.navbar {
 
     /*-- Content --*/
 
+    //font size 恢復大小
+    .feature2 {
+
+        .block2 .product-info,
+        .block3 .product-info {
+            h3.title {
+                font-size: 24px;
+                letter-spacing: 2.4px;
+            }
+
+            .special-title {
+                font-size: 16px;
+                letter-spacing: 4.8px;
+            }
+        }
+    }
+
+
     /* BEST SELLER */
     .best-seller {
         .card-area {
             flex-basis: 20%;
         }
-
-        .card {
-            .stars {
-                top: 53.5%
-            }
-
-            .favorite-bar {
-                bottom: 30%;
-            }
-
-            .favorite-bar2 {
-                bottom: 37%;
-            }
-        }
-
-
-
     }
 
 
@@ -1841,6 +1924,14 @@ nav.navbar {
         .top {
             .services .service-item {
                 padding-bottom: 0;
+
+                h5.title {
+                    width: 109%;
+                }
+
+                p.content {
+                    width: 106%;
+                }
             }
         }
     }
@@ -1874,20 +1965,6 @@ nav.navbar {
         }
     }
 
-    /* BEST SELLER */
-    .best-seller {
-        .card {
-            .stars {
-                top: 60.5%
-            }
-
-            .favorite-bar {
-                bottom: 26%;
-            }
-
-            .favorite-bar2{ bottom: 32%; }
-        }
-    }
 
     /*-- Footer --*/
     #footer {
@@ -1896,7 +1973,15 @@ nav.navbar {
 
             /* Services */
             .services .service-item .info {
-                transform: scale(1);
+                h5.title {
+                    font-size: 14px;
+                    letter-spacing: 1.12px;
+                }
+
+                p {
+                    font-size: 12px;
+                    letter-spacing: 0.96px;
+                }
             }
 
             /* Footer Info */
