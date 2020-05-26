@@ -44,14 +44,18 @@
     nav.navbar {
         top: 0;
 
-        .navbar-brand .phone {
-            margin-top: 14px;
-            padding-left: 8px;
-            color: @text-gray-dark;
-            font-family: @font1;
-            font-weight: bold;
-            text-decoration: none;
-            letter-spacing: 0.96px;
+        .navbar-brand {
+            margin: 0;;
+
+            .phone {
+                margin-top: 14px;
+                padding-left: 8px;
+                color: @text-gray-dark;
+                font-family: @font1;
+                font-weight: bold;
+                text-decoration: none;
+                letter-spacing: 0.96px;
+            }
         }
 
         /*  Shopping Area  */
@@ -522,7 +526,7 @@
         }
 
 
-        nav.navbar .navbar-brand .phone{
+        nav.navbar .navbar-brand .phone {
             padding-left: 22px;
         }
 
@@ -572,7 +576,7 @@
 
     /*----- Width > 767px md-----*/
     @media(min-width: 768px) {
-        
+
         /*--------------------
     ** Content ---------*/
         /*-- Our Team --*/
@@ -597,7 +601,9 @@
 
         nav.navbar {
 
-            .navbar-brand{ margin-right: 45px; }
+            .navbar-brand {
+                margin-right: 45px;
+            }
 
             /*-- Navigation Shopping Area  --*/
             .shopping-area {
@@ -665,8 +671,10 @@
         }
     }
 
-     /*----- Width > 1199px lg-----*/
-     @media(min-width: 1200px){
-        nav.navbar .navbar-brand { margin-right: 109px; }
-     }
+    /*----- Width > 1199px lg-----*/
+    @media(min-width: 1200px) {
+        nav.navbar .navbar-brand {
+            margin-right: 109px;
+        }
+    }
 }

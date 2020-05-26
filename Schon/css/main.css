@@ -60,6 +60,9 @@
   top: 0;
   /*  Shopping Area  */
 }
+.about nav.navbar .navbar-brand {
+  margin: 0;
+}
 .about nav.navbar .navbar-brand .phone {
   margin-top: 14px;
   padding-left: 8px;
