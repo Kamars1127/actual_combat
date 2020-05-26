@@ -1,0 +1,672 @@
+@import "basic.less";
+
+.about {
+
+    h2.title {
+        margin: 0;
+        color: @text-black-light;
+        font-family: @font1;
+        font-size: 44px;
+        font-weight: bold;
+        letter-spacing: 0.88px;
+    }
+
+    h3.title {
+        color: @text-black-light;
+        font-size: 21px;
+        line-height: 0.7;
+        letter-spacing: 0;
+    }
+
+    h4.title {
+        margin: 0;
+        color: @text-black-light;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2.5;
+        letter-spacing: -0.16px;
+    }
+
+    p.content {
+        margin: 0;
+        color: @text-black-light;
+        font-size: 12px;
+        font-weight: @fw-Light;
+        line-height: 1.7;
+        letter-spacing: 0.24px;
+    }
+
+    /*--------------------------------------------------------
+** Header                                              
+--------------------------------------------------------*/
+
+    /*----- Navigation -----*/
+    nav.navbar {
+        top: 0;
+
+        .navbar-brand .phone {
+            margin-top: 14px;
+            padding-left: 8px;
+            color: @text-gray-dark;
+            font-family: @font1;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 0.96px;
+        }
+
+        /*  Shopping Area  */
+        .shopping-area {
+            padding: 10px 0 15px;
+
+            .favorite {
+                padding-bottom: 15px;
+            }
+
+            .cart .item {
+                position: absolute;
+                top: 12px;
+                right: -10px;
+                border: 2px solid @branding-color;
+                width: 23px;
+                height: 23px;
+                background: white;
+                text-align: center;
+
+                .badge {
+                    position: unset;
+                    padding: 0;
+                    font-size: 11px;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+
+    /*--------------------------------------------------------
+** Content                                              
+--------------------------------------------------------*/
+    #content {
+        padding-top: 100px;
+    }
+
+    /*----- Banner -----*/
+    .banner {
+        margin-bottom: 86px;
+        height: 207px;
+        background: #F5F5F5;
+
+        .container-fluid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        h2.title {
+            margin-bottom: 11px;
+        }
+
+        .breadcrumb {
+            margin: 0;
+            background: none;
+
+            .breadcrumb-item {
+                color: @text-black-light;
+                font-size: 14px;
+                font-weight: @fw-Light;
+
+                a {
+                    color: @text-black-light;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-weight: @fw-Light;
+
+                    &:hover {
+                        color: @branding-color;
+                    }
+                }
+
+                &.active::before {
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                    font-size: 14px;
+                    content: "\f105";
+                    color: @text-black-light;
+                }
+            }
+        }
+    }
+
+    /*----- Introduction -----*/
+    .introduction {
+        h3.title {
+            padding-bottom: 64px;
+        }
+
+        p.content {
+            span {
+                display: block;
+                font-size: 16px;
+                font-weight: @fw-Semibold;
+                line-height: 1.29;
+                letter-spacing: 0.48px;
+            }
+
+            &:nth-child(2) {
+                padding-bottom: 50px;
+            }
+
+            &:nth-child(3) {
+                padding-bottom: 72px;
+            }
+        }
+
+        .social-media {
+            padding-bottom: 114px;
+
+            ul {
+                margin-top: 9px;
+                margin-left: -5px; // pull back a's padding 5px
+
+                li {
+                    padding-right: 5px;
+
+                    a {
+                        padding: 5px;
+                        color: @text-black-light;
+
+                        .icon {
+                            font-size: 18px;
+                        }
+
+                        &:hover {
+                            color: @branding-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*----- Our Team -----*/
+    .team-intro {
+        .team-info {
+            padding-top: 35px;
+        }
+
+        .employee-intro {
+            margin-bottom: 15px;
+
+            .card-img-top {
+                position: relative;
+                border-bottom: 5px solid transparent;
+
+                .cover {
+                    opacity: 0;
+                    display: flex;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    background: rgba(0, 0, 0, 0.1);
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                .social-media {
+                    position: absolute;
+                    top: 48.5%;
+
+                    li {
+                        border-radius: 20px;
+                        width: 40px;
+                        height: 40px;
+                        margin-right: 4px;
+                        background: #5B5B5B;
+                        text-align: center;
+
+                        &:nth-child(3) {
+                            margin-right: 0;
+                        }
+
+                        a {
+                            color: white;
+
+                            .icon {
+                                font-size: 20px;
+                                line-height: 40px;
+                            }
+                        }
+
+                        &:hover {
+                            background: @branding-color;
+                        }
+                    }
+                }
+
+                .is-you {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    color: #ADADAD;
+                    font-family: @font1;
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+            }
+
+            &:nth-child(1) {
+                padding-right: 7.5px;
+
+                .card-img-top {
+                    border-bottom-color: white;
+                }
+            }
+
+            &:nth-child(2) {
+                padding-left: 7.5px;
+
+                .card-img-top {
+                    border-bottom-color: #F4F4F4;
+                }
+            }
+
+            &:nth-child(3) {
+                padding-right: 7.5px;
+            }
+
+            &:nth-child(4) {
+                padding-left: 7.5px;
+            }
+
+            .card-body {
+                padding: 0;
+                padding-top: 12px;
+                padding-bottom: 5px;
+            }
+
+            .employee-info {
+                border-left: 4px solid #EEEEEE;
+                padding-left: 7px;
+
+                .name {
+                    padding-bottom: 10px;
+                    color: @text-black-light;
+                    font-family: @font1;
+                    font-size: 11px;
+                    font-weight: bold;
+                    line-height: 0.9;
+                    letter-spacing: -0.11px;
+                }
+
+                .position {
+                    color: @text-gray-light;
+                    font-size: 7px;
+                    font-weight: @fw-Semibold;
+                    line-height: 0.6;
+                    letter-spacing: 2.1px;
+                }
+            }
+        }
+
+    }
+
+    /*----- Our Workspace -----*/
+    .workspace {
+        padding-top: 121px;
+        padding-bottom: 109px;
+
+        #workspace-carousel {
+            padding-top: 41px;
+
+            .prev,
+            .next {
+                position: absolute;
+                top: 46%;
+
+                .icon {
+                    color: #878787;
+                    font-size: 41px;
+                }
+
+                &:hover {
+                    .icon {
+                        color: @branding-color;
+                    }
+                }
+            }
+
+            .prev {
+                left: 4%;
+            }
+
+            .next {
+                right: 4%;
+            }
+        }
+
+        .carousel-item {
+            .block1 {
+                padding-right: 1px;
+
+                .block1-1 {
+                    padding-bottom: 1px;
+                }
+
+                .block1-2 {
+                    padding-top: 1px;
+                }
+            }
+
+            .block2 {
+                padding: 1px;
+            }
+
+            .block3 {
+                padding: 1px;
+
+                .block3-1 {
+                    padding: 0 1px 1px 0;
+                }
+
+                .block3-2 {
+                    padding: 0 0 1px 1px;
+                }
+
+                .block3-3 {
+                    padding-top: 1px;
+                }
+            }
+
+            .block4 {
+                padding-left: 1px;
+            }
+
+
+        }
+
+        .modal-dialog {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            left: 0;
+
+            transform: translateY(-50%);
+        }
+
+        .carousel-indicators {
+            margin: 0;
+            bottom: -42px;
+
+            li {
+                margin: 0 5px;
+                border: 0;
+                width: 91px;
+                background-color: #B6B6B6;
+            }
+        }
+
+    }
+
+
+    /*--------------------------------------------------------
+** Footer                                              
+--------------------------------------------------------*/
+    #footer {
+
+        /*----- Footer Top -----*/
+        .top {
+
+            /*-- Footer Info --*/
+            .footer-info {
+                padding: 68px 0;
+
+                /*  Media Info  */
+                .media-info {
+                    .content-area {
+                        padding-top: 33px;
+                        text-align: end;
+
+                        p {
+                            margin: 0;
+                            color: @text-gray-medium-light;
+                            font-size: 14px;
+                            line-height: 1.29;
+                            letter-spacing: -0.14px;
+                        }
+                    }
+
+                    .newsletter {
+                        position: relative;
+                        margin-top: 21px;
+                        margin-bottom: 30px;
+                        padding: 0;
+                        border: 1px solid @text-gray-medium-light;
+                        height: 30px;
+
+                        input {
+                            width: 81.7%;
+                            height: 30px;
+                            padding: 0 0 0 22px;
+                            background: transparent;
+                            color: #8C8C8C;
+                            font-family: @font2;
+                            font-size: 12px;
+                            font-weight: @fw-ExtraLight;
+
+                            &::placeholder {
+                                color: #8C8C8C;
+                                font-size: 12px;
+                                font-weight: @fw-ExtraLight;
+                                letter-spacing: -0.12px;
+                            }
+
+                            &::-webkit-input-placeholder {
+                                color: #8C8C8C;
+                            }
+
+                            &::-ms-input-placeholder {
+                                color: #8C8C8C;
+                            }
+
+                            &::-moz-placeholder {
+                                color: #8C8C8C;
+                            }
+                        }
+
+                        .submit {
+                            position: absolute;
+                            padding: 0 17px;
+                            line-height: 30px;
+
+                            .icon {
+                                color: #A5A0A0;
+                                font-size: 14;
+                            }
+
+                            &:hover {
+                                .icon {
+                                    color: @branding-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /*----- Footer Bottom -----*/
+        .bottom {
+            padding: 25px 0;
+        }
+    }
+
+    /*--------------------------------------------------------
+** Media Query                                              
+--------------------------------------------------------*/
+    /*----- Width > 575 sm-----*/
+    @media(min-width: 576px) {
+        h3.title {
+            font-size: 30px;
+        }
+
+        p.content {
+            font-size: 18px;
+        }
+
+
+        nav.navbar .navbar-brand .phone{
+            padding-left: 22px;
+        }
+
+
+
+        /*--------------------
+    ** Content ---------*/
+
+        /*-- Introduction --*/
+        .introduction {
+            p.content span {
+                font-size: 24px;
+                letter-spacing: 0.36px;
+            }
+        }
+
+        /*-- Our Team --*/
+        .team-intro .employee-intro .employee-info {
+            .name {
+                font-size: 20px;
+                letter-spacing: -0.2px;
+            }
+
+            .position {
+                font-size: 12px;
+                letter-spacing: 3.6px;
+            }
+        }
+
+
+        /*--------------------
+    ** Footer ---------*/
+        #footer .top .footer-info {
+
+            /*-- Information、Account --*/
+            .info-block:nth-child(3),
+            .info-block:nth-child(4) {
+                padding-bottom: 0;
+            }
+
+            /*-- Media Info --*/
+            .media-info {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    /*----- Width > 767px md-----*/
+    @media(min-width: 768px) {
+        
+        /*--------------------
+    ** Content ---------*/
+        /*-- Our Team --*/
+        .team-intro .employee-intro .employee-info {
+            .name {
+                font-size: 11px;
+                letter-spacing: -0.11px;
+            }
+
+            .position {
+                font-size: 7px;
+                letter-spacing: 2.1px;
+            }
+        }
+    }
+
+    /*----- Width > 991px lg-----*/
+    @media(min-width: 992px) {
+        /*--------------------
+    ** Header ---------*/
+
+
+        nav.navbar {
+
+            .navbar-brand{ margin-right: 45px; }
+
+            /*-- Navigation Shopping Area  --*/
+            .shopping-area {
+                padding: 0;
+
+                .favorite {
+                    .icon {
+                        color: #000;
+                    }
+                }
+
+                .search {
+                    padding: 0 21px 0 33px;
+                }
+
+                .favorite {
+                    padding: 0 21px 0 0;
+
+                    a:hover {
+                        .icon {
+                            color: @branding-color;
+                        }
+                    }
+                }
+
+                .cart {
+                    padding-right: 0;
+
+                    .item {
+                        border-color: white;
+                        top: 10px;
+                        right: -2px;
+                        background: black;
+
+                        .badge {
+                            display: inline-block;
+                            color: white;
+                        }
+                    }
+
+                    a:hover {
+                        .item {
+                            background: @branding-color;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        /*--------------------
+    ** Content ---------*/
+        /*-- Our Team --*/
+        .team-intro .employee-intro .employee-info {
+            .name {
+                font-size: 20px;
+                letter-spacing: -0.2px;
+            }
+
+            .position {
+                font-size: 12px;
+                letter-spacing: 3.6px;
+            }
+        }
+    }
+
+     /*----- Width > 1199px lg-----*/
+     @media(min-width: 1200px){
+        nav.navbar .navbar-brand { margin-right: 109px; }
+     }
+}

@@ -1,0 +1,466 @@
+@import "basic.less";
+
+.contact {
+    h3.title {
+        color: @text-black-small-light;
+        font-family: @font2;
+        font-weight: @fw-Semibold;
+        line-height: 1;
+        letter-spacing: 0.42px;
+    }
+
+    h4.title {
+        color: @text-black-small-light;
+        font-size: 14px;
+        font-weight: @fw-Semibold;
+        line-height: 1.94;
+        letter-spacing: 0.28px;
+    }
+
+    h5.title {
+        margin: 0;
+        color: black;
+        font-family: @font1;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 0.78px;
+    }
+
+    p.content {
+        color: #343434;
+        line-height: 1.375;
+    }
+
+
+    /*--------------------------------------------------------
+** Content                                              
+--------------------------------------------------------*/
+    /*----- Banner -----*/
+    .banner {
+        background-image: url(../img/contact/bg_contact_banner.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+    /*----- Contact Info & Question -----*/
+    .contact-question {
+        h3.title {
+            margin-bottom: 36px;
+        }
+    }
+
+    .contact-info {
+        margin-top: 85px;
+
+        h4.title {
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: @text-black-small-light;
+            font-size: 12px;
+            font-weight: @fw-Light;
+            line-height: 1.57;
+            letter-spacing: 0.24px;
+        }
+
+        .address {
+            padding-right: 5px;
+        }
+
+        .phone {
+            display: flex;
+            justify-content: center;
+            padding: 0 5px;
+        }
+
+        .email {
+            padding-left: 5px;
+        }
+    }
+
+    .question-form {
+        margin-top: 30px;
+        margin-bottom: 87px;
+
+        form {
+            margin-top: 23px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            border: 1px solid #C0C0C0;
+            border-radius: 20px;
+            padding: 0 0 0 20px;
+            height: 40px;
+            outline: none;
+            color: #090909;
+            font-weight: @fw-Light;
+            letter-spacing: 0.24px;
+
+            &:focus {
+                border-color: #73B6FF;
+            }
+
+            &::placeholder {
+                color: #090909;
+            }
+
+            &::-webkit-input-placeholder {
+                color: #090909;
+            }
+
+            &:-ms-input-placeholder {
+                color: #090909;
+            }
+
+            &:-moz-placeholder {
+                color: #090909;
+            }
+        }
+
+        textarea {
+            margin-bottom: 10px;
+            border: 1px solid #C0C0C0;
+            border-radius: 20px;
+            padding: 8px 20px;
+            height: 89px;
+            outline: none;
+            color: #090909;
+            font-weight: @fw-Light;
+            letter-spacing: 0.24px;
+
+            &:focus {
+                border-color: #73B6FF;
+            }
+
+            &::placeholder {
+                color: #090909;
+            }
+
+            &::-webkit-input-placeholder {
+                color: #090909;
+            }
+
+            &:-ms-input-placeholder {
+                color: #090909;
+            }
+
+            &:-moz-placeholder {
+                color: #090909;
+            }
+        }
+
+        button {
+            border: 0;
+            width: 72px;
+            height: 40px;
+            background: @text-black-small-light;
+            color: white;
+
+            &:hover {
+                background: @branding-color;
+            }
+        }
+    }
+
+
+    /*----- Map -----*/
+    .map {
+        position: relative;
+        margin-bottom: 81px;
+        overflow: hidden;
+
+        .container-fluid {
+            padding: 0;
+        }
+
+        iframe {
+            width: 100%;
+        }
+
+        .mark {
+            position: absolute;
+            top: 15%;
+            right: 4%;
+            padding: 0;
+            width: 110px;
+            height: 48px;
+            background-color: black;
+
+            &::after {
+                position: absolute;
+                bottom: -11px;
+                left: 10px;
+                border-style: solid;
+                border-width: 11px 11px 0 0;
+                border-color: black transparent transparent transparent;
+                width: 0;
+                height: 0;
+                content: "";
+            }
+
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: auto;
+                height: auto;
+                transform: translate(-50%, -50%);
+            }
+
+        }
+    }
+
+
+    /*--------------------------------------------------------
+** Footer                                              
+--------------------------------------------------------*/
+    #footer {
+
+        /*----- Top -----*/
+        .top {
+
+            margin-bottom: 73px;
+
+            .info-block {
+                padding-bottom: 30px;
+
+                &:nth-child(2) {
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                &:nth-child(4) {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            ul {
+                margin-top: 16px;
+
+                li {
+                    margin: 19px 0;
+                }
+
+                a {
+                    margin-left: -5px;
+                    padding: 5px;
+                    color: @text-gray-contact;
+                    font-family: @font1;
+                    text-decoration: none;
+                    letter-spacing: 0.72px;
+
+                    &:hover {
+                        color: @branding-color;
+                    }
+                }
+            }
+
+
+            /*--- Schon Info ---*/
+            .schon-info {
+                text-align: end;
+
+                img {
+                    width: auto;
+                    height: auto;
+                }
+
+                .schon-contact-info {
+                    margin-top: 55px;
+                }
+
+                .address,
+                .phone,
+                .email {
+                    padding: 0;
+                    padding-bottom: 10px;
+                }
+
+                .address {
+                    position: relative;
+                    padding-right: 25px;
+                }
+
+                .email {
+                    padding-bottom: 0;
+                }
+
+                a {
+                    padding-right: 10px;
+                    color: @text-gray-contact;
+                    font-family: @font1;
+                    text-decoration: none;
+                    line-height: 1.83;
+                    letter-spacing: 0.72px;
+
+                    &.address-link{ padding: 0; }
+                }
+
+                .icon {
+                    color: @text-gray-contact;
+
+                    &.map-maker {
+                        position: absolute;
+                        top: 5px;
+                        width: 22px;
+                        height: 12px;
+                    }
+                }
+
+                .phone .icon{ 
+                    transform: rotate(90deg);
+                 }
+            }
+        }
+
+        /*----- Bottom -----*/
+        .bottom {
+            margin-bottom: 115px;
+            padding: 0;
+
+            /*--- Payment ---*/
+            .payment {
+                padding-bottom: 11px;
+
+                img {
+                    width: auto;
+                }
+            }
+
+            /*--- Copyright ---*/
+            .copyright .title {
+                color: @text-gray-contact;
+                font-size: 11px;
+                letter-spacing: 0.66px;
+            }
+
+        }
+    }
+
+
+    /*--------------------------------------------------------
+** Media Query                                              
+--------------------------------------------------------*/
+    /*----- width > 575 -----*/
+    @media(min-width: 576px) {
+        h3.title {
+            font-size: 30px;
+            letter-spacing: 0.6px;
+        }
+
+        h4.title {
+            font-size: 16px;
+            letter-spacing: 0.32px;
+        }
+
+        p.content {
+            font-size: 16px;
+            letter-spacing: 0.32px;
+        }
+
+        /*------  Content  ------*/
+        /*-----------------------*/
+
+        /*---  Contact Info & Question  ---*/
+        .contact-info {
+            a {
+                font-size: 14px;
+                letter-spacing: 0.28px;
+            }
+
+            .address {
+                padding-right: 15px;
+            }
+
+            .phone {
+                padding: 0 15px;
+            }
+
+            .email {
+                padding-left: 15px;
+            }
+        }
+
+        .question-form {
+
+            input,
+            textarea,
+            button {
+                font-size: 14px;
+                letter-spacing: 0.28px;
+            }
+        }
+
+
+        /*---  Map  ---*/
+        .map {
+            iframe {
+                height: 450px;
+            }
+
+            .mark {
+                top: 46%;
+                right: -3%;
+            }
+        }
+
+    }
+
+    /*----- width > 767 -----*/
+    @media(min-width: 768px) {
+
+        /*---  Map  ---*/
+        .map {
+            iframe {
+                height: 570px;
+            }
+
+            .mark {
+                top: 47%;
+                right: 10%;
+            }
+        }
+    }
+
+    /*----- width > 991 -----*/
+    @media(min-width: 992px){
+        nav.navbar .shopping-area{
+            .search{
+                padding-left: 20px;
+                padding-right: 10px;
+            }
+
+            .favorite{ padding-right: 10px; }
+        } 
+
+
+        /*------  Content  ------*/
+        /*-----------------------*/
+        .map .mark{
+            right: 20%;
+        }
+    }
+
+    /*----- width > 1199 -----*/  
+    @media(min-width: 1200px){
+        nav.navbar .shopping-area{
+            .search{
+                padding-left: 33px;
+                padding-right: 21px;
+            }
+
+            .favorite{ padding-right: 21px; }
+        } 
+
+        /*------  Content  ------*/
+        /*-----------------------*/
+        .map .mark{
+            right: 24%;
+        }
+    }  
+}

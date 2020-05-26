@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/action.js"></script>
+</head>
+
+<body class="about contact">
+
+    <div id="header">
+        <!--Navigation Bar-->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <div class="navbar-brand clearfix">
+                    <a class="float-left" href="index.html"><img src="img/logo_navbar_home.png" alt="logo"></a>
+                    <!--Phone Number-->
+                    <a class="float-left phone" href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+
+                </div>
+
+                <!--Hamburger Menu-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hamburger-menu">
+                    <!--Hamburger Menu Icon-->
+                    <div id="menu-toggle" class="d-flex align-items-start">
+                        <div id="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div id="cross">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </button>
+
+                <div class="collapse navbar-collapse" id="hamburger-menu">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="index.html">home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="about.html">
+                                products
+                                <i class="icon fas fa-angle-down"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="">
+                                collections
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="">pages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="about.html">about</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="#">contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Shopping Area-->
+                <div class="shopping-area">
+                    <ul class="clearfix">
+                        <li class="search">
+                            <a href="#"><i class="icon fas fa-search"></i></a>
+                        </li>
+                        <li class="favorite">
+                            <a href="#"><i class="icon far fa-heart"></i></a>
+                        </li>
+                        <li class="cart">
+                            <a href="#">
+                                <i class="icon fas fa-shopping-bag"></i>
+                                <div class="item rounded-circle">
+                                    <span class="badge">3</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="content">
+        <!--Banner-->
+        <div class="banner">
+            <div class="container-fluid">
+                <h2 class="title text-uppercase">contact</h2>
+
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item text-capitalize float-left bounded">
+                            <a href="index.html">home</a>
+                        </li>
+                        <li class="breadcrumb-item active text-capitalize float-left">contact</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <!--Contact Info & Question-->
+        <div class="contact-question">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <div class="maker-info">
+                            <h3 class="title">schön. chair maker</h3>
+                            <p class="content">
+                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                commodo consequat.
+                            </p>
+
+                            <div class="contact-info">
+                                <div class="row">
+                                    <div class="col-4 address">
+                                        <h4 class="title">Address</h4>
+                                        <a href="#">
+                                            Suite 18B, 148 Connaught Road
+                                            Central
+                                            New Yankee
+                                        </a>
+                                    </div>
+
+                                    <div class="col-4 phone">
+                                        <div class="phone-info">
+                                            <h4 class="title">Phone</h4>
+                                            <a href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4 email">
+                                        <h4 class="title">E-Mail</h4>
+                                        <a href="mailto:info@schon.chair">info@schon.chair</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-5">
+                        <div class="question-form">
+                            <h4 class="title">Have a question?</h4>
+                            <form>
+                                <input class="d-block w-100" type="text" placeholder="Name">
+                                <input class="d-block w-100" type="text" placeholder="E-Mail">
+                                <input class="d-block w-10" type="text" placeholder="Subject">
+                                <textarea class="d-block w-100" placeholder="Message"></textarea>
+                                <button class="rounded-pill" type="submit">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Map-->
+        <div class="map">
+            <div class="container-fluid">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d28434.43924938069!2d-74.04787239801314!3d40.619227920708255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2stw!4v1590227843674!5m2!1szh-TW!2stw"
+                    frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <div class="mark">
+                <img src="img/contact/logo_map_mark.png" alt="mark">
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-sm-3 col-lg-2 info-block">
+                        <div class="products">
+                            <h5 class="title text-uppercase">products</h5>
+                            <ul>
+                                <li><a href="#">All</a></li>
+                                <li><a href="#">Chairs</a></li>
+                                <li><a href="#">Sofas</a></li>
+                                <li><a href="#">Living</a></li>
+                                <li><a href="#">Bedroom</a></li>
+                                <li><a href="#">Tables</a></li>
+                                <li><a href="#">New</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-lg-2 info-block">
+                        <div class="costomer">
+                            <h5 class="title text-uppercase">costomer</h5>
+                            <ul>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Repair Center</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-lg-2 info-block">
+                        <div class="pages">
+                            <h5 class="title text-uppercase">pages</h5>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Product</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="#">Terms</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-lg-2 info-block">
+                        <div class="socials">
+                            <h5 class="title text-uppercase">socials</h5>
+                            <ul>
+                                <li><a href="#">twitter</a></li>
+                                <li><a href="#">facebook</a></li>
+                                <li><a href="#">google+</a></li>
+                                <li><a href="#">pinterest</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-8 offset-sm-4 col-lg-4 offset-lg-0 schon-info">
+                        <img src="img/contact/logo_footer.png" alt="logo">
+                        <div class="schon-contact-info">
+                            <div class="address">
+                                <a class="address-link" href="#">
+                                    Suite 18B, 148 Connaught Road Central
+                                    New Yankee
+                                </a>
+                                <i class="icon fas fa-map-marker-alt map-maker"></i>
+                            </div>
+
+                            <div class="phone">
+                                <a href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+                                <i class="icon fas fa-phone"></i>
+                            </div>
+                            <div class="email">
+                                <a href="mailto:info@schon.chair">info@schon.chair</a>
+                                <i class="icon far fa-envelope"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="payment">
+                <img src="img/logo_about_Payment.png" alt="payment">
+            </div>
+
+            <div class="copyright">
+                <div class="title">Copyright shön. All right recerved</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

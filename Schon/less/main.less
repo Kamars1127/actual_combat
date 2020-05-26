@@ -1,5 +1,6 @@
 @import "basic.less";
-
+@import "about.less";
+@import "contact.less";
 
 * {
     font-family: "Source Sans Pro";
@@ -214,7 +215,7 @@ a.product-anchor {
 
 
 /*  Carousel Control Button  */
-.carousel-controler {
+.carousel-controler{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -563,7 +564,7 @@ nav.navbar {
         color: white;
 
         .special-title {
-            width: 167px;
+            width: 138px;
             height: 14px;
             background: @text-gray-dark;
             text-align: center;
@@ -773,7 +774,7 @@ nav.navbar {
 /*----- Feature  2 -----*/
 
 /*  Feature Carousel  */
-.carousel-indicators {
+.carousel-indicators.circle-style{
     justify-content: start;
     margin: 0;
     left: 7.6%;
@@ -891,6 +892,9 @@ nav.navbar {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 20px;
+
+        .carousel-controler{ margin-top: 20px; }
 
         #recommend-tab {
             .nav-item {
@@ -920,10 +924,6 @@ nav.navbar {
                     color: #3a3a3a;
                 }
             }
-        }
-
-        .carousel-controler {
-            margin: 26px 0 32px;
         }
     }
 
@@ -1557,7 +1557,7 @@ nav.navbar {
 
     /* Feature Carousel */
     // width, height 放大1.4倍
-    .carousel-indicators li {
+    .carousel-indicators.circle-style li {
         border-radius: 8.5px;
         width: 17px;
         height: 17px;
@@ -1608,6 +1608,8 @@ nav.navbar {
         .toolbar {
             flex-direction: row;
             justify-content: space-between;
+
+            .carousel-controler{ margin: 0; }
 
             #recommend-tab {
                 .nav-item.bounded::after {

@@ -19,4 +19,5 @@ $(document).ready(function(){
     $('#menu-toggle').click(function(e){
         $(this).toggleClass('open');
     });
+
 });
