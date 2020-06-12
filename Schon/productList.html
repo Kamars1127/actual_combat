@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/action.js"></script>
+</head>
+
+<body class="pd-list">
+
+
+    <div id="header">
+        <!--Navigation Bar-->
+        <nav class="navbar navbar-expand-lg fixed-top theme-2 theme-3">
+            <div class="container">
+                <div class="navbar-brand clearfix">
+                    <!--Logo-->
+                    <a class="float-left" href="index.html">
+                        <img src="img/logo_navbar_home.png" alt="logo">
+                    </a>
+                    <!--Phone-->
+                    <a class="float-left phone" href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+                </div>
+
+                <!--Hamburger Menu-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hamburger-menu">
+                    <!--Hamburger Menu Icon-->
+                    <div id="menu-toggle" class="d-flex align-items-start">
+                        <div id="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="cross">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </button>
+
+                <div id="hamburger-menu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <!--Home-->
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="index.html">home</a>
+                        </li>
+                        <!--Products-->
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="#">
+                                products
+                                <i class="icon fas fa-angle-down"></i>
+                            </a>
+                        </li>
+                        <!--Collections-->
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="#">collecions</a>
+                        </li>
+                        <!--Pages-->
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="#">
+                                pages
+                                <i class="icon fas fa-angle-down"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="about.html">about</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="contact.html">contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Shopping Area-->
+                <div class="shopping-area">
+                    <ul class="clearfix">
+                        <!--Search-->
+                        <li class="search">
+                            <a href="#"><i class="icon fas fa-search"></i></a>
+                        </li>
+                        <!--Favorite-->
+                        <li class="favorite">
+                            <a href="#"><i class="icon far fa-heart"></i></a>
+                        </li>
+                        <!--Cart-->
+                        <li class="cart">
+                            <a href="#">
+                                <i class="icon fas fa-shopping-bag"></i>
+                                <div class="item rounded-circle">
+                                    <span class="badge">3</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="content">
+
+        <!--Banner-->
+        <div class="banner">
+            <div class="container-fluid">
+                <h2 class="title text-uppercase">chairs</h2>
+
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item text-capitalize float-left bounded">
+                            <a href="index.html">home</a>
+                        </li>
+                        <li class="breadcrumb-item text-capitalize float-left bounded">
+                            <a href="#">products</a>
+                        </li>
+                        <li class="breadcrumb-item text-capitalize float-left">chairs</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <!--Product List-->
+        <div class="product-list">
+            <div class="container">
+                <div class="row">
+                    <!--Block 1-->
+                    <div class="col-12 col-lg-4 block-1">
+                        <div class="row">
+                            <!--Filter & Category Button-->
+                            <div class="btn-bar">
+                                <button class="category-btn text-uppercase rounded-pill" data-toggle="collapse"
+                                    data-target="#category-menu">categories</button>
+
+                                <button class="filter-btn text-uppercase rounded-pill" data-toggle="collapse"
+                                    data-target="#filter-menu">filter</button>
+                            </div>
+
+                            <!--Filter-->
+                            <div class="col-12 col-lg-12">
+                                <div class="filter-area">
+                                    <div id="filter-menu" class="collapse">
+                                        <h3 class="title text-uppercase">filter</h3>
+                                        <form>
+                                            <div class="form-group checkbox-area">
+                                                <label class="title">Filter by Brands</label>
+                                                <!--Casali-->
+                                                <div class="form-check">
+                                                    <input id="item-1" class="form-check-input" type="checkbox"
+                                                        value="casali">
+                                                    <label class="text-capitalize form-check-label"
+                                                        for="#item-1">casali</label>
+                                                    <span class="badge">2</span>
+                                                </div>
+                                                <!--Decar-->
+                                                <div class="form-check">
+                                                    <input id="item-2" class="form-check-input" type="checkbox"
+                                                        value="decar">
+                                                    <label for="#item-2"
+                                                        class="form-check-label text-capitalize">decar</label>
+                                                    <span class="badge">12</span>
+                                                </div>
+                                                <!--Fantini-->
+                                                <div class="form-check">
+                                                    <input id="item-3" class="form-check-input" type="checkbox"
+                                                        value="fantini" checked>
+                                                    <label for="#item-3"
+                                                        class="form-check-label text-capitalize">fantini</label>
+                                                    <span class="badge">4</span>
+                                                </div>
+                                                <!--Flamentstyle-->
+                                                <div class="form-check">
+                                                    <input id="item-4" class="form-check-input" type="checkbox"
+                                                        value="fantini">
+                                                    <label for="#item-4"
+                                                        class="form-check-label text-capitalize">flamentstyle</label>
+                                                    <span class="badge">4</span>
+                                                </div>
+                                                <!--Heerenhuis-->
+                                                <div class="form-check">
+                                                    <input id="item-5" class="form-check-input" type="checkbox"
+                                                        value="fantini">
+                                                    <label for="#item-5"
+                                                        class="form-check-label text-capitalize">heerenhuis</label>
+                                                    <span class="badge">6</span>
+                                                </div>
+                                                <!--Hoffmann-->
+                                                <div class="form-check">
+                                                    <input id="item-6" class="form-check-input" type="checkbox"
+                                                        value="fantini">
+                                                    <label for="#item-6"
+                                                        class="form-check-label text-capitalize">hoffmann</label>
+                                                    <span class="badge">10</span>
+                                                </div>
+                                                <!--Italfloor-->
+                                                <div class="form-check">
+                                                    <input id="item-7" class="form-check-input" type="checkbox"
+                                                        value="fantini">
+                                                    <label for="#item-7"
+                                                        class="form-check-label text-capitalize">italfloor</label>
+                                                    <span class="badge">13</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group price-range-area">
+                                                <label class="title">Filter by Price</label>
+                                                <div id="slider-range" class="price-range-controller"></div>
+
+                                                <div class="price-range-value">
+                                                    <label class="title" for="amount">Price</label>
+                                                    <input class="value" type="text" id="amount" readonly>
+                                                    <button class="filter-btn" type="submit">Filter</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!--Categories-->
+                            <div class="col-12 col-lg-12 category-area">
+                                <div id="category-menu" class="collapse">
+                                    <h3 class="title text-uppercase">categories</h3>
+                                    <ul class="item">
+                                        <li class="text-uppercase">
+                                            <a href="#">chairs</a>
+                                            <span class="badge">12</span>
+                                        </li>
+                                        <li class="text-uppercase">
+                                            <a href="#">sofas</a>
+                                            <span class="badge">24</span>
+                                        </li>
+                                        <li class="text-uppercase">
+                                            <a href="#">armchairs</a>
+                                            <span class="badge">9</span>
+                                        </li>
+                                        <li class="text-uppercase">
+                                            <a href="#">bedroom</a>
+                                            <span class="badge">2</span>
+                                        </li>
+                                        <li class="text-uppercase">
+                                            <a href="#">lighting</a>
+                                            <span class="badge">17</span>
+                                        </li>
+                                        <li class="text-uppercase">
+                                            <a href="#">kitchen</a>
+                                            <span class="badge">10</span>
+                                        </li>
+                                        <li class="text-uppercase">
+                                            <a href="#">accessories</a>
+                                            <span class="badge">23</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!--Hot Sale-->
+                            <div class="col-12 col-lg-12 hot-sale-area">
+                                <h3 class="title text-uppercase">hot sale</h3>
+                                <div class="row hot-product-area">
+                                    <!--Egon Wooden Chair-->
+                                    <div class="col-12 col-sm-3 col-lg-12">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/79x79/F8F8F8/F8F8F8"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="card-title text-capitalize">egon wooden chair</h4>
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star no-filled"></i>
+                                                </div>
+                                                <div class="price clearfix">
+                                                    <div class="original-price float-left">$75,00</div>
+                                                    <div class="special-price float-left">$55,00</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Oyo Cantilever chair-->
+                                    <div class="col-12 col-sm-3 col-lg-12">
+                                        <div class="card no-stars">
+                                            <img class="card-image-top" src="https://dummyimage.com/79x79/F8F8F8/F8F8F8"
+                                                alt="chair">
+
+                                            <div class="card-body">
+                                                <h4 class="card-title text-uppercase">oyo cantilever chair</h4>
+                                                <div class="price">
+                                                    <div class="special-price">$55,00</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!--Kurve Chair-->
+                                    <div class="col-12 col-sm-3 col-lg-12">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/79x79/F8F8F8/F8F8F8"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="card-title text-capitalize">kurve chair</h4>
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star no-filled"></i>
+                                                </div>
+                                                <div class="price clearfix">
+                                                    <div class="original-price float-left">$75,00</div>
+                                                    <div class="special-price float-left">$55,00</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!--Marvelous Wooden Chair-->
+                                    <div class="col-12 col-sm-3 col-lg-12">
+                                        <div class="card no-stars">
+                                            <img class="card-image-top" src="https://dummyimage.com/79x79/F8F8F8/F8F8F8"
+                                                alt="chair">
+
+                                            <div class="card-body ">
+                                                <h4 class="card-title text-uppercase">marvelous wooden chair</h4>
+                                                <div class="price clearfix">
+                                                    <div class="original-price float-left">$75,00</div>
+                                                    <div class="special-price float-left">$55,00</div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block 2-->
+                    <div class="col-12 col-lg-8 block-2">
+                        <div
+                            class="top d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+                            <div class="show-detail">
+                                <div class="title">
+                                    Showing <span>1-9</span> of <span>65</span> results
+                                    <br>
+                                    View 9 / 18 / 27 / All
+                                </div>
+                            </div>
+
+                            <ul class="show-controller align-self-end clearfix">
+                                <li class="float-left item-sort">
+                                    <select class="select-sort">
+                                        <option value="default" selected>Default Sorting</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </li>
+
+                                <li class="float-left item-layout">
+                                    <a class="rounded-circle layout-column-btn" href="#">
+                                        <i class="icon fas fa-th-large"></i>
+                                    </a>
+                                </li>
+
+                                <li class="float-left item-layout">
+                                    <a class="rounded-circle layout-row-btn" href="#">
+                                        <i class="icon fas fa-th-list"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!--Show Product Area-->
+                        <div class="tab-content show-product-area layout-column">
+                            <!--Page 1-->
+                            <div id="product-page-1" class="tab-pane fade show active">
+                                <div class="row">
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/F8F8F8/F8F8F8"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Bombi Charir</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/F8F8F8/F8F8F8"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Marvelous Modern 3 Seater</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 599,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/F8F8F8/F8F8F8"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Chair with armrests</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 200,00
+                                                </div>
+                                            </div>
+
+                                            <div class="mark">
+                                                <span>15% Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/F8F8F8/F8F8F8"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Pouf Charir</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/F8F8F8/F8F8F8"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Jalis Counter stool</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 269,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/F8F8F8/F8F8F8"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Bombi Charir</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/F8F8F8/F8F8F8"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Lucky Chair</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/F8F8F8/F8F8F8"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Cut Chair with 4 Spoke Base</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 269,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/F8F8F8/F8F8F8"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Yard SeChair</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 139,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Page 2-->
+                            <div id="product-page-2" class="tab-pane fade">
+                                <div class="row">
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FEFFB0/FEFFB0"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Bombi Charir</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FEFFB0/FEFFB0"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Marvelous Modern 3 Seater</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 599,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FEFFB0/FEFFB0"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Chair with armrests</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 200,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FEFFB0/FEFFB0"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Pouf Charir</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FEFFB0/FEFFB0"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Jalis Counter stool</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 269,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FEFFB0/FEFFB0"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Bombi Charir</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FEFFB0/FEFFB0"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Lucky Chair</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FEFFB0/FEFFB0"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Cut Chair with 4 Spoke Base</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 269,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FEFFB0/FEFFB0"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Yard SeChair</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 139,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Page 3-->
+                            <div id="product-page-3" class="tab-pane fade">
+                                <div class="row">
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FFD9B6/FFD9B6"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Bombi Charir</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FFD9B6/FFD9B6"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Marvelous Modern 3 Seater</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 599,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FFD9B6/FFD9B6"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Chair with armrests</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 200,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FFD9B6/FFD9B6"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Pouf Charir</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FFD9B6/FFD9B6"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Jalis Counter stool</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 269,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FFD9B6/FFD9B6"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Bombi Charir</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FFD9B6/FFD9B6"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Lucky Chair</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FFD9B6/FFD9B6"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Cut Chair with 4 Spoke Base</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 269,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/FFD9B6/FFD9B6"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Yard SeChair</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 139,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Page 4-->
+                            <div id="product-page-4" class="tab-pane fade">
+                                <div class="row">
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/B6CAFF/B6CAFF"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Bombi Charir</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/B6CAFF/B6CAFF"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Marvelous Modern 3 Seater</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 599,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card no-stars">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/B6CAFF/B6CAFF"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <h4 class="title">Chair with armrests</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 200,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/B6CAFF/B6CAFF"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Pouf Charir</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 399,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-amount">
+                                        <div class="card">
+                                            <img class="card-img-top" src="https://dummyimage.com/275x275/B6CAFF/B6CAFF"
+                                                alt="charir">
+
+                                            <div class="card-body">
+                                                <div class="stars">
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon fas fa-star filled"></i>
+                                                    <i class="icon far fa-star no-filled"></i>
+                                                </div>
+
+                                                <h4 class="title">Jalis Counter stool</h4>
+                                                <div class="price"><i class="icon fas fa-euro-sign"></i> 269,00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Pagination-->
+                        <nav class="pagination-area">
+                            <ul id="pills-tab" class="pagination nav nav-pills">
+                                <li class="page-item"><a class="nav-item nav-link page-link active" data-toggle="pill"
+                                        href="#product-page-1">1</a></li>
+                                <li class="page-item"><a class="nav-item nav-link page-link" data-toggle="pill"
+                                        href="#product-page-2">2</a></li>
+                                <li class="page-item"><a class="nav-item nav-link page-link" data-toggle="pill"
+                                        href="#product-page-3">3</a></li>
+                                <li class="page-item"><a class="nav-item nav-link page-link" data-toggle="pill"
+                                        href="#product-page-4">4</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="footer">
+        <div class="top bg-gray">
+            <!--Services-->
+            <div class="services">
+                <div class="container">
+                    <div class="row">
+                        <!--Service Item 1-->
+                        <div class="col-12 col-sm-6 col-lg-3 service-item">
+                            <i class="icon fas fa-plane"></i>
+                            <div class="info">
+                                <h5 class="title text-uppercase">free shipping</h5>
+                                <p class="content">Free shipping on all US order</p>
+                            </div>
+                        </div>
+
+                        <!--Service Item 2-->
+                        <div class="col-12 col-sm-6 col-lg-3 service-item">
+                            <i class="icon far fa-life-ring"></i>
+                            <div class="info">
+                                <h5 class="title text-uppercase">support 24/7</h5>
+                                <p class="content">We support 24 hours a day</p>
+                            </div>
+                        </div>
+
+                        <!--Service Item 3-->
+                        <div class="col-12 col-sm-6 col-lg-3 service-item">
+                            <i class="icon fab fa-dropbox"></i>
+                            <div class="info">
+                                <h5 class="title text-uppercase">gift cards</h5>
+                                <p class="content">Give perfect gift</p>
+                            </div>
+                        </div>
+
+                        <!--Service Item 4-->
+                        <div class="col-12 col-sm-6 col-lg-3 service-item">
+                            <i class="icon far fa-money-bill-alt"></i>
+                            <div class="info">
+                                <h5 class="title text-uppercase">payment 100% secure</h5>
+                                <p class="content">Payment 100% secure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Footer Info-->
+            <div class="footer-info">
+                <div class="container">
+                    <div class="row">
+                        <!--Schon info-->
+                        <div class="col-12 col-sm-7 col-md-6 col-lg-3 schon-info">
+                            <img src="img/logo_footer_gray.png" alt="logo">
+                            <p>Exercitation ullamco laboris nisi ut aliquip ex
+                                <br>
+                                commodo consequat. Duis aute irure
+                            </p>
+                            <div class="contact-info">
+                                <div class="address">
+                                    <i class="icon fas fa-map-marker-alt"></i>
+                                    <a href="#">Connaugt Road Central Suite 18B, 148
+
+                                        New Yankee</a>
+                                </div>
+
+                                <div class="phone">
+                                    <i class="icon fas fa-phone"></i>
+                                    <a href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+                                </div>
+
+                                <div class="email">
+                                    <i class="icon far fa-envelope"></i>
+                                    <a href="mailto:info@schon.chair">info@schon.chair</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Categories-->
+                        <div class="col-12 col-sm-5 col-md-2 col-lg-2 info-block">
+                            <div class="categories">
+                                <h5 class="title">Categories</h5>
+                                <ul>
+                                    <li><a href="#">Chairs</a></li>
+                                    <li><a href="#">Sofas</a></li>
+                                    <li><a href="#">Living</a></li>
+                                    <li><a href="#">Bedroom</a></li>
+                                    <li><a href="#">Tables</a></li>
+                                    <li><a href="#">New</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <!--Information-->
+                        <div class="col-12 col-sm-3 col-md-2 col-lg-2 info-block">
+                            <div class="information">
+                                <h5 class="title">Information</h5>
+                                <ul>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Terms &amp; Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Customer Service</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Account-->
+                        <div class="col-12 col-sm-3 col-md-2 col-lg-2 info-block">
+                            <div class="account">
+                                <h5 class="title">Account</h5>
+                                <ul>
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Order Tracking</a></li>
+                                    <li><a href="#">Wish list</a></li>
+                                    <li><a href="#">Shopping Cart</a></li>
+                                    <li><a href="#">Checkout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Media Info-->
+                        <div class="col-12 col-sm-6 offset-md-6 col-lg-3 offset-lg-0 media-info">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="title">Sing Up Newsletter</h5>
+                                    <div class="row newsletter">
+                                        <div class="col-8"><input type="text" placeholder="Your e-mail"></div>
+                                        <div class="col-4"><button>Subscribe</button></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 social-media">
+                                    <h5 class="title">Follow Us</h5>
+                                    <ul class="clearfix">
+                                        <li><a href="#"><i class="icon fab fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="icon fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="icon fab fa-google-plus-g"></i></a></li>
+                                        <li><a href="#"><i class="icon fa fa-youtube" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="icon fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="#"><i class="icon fab fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="container d-sm-flex justify-content-sm-between align-items-sm-center">
+                <div class="copyright">
+                    <div class="title">&copy; <span>schön.</span> - All rights Reserved</div>
+                </div>
+
+                <div class="payment"><img src="img/home/logo_home_Payment.png" alt="payment"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

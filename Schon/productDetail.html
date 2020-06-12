@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/action.js"></script>
+</head>
+
+<body class="pd-detail">
+    <div id="header">
+        <!--Navigation Bar-->
+        <nav class="navbar navbar-expand-lg fixed-top theme-2 theme-3">
+            <div class="container">
+                <div class="navbar-brand clearfix">
+                    <!--Logo-->
+                    <a class="float-left" href="index.html">
+                        <img src="img/logo_navbar_home.png" alt="logo">
+                    </a>
+                    <!--Phone-->
+                    <a class="float-left phone" href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+                </div>
+
+                <!--Hamburger Menu-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hamburger-menu">
+                    <!--Hamburger Menu Icon-->
+                    <div id="menu-toggle" class="d-flex align-items-start">
+                        <div id="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="cross">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </button>
+
+                <div id="hamburger-menu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <!--Home-->
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="index.html">home</a>
+                        </li>
+                        <!--Products-->
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="#">
+                                products
+                                <i class="icon fas fa-angle-down"></i>
+                            </a>
+                        </li>
+                        <!--Collections-->
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="#">collecions</a>
+                        </li>
+                        <!--Pages-->
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="#">
+                                pages
+                                <i class="icon fas fa-angle-down"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="about.html">about</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="contact.html">contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Shopping Area-->
+                <div class="shopping-area">
+                    <ul class="clearfix">
+                        <!--Search-->
+                        <li class="search">
+                            <a href="#"><i class="icon fas fa-search"></i></a>
+                        </li>
+                        <!--Favorite-->
+                        <li class="favorite">
+                            <a href="#"><i class="icon far fa-heart"></i></a>
+                        </li>
+                        <!--Cart-->
+                        <li class="cart">
+                            <a href="#">
+                                <i class="icon fas fa-shopping-bag"></i>
+                                <div class="item rounded-circle">
+                                    <span class="badge">3</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="content">
+        <!--Main Product-->
+        <div class="main-product bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <!--Share Bar-->
+                        <div class="share-bar">
+                            <ul class="clearfix">
+                                <!--Favorite-->
+                                <li class="float-left favorite">
+                                    <a href="#">
+                                        <i class="icon fas fa-heart"></i>
+                                        <span class="badge">27</span>
+                                    </a>
+                                </li>
+                                <!--Comment-->
+                                <li class="float-left comment">
+                                    <a href="#">
+                                        <i class="icon fas fa-comments"></i>
+                                        <span class="badge">12</span>
+                                    </a>
+                                </li>
+                                <!--Share-->
+                                <li class="float-left share">
+                                    <a href="#">
+                                        <i class="icon fas fa-share-alt"></i>
+                                        <span class="badge">14</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!--Product Picture-->
+                        <div class="product-picture">
+                            <div class="big-picture">
+                                <div><img src="https://picsum.photos/id/1015/510/450" alt="product"></div>
+                                <div><img src="https://picsum.photos/id/1016/510/450" alt="product"></div>
+                                <div><img src="https://picsum.photos/id/1018/510/450" alt="product"></div>
+                                <div><img src="https://picsum.photos/id/1028/510/450" alt="product"></div>
+                                <div><img src="https://picsum.photos/id/1036/510/450" alt="product"></div>
+                                <div><img src="https://picsum.photos/id/1057/510/450" alt="product"></div>
+                            </div>
+
+                            <div class="picture-bar">
+                                <div><img src="https://picsum.photos/id/1015/400/105" alt="product"></div>
+                                <div><img src="https://picsum.photos/id/1016/400/105" alt="product"></div>
+                                <div><img src="https://picsum.photos/id/1018/400/105" alt="product"></div>
+                                <div><img src="https://picsum.photos/id/1028/400/105" alt="product"></div>
+                                <div><img src="https://picsum.photos/id/1036/400/105" alt="product"></div>
+                                <div><img src="https://picsum.photos/id/1057/400/105" alt="product"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="product-link ">
+                            <ul class="clearfix">
+                                <li class="float-left text-capitalize bounded "><a href="#">chairs</a></li>
+                                <li class="float-left text-capitalize"><a href="#">products</a></li>
+                            </ul>
+                        </div>
+
+                        <h2 class="title text-uppercase">kaila fabric chair</h2>
+
+                        <div class="review clearfix">
+                            <div class="stars float-left">
+                                <i class="icon fas fa-star filled"></i>
+                                <i class="icon fas fa-star filled"></i>
+                                <i class="icon fas fa-star filled"></i>
+                                <i class="icon far fa-star no-filled"></i>
+                            </div>
+
+                            <a class="float-left text-capitalize" href="#">
+                                reviews
+                                <span class="badge parentheses">12</span>
+                            </a>
+                        </div>
+
+                        <div class="function-bar">
+                            <ul class="clearfix">
+                                <li class="share float-left">
+                                    <a href="#">
+                                        <i class="icon fas fa-share-alt"></i>
+                                        <span class="text-uppercase">share</span>
+                                    </a>
+                                </li>
+
+                                <li class="compare float-left">
+                                    <a href="#">
+                                        <i class="icon fas fa-exchange-alt"></i>
+                                        <span class="text-uppercase">compare</span>
+                                    </a>
+                                </li>
+
+                                <li class="wish float-left">
+                                    <a href="#">
+                                        <i class="icon fas fa-heart"></i>
+                                        <span class="text-uppercase">add to wishlist</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <hr>
+
+                        <p class="content section-1">
+                            Koila is a chair designed for restaurants and food lovers in general. Designed in
+                            collaboration with restaurant professionals, it ensures comfort and an ideal posture, as
+                            there are armrests on both sides of the chair.
+                        </p>
+
+                        <p class="content section-2">
+                            Koila is a seat designed for restaurants and gastronomic places in general. Designed in
+                            collaboration with professional of restaurants and hotels field, this armchair is composed
+                            of a curved shell with a base in oak who has pinched the back upholstered in fabric or
+                            leather. It provides comfort and holds for ideal sitting position,the arms may rest on the
+                            sides ofthe armchair.
+                        </p>
+
+                        <hr class="hr-second">
+
+                        <div class="price">
+                            $ 79.00
+                            <span class="original-price">399,00</span>
+                        </div>
+
+                        <div class="order-area">
+                            <div class="title text-uppercase float-left">qty:</div>
+
+                            <div class="quantity-select">
+                                <input class="rounded-pill" type="number" min="1" max="100" value="1">
+                                <button class="increase"><i class="icon fas fa-angle-up"></i></button>
+                                <button class="reduce"><i class="icon fas fa-angle-down"></i></button>
+                            </div>
+                            
+
+                            <button class="place-order text-uppercase rounded-pill">add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Product Detail-->
+        <div class="product-detail">
+            <div class="container">
+                <nav>
+                    <div class="nav nav-pills detail-tab" id="nav-tab">
+                        <hr>
+                        <a class="nav-item nav-link text-uppercase active" id="description" data-toggle="tab"
+                            href="#description-content">description</a>
+                        <a class="nav-item nav-link text-uppercase" id="information" data-toggle="tab"
+                            href="#information-content">information</a>
+                        <a class="nav-item nav-link text-uppercase" id="review" data-toggle="tab" href="#review-content">reviews</a>
+                    </div>
+                </nav>
+
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="description-content">
+                        <p class="content section-1">
+                            Koila is a chair designed for restaurants and food lovers in general. Designed in
+                            collaboration with restaurant professionals, it ensures comfort and an ideal posture, as
+                            there are armrests on both sides of the chair.
+                        </p>
+
+                        <p class="content section-2">
+                            Koila is a seat designed for restaurants and gastronomic places in general. Designed in
+                            collaboration with professional of restaurants and hotels field, this armchair is composed
+                            of a curved shell with a base in oak who has pinched the back upholstered in fabric or
+                            leather. It provides comfort and holds for ideal sitting position,the arms may rest on the
+                            sides ofthe armchair.
+                            Solid oak construction.
+                            Back in plywood (2 faces oak veneer) or upholstered in fabric, leather or eco-leather.
+                            Seat upholstered in fabric, leather or eco-leather.
+                            H 830 x L 585 x P 540 mm.
+                        </p>
+                    </div>
+
+                    <div class="tab-pane fade" id="information-content">...</div>
+
+                    <div class="tab-pane fade" id="review-content">...</div>
+                </div>
+            </div>
+        </div>
+
+        <!--Related Products-->
+        <div class="related-products">
+            <div class="container">
+                <h3 class="title text-uppercase">related products</h3>
+
+                <div class="product-layout-5">
+                    <div class="row">
+                        <div class="col-6 col-md-4 card-area">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://dummyimage.com/213x213/F8F8F8/F8F8F8" alt="chair">
+                                    <div class="stars">
+                                        <i class="icon fas fa-star filled"></i>
+                                        <i class="icon fas fa-star filled"></i>
+                                        <i class="icon fas fa-star filled"></i>
+                                        <i class="icon far fa-star no-filled"></i>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+                                    <h5 class="card-title text-capitalize">puff chair</h5>
+                                    <div class="price"><i class="icon fas fa-euro-sign"></i> 287,00</div>
+                                </div>
+
+                                <div class="mark-area">
+                                    <div class="mark-new"><span>NEW</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-4 card-area">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://dummyimage.com/213x213/F8F8F8/F8F8F8" alt="chair">
+                                </div>
+
+                                <div class="card-body">
+                                    <h5 class="card-title text-capitalize">bombi chair</h5>
+                                    <div class="price"><i class="icon fas fa-euro-sign"> 399,00</i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-4 card-area">
+                            <div class="card">
+                                <img class="card-img-top" src="https://dummyimage.com/213x213/F8F8F8/F8F8F8"
+                                    alt="chair">
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="title text-capitalize">wood chair</h5>
+                                <div class="price"><i class="icon fas fa-euro-sign"> 198,00</i></div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-4 card-area">
+                            <div class="card">
+                                <img class="card-img-top" src="https://dummyimage.com/213x213/F8F8F8/F8F8F8"
+                                    alt="chair">
+
+                                <div class="card-body">
+                                    <h5 class="card-title text-capitalize">bombi chair</h5>
+                                    <div class="price"><i class="icon fas fa-euro-sign"></i> 200,00</div>
+                                </div>
+
+                                <div class="mark-area area2">
+                                    <div class="mark-off"><span>15% Off</span></div>
+                                    <div class="mark-new"><span>NEW</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-4 card-area">
+                            <div class="card">
+                                <img class="card-img-top" src="https://dummyimage.com/213x213/F8F8F8/F8F8F8"
+                                    alt="chair">
+
+                                <div class="card-body">
+                                    <h5 class="card-title text-capitalize">bombi chair</h5>
+                                    <div class="price"><i class="icon fa fa-euro-sign"></i> 200,00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="footer-theme-2">
+        <div class="top bg-gray">
+            <!--Footer Info-->
+            <div class="footer-info">
+                <div class="container">
+                    <div class="row">
+                        <!--Schon Info-->
+                        <div class="col-12 col-sm-7 col-md-6 col-lg-3 schon-info">
+                            <img src="img/logo_footer_gray.png" alt="logo">
+                            <p>
+                                Exercitation ullamco laboris nisi ut aliquip ex
+                                <br>
+                                commodo consequat. Duis aute irure
+                            </p>
+
+                            <div class="contact-info">
+                                <div class="address">
+                                    <i class="icon fas fa-map-marker-alt"></i>
+                                    <a href="#">Connaugt Road Central Suite 18B, 148
+                                        New Yankee</a>
+                                </div>
+
+                                <div class="phone">
+                                    <i class="icon fas fa-phone"></i>
+                                    <a href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+                                </div>
+
+                                <div class="email">
+                                    <i class="icon fa fa-envelope"></i>
+                                    <a href="mailto:info@schon.chair">info@schon.chair</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Categories-->
+                        <div class="col-12 col-sm-5 col-md-2 col-lg-2 info-block">
+                            <div class="categories">
+                                <h5 class="title">Categories</h5>
+                                <ul>
+                                    <li><a href="#">Chairs</a></li>
+                                    <li><a href="#">Sofas</a></li>
+                                    <li><a href="#">Living</a></li>
+                                    <li><a href="#">Bedroom</a></li>
+                                    <li><a href="#">Tables</a></li>
+                                    <li><a href="#">New</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Information-->
+                        <div class="col-12 col-sm-3 col-md-2 col-lg-2 info-block">
+                            <div class="information">
+                                <h5 class="title">Information</h5>
+                                <ul>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Terms &amp; Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Customer Service</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Account-->
+                        <div class="col-12 col-sm-3 col-md-2 col-lg-2 info-block">
+                            <div class="account">
+                                <h5 class="title">Account</h5>
+                                <ul>
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Order Tracking</a></li>
+                                    <li><a href="#">Wish list</a></li>
+                                    <li><a href="#">Shopping Cart</a></li>
+                                    <li><a href="#">Checkout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Media Info-->
+                        <div class="col-12 col-sm-6 offset-md-6 col-lg-3 offset-lg-0 media-info">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="title">Sing Up Newsletter</h5>
+                                    <div class="content-area">
+                                        <p>Subscribe now to get 15% off</p>
+                                        <p>on any product</p>
+                                    </div>
+
+                                    <div class="newsletter rounded-pill">
+                                        <input type="text" placeholder="Your e-mail">
+                                        <a class="submit" href="#"><i class="icon fas fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 social-media">
+                                    <h5 class="title">Follow Us</h5>
+                                    <ul class="clearfix">
+                                        <li><a href="#"><i class="icon fab fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="icon fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="icon fab fa-google-plus-g"></i></a></li>
+                                        <li><a href="#"><i class="icon fa fa-youtube" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li><a href="#"><i class="icon fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="#"><i class="icon fab fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="container d-sm-flex justify-content-sm-between align-items-sm-center">
+                <div class="copyright">
+                    <div class="title">&copy; <span>schön.</span> - All rights Reserved</div>
+                </div>
+
+                <div class="payment"><img src="img/logo_about_Payment.png" alt="payment"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

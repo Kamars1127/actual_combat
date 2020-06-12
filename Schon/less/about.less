@@ -1,15 +1,6 @@
 @import "basic.less";
 
-.about {
-
-    h2.title {
-        margin: 0;
-        color: @text-black-light;
-        font-family: @font1;
-        font-size: 44px;
-        font-weight: bold;
-        letter-spacing: 0.88px;
-    }
+body.about {
 
     h3.title {
         color: @text-black-light;
@@ -36,111 +27,11 @@
         letter-spacing: 0.24px;
     }
 
-    /*--------------------------------------------------------
-** Header                                              
---------------------------------------------------------*/
 
-    /*----- Navigation -----*/
-    nav.navbar {
-        top: 0;
-
-        .navbar-brand {
-            margin: 0;
-
-            .phone {
-                margin-top: 14px;
-                padding-left: 8px;
-                color: @text-gray-dark;
-                font-family: @font1;
-                font-weight: bold;
-                text-decoration: none;
-                letter-spacing: 0.96px;
-            }
-        }
-
-        /*  Shopping Area  */
-        .shopping-area {
-            padding: 10px 0 15px;
-
-            .favorite {
-                padding-bottom: 15px;
-            }
-
-            .cart .item {
-                position: absolute;
-                top: 12px;
-                right: -10px;
-                border: 2px solid @branding-color;
-                width: 23px;
-                height: 23px;
-                background: white;
-                text-align: center;
-
-                .badge {
-                    position: unset;
-                    padding: 0;
-                    font-size: 11px;
-                    line-height: 19px;
-                }
-            }
-        }
-    }
 
     /*--------------------------------------------------------
 ** Content                                              
 --------------------------------------------------------*/
-    #content {
-        padding-top: 100px;
-    }
-
-    /*----- Banner -----*/
-    .banner {
-        margin-bottom: 86px;
-        height: 207px;
-        background: #F5F5F5;
-
-        .container-fluid {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-        }
-
-        h2.title {
-            margin-bottom: 11px;
-        }
-
-        .breadcrumb {
-            margin: 0;
-            background: none;
-
-            .breadcrumb-item {
-                color: @text-black-light;
-                font-size: 14px;
-                font-weight: @fw-Light;
-
-                a {
-                    color: @text-black-light;
-                    text-decoration: none;
-                    font-size: 14px;
-                    font-weight: @fw-Light;
-
-                    &:hover {
-                        color: @branding-color;
-                    }
-                }
-
-                &.active::before {
-                    font-family: 'Font Awesome 5 Free';
-                    font-weight: 900;
-                    font-size: 14px;
-                    content: "\f105";
-                    color: @text-black-light;
-                }
-            }
-        }
-    }
 
     /*----- Introduction -----*/
     .introduction {
@@ -278,7 +169,7 @@
                 padding-left: 7.5px;
 
                 .card-img-top {
-                    border-bottom-color: #F4F4F4;
+                    border-bottom-color: @text-gray-light-about;
                 }
             }
 
@@ -413,104 +304,12 @@
                 margin: 0 5px;
                 border: 0;
                 width: 91px;
-                background-color: #B6B6B6;
+                background-color: @text-gray-about;
             }
         }
 
     }
-
-
-    /*--------------------------------------------------------
-** Footer                                              
---------------------------------------------------------*/
-    #footer {
-
-        /*----- Footer Top -----*/
-        .top {
-
-            /*-- Footer Info --*/
-            .footer-info {
-                padding: 68px 0;
-
-                /*  Media Info  */
-                .media-info {
-                    .content-area {
-                        padding-top: 33px;
-                        text-align: end;
-
-                        p {
-                            margin: 0;
-                            color: @text-gray-medium-light;
-                            font-size: 14px;
-                            line-height: 1.29;
-                            letter-spacing: -0.14px;
-                        }
-                    }
-
-                    .newsletter {
-                        position: relative;
-                        margin-top: 21px;
-                        margin-bottom: 30px;
-                        padding: 0;
-                        border: 1px solid @text-gray-medium-light;
-                        height: 30px;
-
-                        input {
-                            width: 81.7%;
-                            height: 30px;
-                            padding: 0 0 0 22px;
-                            background: transparent;
-                            color: #8C8C8C;
-                            font-family: @font2;
-                            font-size: 12px;
-                            font-weight: @fw-ExtraLight;
-
-                            &::placeholder {
-                                color: #8C8C8C;
-                                font-size: 12px;
-                                font-weight: @fw-ExtraLight;
-                                letter-spacing: -0.12px;
-                            }
-
-                            &::-webkit-input-placeholder {
-                                color: #8C8C8C;
-                            }
-
-                            &::-ms-input-placeholder {
-                                color: #8C8C8C;
-                            }
-
-                            &::-moz-placeholder {
-                                color: #8C8C8C;
-                            }
-                        }
-
-                        .submit {
-                            position: absolute;
-                            padding: 0 17px;
-                            line-height: 30px;
-
-                            .icon {
-                                color: #A5A0A0;
-                                font-size: 14;
-                            }
-
-                            &:hover {
-                                .icon {
-                                    color: @branding-color;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        /*----- Footer Bottom -----*/
-        .bottom {
-            padding: 25px 0;
-        }
-    }
+    
 
     /*--------------------------------------------------------
 ** Media Query                                              
@@ -524,12 +323,6 @@
         p.content {
             font-size: 18px;
         }
-
-
-        nav.navbar .navbar-brand .phone {
-            padding-left: 22px;
-        }
-
 
 
         /*--------------------
@@ -555,23 +348,6 @@
                 letter-spacing: 3.6px;
             }
         }
-
-
-        /*--------------------
-    ** Footer ---------*/
-        #footer .top .footer-info {
-
-            /*-- Information、Account --*/
-            .info-block:nth-child(3),
-            .info-block:nth-child(4) {
-                padding-bottom: 0;
-            }
-
-            /*-- Media Info --*/
-            .media-info {
-                padding-bottom: 0;
-            }
-        }
     }
 
     /*----- Width > 767px md-----*/
@@ -595,68 +371,10 @@
 
     /*----- Width > 991px lg-----*/
     @media(min-width: 992px) {
-        /*--------------------
-    ** Header ---------*/
-
-
-        nav.navbar {
-
-            .navbar-brand {
-                margin-right: 45px;
-            }
-
-            /*-- Navigation Shopping Area  --*/
-            .shopping-area {
-                padding: 0;
-
-                .favorite {
-                    .icon {
-                        color: #000;
-                    }
-                }
-
-                .search {
-                    padding: 0 21px 0 33px;
-                }
-
-                .favorite {
-                    padding: 0 21px 0 0;
-
-                    a:hover {
-                        .icon {
-                            color: @branding-color;
-                        }
-                    }
-                }
-
-                .cart {
-                    padding-right: 0;
-
-                    .item {
-                        border-color: white;
-                        top: 10px;
-                        right: -2px;
-                        background: black;
-
-                        .badge {
-                            display: inline-block;
-                            color: white;
-                        }
-                    }
-
-                    a:hover {
-                        .item {
-                            background: @branding-color;
-                        }
-                    }
-                }
-            }
-        }
-
-
 
         /*--------------------
     ** Content ---------*/
+        
         /*-- Our Team --*/
         .team-intro .employee-intro .employee-info {
             .name {
@@ -671,10 +389,4 @@
         }
     }
 
-    /*----- Width > 1199px lg-----*/
-    @media(min-width: 1200px) {
-        nav.navbar .navbar-brand {
-            margin-right: 109px;
-        }
-    }
 }
