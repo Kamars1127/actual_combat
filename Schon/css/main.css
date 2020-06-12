@@ -884,7 +884,6 @@ body.pd-detail .main-product .order-area input {
 }
 body.pd-detail .main-product .order-area input[type="number"] {
   -webkit-appearance: textfield;
-  -moz-appearance: textfield;
   appearance: textfield;
 }
 body.pd-detail .main-product .order-area input::-webkit-inner-spin-button,
@@ -1080,6 +1079,7 @@ body.pd-detail .related-products .product-layout-5 {
 }
 body.pd-list {
   /*----- jQuery UI - Selectmenu-----*/
+  /*------ Card ------*/
   /*--------------------------------------------------------
 ** Content                                              
 --------------------------------------------------------*/
@@ -1107,6 +1107,12 @@ body.pd-list .ui-selectmenu-menu .ui-menu .ui-menu-item-wrapper {
 body.pd-list .ui-selectmenu-menu .ui-menu .ui-menu-item-wrapper.ui-state-active {
   border: none;
   background-color: #ff6060;
+}
+body.pd-list a.card {
+  text-decoration: none;
+}
+body.pd-list a.card:hover {
+  border: 2px solid #ff6060;
 }
 body.pd-list .product-list {
   padding-bottom: 98px;
@@ -1431,6 +1437,7 @@ body.pd-list .product-list .block-2 .show-product-area .card .mark span {
   letter-spacing: -0.56px;
 }
 body.pd-list .product-list .block-2 .show-product-area .card .card-body h4.title {
+  color: #747474;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.4;

@@ -25,6 +25,14 @@ body.pd-list {
         }
     }
 
+    /*------ Card ------*/
+    a.card{
+        text-decoration: none;
+
+        &:hover{
+            border: 2px solid @branding-color;
+        }
+    }
     /*--------------------------------------------------------
 ** Content                                              
 --------------------------------------------------------*/
@@ -233,7 +241,7 @@ body.pd-list {
                 .card {
                     display: flex;
                     flex-direction: row;
-
+                   
                     img {
                         width: 79px;
                         height: 79px;
@@ -440,6 +448,7 @@ body.pd-list {
 
                     .card-body {
                         h4.title {
+                            color: #747474;
                             font-size: 14px;
                             font-weight: @fw-Semibold;
                             line-height: 1.4;
