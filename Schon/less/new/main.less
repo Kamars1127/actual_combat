@@ -33,30 +33,6 @@ h3.title {
 }
 
 /*--------------------------------------------------------
-** Let web don't scroll                                              
---------------------------------------------------------*/
-.no-scroll{
-    overflow: hidden;
-}
-
-
-/*--------------------------------------------------------
-** When Clicked  Color                                              
---------------------------------------------------------*/
-#header{
-    .active-branding-color{
-        color: @branding-color;
-    }
-
-    .active-bg-branding{
-        background: @branding-color;
-    }
-} 
-
-
-
-
-/*--------------------------------------------------------
 ** Hamburger Menu                                               
 --------------------------------------------------------*/
 
@@ -657,7 +633,7 @@ nav.navbar {
 
     &.scrolled {
         top: 0;
-        background: @bg-green;
+        background: #d0e9b0;
 
         #menu-toggle {
             span {
@@ -667,7 +643,7 @@ nav.navbar {
     }
 
 
-    /*  Schon Area  */
+    /*  Shopping Area  */
     .shopping-area {
         position: absolute;
         display: flex;
@@ -676,7 +652,7 @@ nav.navbar {
         border-radius: 10px 0 0 10px;
         min-width: 50px;
         min-height: 80px;
-        background: @bg-green;
+        background: @branding-color;
         justify-content: center;
         align-items: center;
 
@@ -759,7 +735,7 @@ nav.navbar {
                     position: absolute;
                     top: 12px;
                     right: -10px;
-                    border: 2px solid @bg-green;
+                    border: 2px solid @branding-color;
                     width: 23px;
                     height: 23px;
                     background: white;
@@ -768,7 +744,6 @@ nav.navbar {
                     .badge {
                         position: unset;
                         padding: 0;
-                        color: black;
                         font-size: 11px;
                         line-height: 19px;
                     }
@@ -816,13 +791,13 @@ nav.navbar {
                         height: 20px;
                     }
 
-                    /* Buyer's Orders */
-                    .cart-order-area {
+                    /* Product in the cart */
+                    .cart-product-area {
                         max-height: 270px;
                         overflow: scroll;
                     }
 
-                    .buyer-orders {
+                    .cart-product {
                         padding-bottom: 17px;
 
                         &:last-child {
@@ -1882,9 +1857,9 @@ nav.navbar {
 
                 &::before, &::after {
                     position: absolute;
+                    
                     content: " ";
                     border-style: solid;
-                    border-width: 15px;
                     height: 0px;
                     width: 0px;
                 }
@@ -1892,13 +1867,15 @@ nav.navbar {
                 &::before{
                     top: 20px;
                     right: -30px;
-                    border-color: transparent transparent transparent rgba(158, 158, 158, .2);
+                    border-color: transparent transparent transparent rgba(0, 0, 0, .1);
+                    border-width: 15px;
                 }
 
                 &::after{
-                    top: 20px;
-                    right: -29px;
+                    top: 21px;
+                    right: -27px;
                     border-color: transparent transparent transparent white;
+                    border-width: 14px;
                 }
             }
         }
@@ -2245,6 +2222,8 @@ nav.navbar {
                 align-items: baseline;
             }
 
+
+
             .search,
             .cart {
                 float: left;
@@ -2356,27 +2335,6 @@ nav.navbar {
                     a:hover {
                         .item {
                             background: @branding-color;
-                        }
-                    }
-
-                    #cart-detail{
-                        top: 62px;
-                        right: -34px;
-                        left: -358px;
-                        padding: 49px 41px;
-    
-                        .close-cart{ display: none;}
-
-                        &::before{
-                            top: -30px;
-                            right: 42px;
-                            border-color: transparent transparent rgba(158, 158, 158, .2) transparent;
-                        }
-
-                        &::after{
-                            top: -29px;
-                            right: 42px;
-                            border-color: transparent transparent white transparent;
                         }
                     }
                 }

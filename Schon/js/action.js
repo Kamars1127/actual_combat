@@ -1,4 +1,10 @@
 $(document).ready(function () {
+    /*------------------------------------------------------------------------------------
+    ** Handlebars Compile                           
+    -------------------------------------------------------------------------------------*/
+    var source = $('#cart-order-template').html();
+    var template = Handlebars.compile(source);
+
 
     /*------------------------------------------------------------------------------------
     ** Scrolled                           
@@ -13,12 +19,83 @@ $(document).ready(function () {
         }
     });
 
+
     /*------------------------------------------------------------------------------------
     ** Hamburger Menu                           
     -------------------------------------------------------------------------------------*/
     $('#menu-toggle').click(function (e) {
         $(this).toggleClass('open');
     });
+
+
+
+    /*------------------------------------------------------------------------------------
+    ** Shopping Cart                           
+    -------------------------------------------------------------------------------------*/
+
+    $('.cart')
+        .on('click', '.cart-btn', function (e) {
+            /*--- Add cart icon color ---*/
+            $(this).children('.icon').toggleClass('active-branding-color');
+            $(this).children('.item').toggleClass('active-bg-branding');
+
+            /*--- Let web don't scroll ---*/
+            $(this).closest('body').toggleClass('no-scroll');
+
+            /*--- Show Buyer's orders ---*/
+            var orderUI = "";
+            var totalPrice = 0;
+            var cartDetail = $(e.currentTarget).parent().children('#cart-detail'); 
+            
+            $.ajax({
+                type: "get",
+                url: "https://kamars1127.github.io/actual_combat/Schon/data/data.json",
+                data: "",
+                dataType: "json",
+                success: function (data) {
+                    
+                    $.each(data.shoppingCart, function (index, product) { 
+                        /* Connect order's info*/
+                         orderUI += template(product);
+
+                         /* calculate order price */
+                         totalPrice += parseInt(data.shoppingCart[index].price);
+                    });
+                    
+                    /* Add Buyer's order to cart */
+                    cartDetail.children('.cart-order-area').append(orderUI);
+
+                    /* Add order's total price to cart */
+                    cartDetail.children('.cart-total-price').children('.price').append(totalPrice+',00');
+                },
+                error: function (xhr){
+                    alert("Error!!");
+                }
+            });
+        })
+        .on('click', '.close-cart', function (e) {
+            var parent = $(this).parent();
+            var cartBtn = parent.siblings('.cart-btn');
+
+            /*--- Close Shopping Cart ---*/
+            parent.removeClass('show');
+
+            /*--- Let web  scroll ---*/
+            $(this).closest('body').removeClass('no-scroll');
+
+            /*--- remove cart icon color ---*/
+            cartBtn.children('.icon').removeClass('active-branding-color');
+            cartBtn.children('.item').removeClass('active-bg-branding');
+        })
+        .on('click', '.delete-product .delete', function (e) {
+            e.preventDefault();
+            var doDelete = confirm("do you want to delete ?");
+            if (doDelete) {
+
+                $(e.currentTarget).closest('li').remove();
+            }
+        }); 
+
 
 
     /*------------------------------------------------------------------------------------
@@ -33,7 +110,7 @@ $(document).ready(function () {
             fade: true,
             asNavFor: '.picture-bar'
         });
-    
+
         $('.picture-bar').slick({
             infinite: false,
             slidesToShow: 4.3,
@@ -73,9 +150,9 @@ $(document).ready(function () {
     /*------------------------------------------------------------------------------------
     ** Product List Page - Filter & Category Button                       
     -------------------------------------------------------------------------------------*/
-        $(".filter-btn, .category-btn").click(function(e){
-            $(this).toggleClass('click');
-        });
+    $(".filter-btn, .category-btn").click(function (e) {
+        $(this).toggleClass('click');
+    });
 
     /*------------------------------------------------------------------------------------
     ** Product List Page - Price Range                      
@@ -90,7 +167,7 @@ $(document).ready(function () {
             $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
         }
     });
-    
+
     $("#amount").val("$" + $("#slider-range").slider("values", 0) +
         " - $" + $("#slider-range").slider("values", 1));
 
@@ -106,7 +183,7 @@ $(document).ready(function () {
     -------------------------------------------------------------------------------------*/
 
     /*--- layout Column ---*/
-    $('.layout-column-btn').click(function(e){
+    $('.layout-column-btn').click(function (e) {
         e.preventDefault();
 
         var target = $(this).closest('.top').siblings('.show-product-area');
@@ -119,7 +196,7 @@ $(document).ready(function () {
     });
 
     /*--- layout Row ---*/
-    $('.layout-row-btn').click(function(e){
+    $('.layout-row-btn').click(function (e) {
         e.preventDefault();
 
         var target = $(this).closest('.top').siblings('.show-product-area');

@@ -884,6 +884,7 @@ body.pd-detail .main-product .order-area input {
 }
 body.pd-detail .main-product .order-area input[type="number"] {
   -webkit-appearance: textfield;
+  -moz-appearance: textfield;
   appearance: textfield;
 }
 body.pd-detail .main-product .order-area input::-webkit-inner-spin-button,
@@ -1645,6 +1646,21 @@ h3.title {
   letter-spacing: -0.15px;
 }
 /*--------------------------------------------------------
+** Let web don't scroll                                              
+--------------------------------------------------------*/
+.no-scroll {
+  overflow: hidden;
+}
+/*--------------------------------------------------------
+** When Clicked  Color                                              
+--------------------------------------------------------*/
+#header .active-branding-color {
+  color: #ff6060;
+}
+#header .active-bg-branding {
+  background: #ff6060;
+}
+/*--------------------------------------------------------
 ** Hamburger Menu                                               
 --------------------------------------------------------*/
 #menu-toggle {
@@ -2077,7 +2093,7 @@ a.product-anchor:hover .icon {
 nav.navbar {
   top: 80px;
   background: white;
-  /*  Shopping Area  */
+  /*  Schon Area  */
   /*  Theme 2 */
 }
 nav.navbar .navbar-toggler {
@@ -2102,7 +2118,7 @@ nav.navbar .navbar-collapse .nav-link:hover {
 }
 nav.navbar.scrolled {
   top: 0;
-  background: #d0e9b0;
+  background: #D0E9B0;
 }
 nav.navbar.scrolled #menu-toggle span {
   background: white;
@@ -2115,21 +2131,23 @@ nav.navbar .shopping-area {
   border-radius: 10px 0 0 10px;
   min-width: 50px;
   min-height: 80px;
-  background: #ff6060;
+  background: #D0E9B0;
   justify-content: center;
   align-items: center;
 }
 nav.navbar .shopping-area .search {
   padding-bottom: 15px;
 }
-nav.navbar .shopping-area .icon {
+nav.navbar .shopping-area .icon-sea,
+nav.navbar .shopping-area .icon-fav,
+nav.navbar .shopping-area .icon-cart {
   color: white;
   font-size: 24px;
 }
 nav.navbar .shopping-area .cart {
   position: relative;
 }
-nav.navbar .shopping-area .cart .title {
+nav.navbar .shopping-area .cart .cart-info .title {
   display: none;
   color: #000;
   font-size: 13px;
@@ -2137,22 +2155,22 @@ nav.navbar .shopping-area .cart .title {
   line-height: 1.84;
   letter-spacing: 0.78px;
 }
+nav.navbar .shopping-area .cart .cart-info .shopping-detail {
+  display: none;
+  color: #000;
+}
+nav.navbar .shopping-area .cart .cart-info .shopping-detail .shopping-item,
+nav.navbar .shopping-area .cart .cart-info .shopping-detail .total-price {
+  font-family: "Montserrat";
+  font-size: 11px;
+  line-height: 1.91;
+  letter-spacing: 0.66px;
+}
 nav.navbar .shopping-area .cart .badge {
   position: absolute;
   top: 50%;
   right: 28%;
   color: #ff6060;
-}
-nav.navbar .shopping-area .cart .shopping-detail {
-  display: none;
-  color: #000;
-}
-nav.navbar .shopping-area .cart .shopping-detail .shopping-item,
-nav.navbar .shopping-area .cart .shopping-detail .total-price {
-  font-family: "Montserrat";
-  font-size: 11px;
-  line-height: 1.91;
-  letter-spacing: 0.66px;
 }
 nav.navbar.theme-2 {
   top: 0;
@@ -2180,7 +2198,7 @@ nav.navbar.theme-2 .shopping-area .cart .item {
   position: absolute;
   top: 12px;
   right: -10px;
-  border: 2px solid #ff6060;
+  border: 2px solid #D0E9B0;
   width: 23px;
   height: 23px;
   background: white;
@@ -2189,8 +2207,120 @@ nav.navbar.theme-2 .shopping-area .cart .item {
 nav.navbar.theme-2 .shopping-area .cart .item .badge {
   position: unset;
   padding: 0;
+  color: black;
   font-size: 11px;
   line-height: 19px;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 70px 10px 30px;
+  background: #D6D6D6;
+  /* Close Collapse */
+  /* Buyer's Orders */
+  /* Cart total price */
+  /* Cart button area */
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail h3.title {
+  font-family: "Source Sans Pro";
+  font-size: 14px;
+  font-weight: 600;
+  color: #757575;
+  line-height: 1.5;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .price {
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .price .icon {
+  color: black;
+  font-size: 11px;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .close-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 2px solid;
+  width: 20px;
+  height: 20px;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .cart-order-area {
+  max-height: 270px;
+  overflow: scroll;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .buyer-orders {
+  padding-bottom: 17px;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .buyer-orders:last-child {
+  padding-bottom: 0;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .product-picture {
+  min-width: 74px;
+  max-height: 74px;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .product-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .product-detail .quantity {
+  color: #757575;
+  font-size: 14px;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .delete-product {
+  display: flex;
+  align-items: center;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .delete-product .icon {
+  color: #F05C5C;
+  font-size: 16px;
+  line-height: 14px;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .cart-total-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  margin-bottom: 23px;
+  border-top: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+  padding: 20px 0;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .cart-button-area {
+  display: flex;
+  justify-content: space-around;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .cart-button-area button {
+  outline: none;
+  border: 1px solid black;
+  padding: 7px 23px;
+  font-family: "Montserrat";
+  font-size: 14px;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .cart-button-area button:hover {
+  border-color: #ff6060;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .cart-button-area button.view-cart {
+  background-color: white;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .cart-button-area button.view-cart:hover {
+  color: #ff6060;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .cart-button-area button.checkout {
+  background-color: black;
+  color: white;
+}
+nav.navbar.theme-2 .shopping-area .cart #cart-detail .cart-button-area button.checkout:hover {
+  background-color: #ff6060;
 }
 /*--------------------------------------------------------
 ** Content                                              
@@ -2934,8 +3064,40 @@ nav.navbar.theme-2 .shopping-area .cart .item .badge {
 @media (min-width: 576px) {
   /*--------------------
     ** Navigation Bar ---*/
+  nav.navbar.theme-2 {
+    /*  Shopping Area  */
+  }
   nav.navbar.theme-2 .navbar-brand .phone {
     padding-left: 22px;
+  }
+  nav.navbar.theme-2 .shopping-area .cart #cart-detail {
+    position: absolute;
+    top: -18px;
+    right: unset;
+    bottom: unset;
+    left: -344px;
+    box-shadow: 0px 1px 2px #9E9E9E;
+    background-color: white;
+    transition: unset;
+  }
+  nav.navbar.theme-2 .shopping-area .cart #cart-detail::before,
+  nav.navbar.theme-2 .shopping-area .cart #cart-detail::after {
+    position: absolute;
+    content: " ";
+    border-style: solid;
+    border-width: 15px;
+    height: 0px;
+    width: 0px;
+  }
+  nav.navbar.theme-2 .shopping-area .cart #cart-detail::before {
+    top: 20px;
+    right: -30px;
+    border-color: transparent transparent transparent rgba(158, 158, 158, 0.2);
+  }
+  nav.navbar.theme-2 .shopping-area .cart #cart-detail::after {
+    top: 20px;
+    right: -29px;
+    border-color: transparent transparent transparent white;
   }
   /*--------------------
     ** Feature Block ---*/
@@ -3158,7 +3320,7 @@ nav.navbar.theme-2 .shopping-area .cart .item .badge {
     position: unset;
     background: unset;
   }
-  nav.navbar .shopping-area ul {
+  nav.navbar .shopping-area .shopping-bar {
     display: flex;
     align-items: baseline;
   }
@@ -3194,20 +3356,20 @@ nav.navbar.theme-2 .shopping-area .cart .item .badge {
   nav.navbar .shopping-area .cart .icon {
     padding-right: 14px;
   }
-  nav.navbar .shopping-area .cart .title {
+  nav.navbar .shopping-area .cart .cart-info .title {
     display: block;
+  }
+  nav.navbar .shopping-area .cart .cart-info .shopping-detail {
+    display: block;
+  }
+  nav.navbar .shopping-area .cart .cart-info .shopping-detail li {
+    float: left;
+  }
+  nav.navbar .shopping-area .cart .cart-info .shopping-detail li.shopping-item {
+    padding-right: 10px;
   }
   nav.navbar .shopping-area .cart .badge {
     display: none;
-  }
-  nav.navbar .shopping-area .cart .shopping-detail {
-    display: block;
-  }
-  nav.navbar .shopping-area .cart .shopping-detail li {
-    float: left;
-  }
-  nav.navbar .shopping-area .cart .shopping-detail li.shopping-item {
-    padding-right: 10px;
   }
   nav.navbar.theme-2 {
     /*-- Navigation Shopping Area  --*/
@@ -3245,6 +3407,25 @@ nav.navbar.theme-2 .shopping-area .cart .item .badge {
   }
   nav.navbar.theme-2 .shopping-area .cart a:hover .item {
     background: #ff6060;
+  }
+  nav.navbar.theme-2 .shopping-area .cart #cart-detail {
+    top: 62px;
+    right: -34px;
+    left: -358px;
+    padding: 49px 41px;
+  }
+  nav.navbar.theme-2 .shopping-area .cart #cart-detail .close-cart {
+    display: none;
+  }
+  nav.navbar.theme-2 .shopping-area .cart #cart-detail::before {
+    top: -30px;
+    right: 42px;
+    border-color: transparent transparent rgba(158, 158, 158, 0.2) transparent;
+  }
+  nav.navbar.theme-2 .shopping-area .cart #cart-detail::after {
+    top: -29px;
+    right: 42px;
+    border-color: transparent transparent white transparent;
   }
   nav.navbar.theme-3 .shopping-area .search {
     padding-left: 20px;
