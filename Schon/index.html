@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/main.css">
 
     <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/plugins/handlebars-v4.4.3.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/action.js"></script>
 </head>
@@ -98,20 +99,45 @@
 
                 <!--Shopping Area-->
                 <div class="shopping-area">
-                    <ul class="clearfix">
-                        <li class="search"><a href=""><i class="icon fas fa-search"></i></a></li>
+                    <ul class="shopping-bar clearfix">
+                        <li class="search"><a href=""><i class="icon icon-sea fas fa-search"></i></a></li>
                         <li class="cart">
-                            <a href="">
-                                <i class="icon fas fa-shopping-bag"></i>
-                                <span class="badge rounded-circle">3</span>
+                            <a class="cart-btn" href="#cart-detail" data-toggle="collapse">
+                                <i class="icon icon-cart fas fa-shopping-bag"></i>
+                                <span class="badge rounded-circle"></span>
                                 <div class="cart-info">
                                     <div class="title text-uppercase">shopping cart</div>
                                     <ul class="shopping-detail clearfix">
-                                        <li class="shopping-item">3 items</li>
-                                        <li class="total-price">$ 74.00</li>
+                                        <li class="shopping-item"><span class="item">0</span> items</li>
+                                        <li class="total-price">$ <span class="price">0</span></li>
                                     </ul>
                                 </div>
                             </a>
+
+                            <!--Cart Collapse-->
+                            <div id="cart-detail" class="collapse">
+                                <!--Close Collapse-->
+                                <div class="close-cart rounded-circle">
+                                    <i class="icon fas fa-times"></i>
+                                </div>
+
+                                <!-- Buyer's Orders -->
+                                <ul class="cart-order-area"></ul>
+
+                                <!--Total Price-->
+                                <div class="cart-total-price">
+                                    <h3 class="title text-capitalize">sub total</h3>
+                                    <div class="price">
+                                        <i class="fas fa-euro-sign"></i> <span class="num">0</span>,00
+                                    </div>
+                                </div>
+
+                                <!--Action Button-->
+                                <div class="cart-button-area">
+                                    <a class="view-cart rounded-pill text-capitalize" href="shoppingCart.html">view cart</a>
+                                    <a class="checkout rounded-pill text-capitalize color-black" href="checkOut.html">checkout</a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -814,7 +840,7 @@
                         <div class="carousel-item active">
                             <div class="container">
                                 <div class="row logo-area">
-                                    <div class="col-2 brand-logo"><img src="img/home/logo_brands_Devon&Devo.png" alt="Devon&Devon">
+                                    <div class="col-2 brand-logo"><img src="img/home/logo_brands_Devon_Devo.png" alt="Devon&Devon">
                                     </div>
                                     <div class="col-2 brand-logo"><img src="img/home/logo_brands_GAN.png" alt="GAN"></div>
                                     <div class="col-2 brand-logo"><img src="img/home/logo_brands_artek.png" alt="artek"></div>
@@ -999,6 +1025,28 @@
         </div>
     </div>
 
+    <script id="cart-order-template" type="text/x-handlebars-template">
+        <li class="buyer-orders d-flex" data-id="{{id}}">
+            <!--Product Image-->
+            <div class="product-picture">
+                <img src="{{img_url}}" alt="product">
+            </div>
+    
+            <!--Product Detail-->
+            <div class="product-detail">
+                <h3 class="title">{{product_name}}</h3>
+                <div class="price">
+                    <i class="icon fas fa-euro-sign"></i>{{price}}
+                </div>
+                <div class="quanity">Qty: {{quanity}}</div>
+            </div>
+    
+            <!--Delete Product -->
+            <div class="delete-product">
+                <a class="delete" href="#"><i class="icon fas fa-times"></i></a>
+            </div>
+        </li>
+    </script>
 </body>
 
 </html>

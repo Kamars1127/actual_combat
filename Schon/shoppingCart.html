@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/plugins/handlebars-v4.4.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/jquery-ui.min.js"></script>
+    <script src="js/action.js"></script>
+    <script src="js/jqueryUI.js"></script>
+</head>
+
+<body class="shoppingCart shopping-cart-page">
+    <div id="header">
+        <div class="header header-theme-2">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <div class="phone">
+                    <i class="icon-phone fas fa-phone"></i>
+                    <a href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+                </div>
+    
+                <ul class="header-right-area d-flex align-items-center">
+                    <li class="account-area">
+                        <a class="login" href="#">Login</a>
+                        or
+                        <a class="create-account" href="#">Create Account</a>
+                    </li>
+
+                    <li class="language-area">
+                        <a class="language-btn text-capitalize" href="#">
+                            <div class="language">language</div>
+                            <i class="icon-down fas fa-angle-down"></i>
+                        </a>
+
+                        <ul class="language-menu shadow">
+                            <li class="text-capitalize">english</li>
+                            <li class="text-capitalize">japanese</li>
+                            <li class="text-capitalize">traditional chinese</li>
+                            <li class="text-capitalize">simplified chinese</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Navigation Bar-->
+        <nav class="navbar navbar-expand-lg fixed-top theme-2 theme-3 bg-color-white">
+            <div class="container">
+                <div class="navbar-brand clearfix">
+                    <a class="float-left" href="index.html"><img src="img/logo_navbar_home.png" alt="logo"></a>
+                    <!--Phone Number-->
+                    <a class="float-left phone" href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+
+                </div>
+
+                <!--Hamburger Menu-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hamburger-menu">
+                    <!--Hamburger Menu Icon-->
+                    <div id="menu-toggle" class="d-flex align-items-start">
+                        <div id="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div id="cross">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </button>
+
+                <div class="collapse navbar-collapse" id="hamburger-menu">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="index.html">home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="about.html">
+                                products
+                                <i class="icon fas fa-angle-down"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="">
+                                collections
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="">pages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="about.html">about</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="#">contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Shopping Area-->
+                <div class="shopping-area">
+                    <ul class="shopping-bar clearfix">
+                        <li class="search"><a href=""><i class="icon icon-sea fas fa-search"></i></a></li>
+                        <li class="favorite"><a href=""><i class="icon icon-fav far fa-heart"></i></a></li>
+                        <li class="cart">
+                            <a class="cart-btn" href="#cart-detail" data-toggle="collapse">
+                                <i class="icon icon-cart fas fa-shopping-bag"></i>
+                                <div class="item rounded-circle">
+                                    <span class="badge ">3</span>
+                                </div>
+                            </a>
+
+                            <!--Cart Collapse-->
+                            <div id="cart-detail" class="collapse">
+                                <!--Close Collapse-->
+                                <div class="close-cart rounded-circle">
+                                    <i class="icon fas fa-times"></i>
+                                </div>
+
+                                <!-- Buyer's Orders -->
+                                <ul class="cart-order-area"></ul>
+
+                                <!--Total Price-->
+                                <div class="cart-total-price">
+                                    <h3 class="title text-capitalize">sub total</h3>
+                                    <div class="price">
+                                        <i class="fas fa-euro-sign"></i> <span class="num">0</span>,00
+                                    </div>
+                                </div>
+
+                                <!--Action Button-->
+                                <div class="cart-button-area">
+                                    <a class="view-cart rounded-pill text-capitalize" href="shoppingCart.html">view cart</a>
+                                    <a class="checkout rounded-pill text-capitalize color-black" href="checkOut.html">checkout</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="content">
+        <!--Banner-->
+        <div class="banner banner-theme-2  bg-color">
+            <div class="container-fluid d-flex">
+                <h2 class="title text-uppercase">shopping cart</h2>
+                <nav class="align-self-start">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item text-capitalize float-left"><a href="index.html">home</a>
+                        </li>
+                        <li class="breadcrumb-item active text-capitalize float-left">shopping cart</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <!--Shopping Progress Bar Statuss-->
+        <div class="shopping-progress-bar">
+            <div class="container">
+                <ul class="progress-bar-status">
+                    <li class="order-status active">
+                        <div class="status rounded-circle">
+                            <div class="number">01</div>
+                        </div>
+                        <h4 class="title text-capitalize">shopping cart</h4>
+                    </li>
+
+                    <li class="order-status">
+                        <div class="status rounded-circle">
+                            <div class="number">02</div>
+                            <div class="status-line"></div>
+                        </div>
+                        <h4 class="title text-capitalize">check out</h4>
+                    </li>
+
+                    <li class="order-status">
+                        <div class="status rounded-circle">
+                            <div class="number">03</div>
+                            <div class="status-line"></div>
+                        </div>
+                        <h4 class="title text-capitalize">order complete</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Shopping Cart Order-->
+        <div class="shopping-cart-order">
+            <div class="container">
+                <ul class="order-title-area d-flex justify-content-start">
+                    <li class="title-product">
+                        <h4 class="title text-uppercase">product</h4>
+                    </li>
+                    <li class="title-price">
+                        <h4 class="title text-uppercase">price</h4>
+                    </li>
+                    <li class="title-quantity">
+                        <h4 class="title text-uppercase">quantity</h4>
+                    </li>
+                    <li class="title-total">
+                        <h4 class="title text-uppercase">total</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Coupon-->
+        <div class="coupon">
+            <div class="container d-flex justify-content-center">
+                <input type="text" placeholder="Your Coupon Code">
+                <button class="text-uppercase">apply</button>
+            </div>
+        </div>
+
+        <!--Calculate Shopping-->
+        <div class="calculate-shopping">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 buyer-address-info">
+                        <h3 class="title text-uppercase">calculate shopping</h3>
+
+                        <select name="country" class="select-country">
+                            <option disabled selected>Select Country</option>
+                            <option value="taiwan">Taiwan</option>
+                        </select>
+
+                        <select name="state-province" class="select-state-province">
+                            <option disabled selected>State / Province</option>
+                            <option value="">Keelung City</option>
+                            <option value="">Taipei City</option>
+                        </select>
+
+                        <select name="zip-postal_code" class="select-zip-postal_code">
+                            <option disabled selected>Zip / Postal Code</option>
+                            <option value="">123</option>
+                            <option value="">456</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 col-md-6 checkout-info">
+                        <h3 class="title text-capitalize">cart total</h3>
+
+                        <ul class="info-block">
+                            <li class="cart-subtotal d-flex justify-content-between align-items-center">
+                                <div class="title text-uppercase">cart subtotal</div>
+                                <div class="price">
+                                    <i class="icon-euro fas fa-euro-sign"></i> <span class="num">0</span>
+                                </div>
+                            </li>
+
+                            <li class="shipping d-flex justify-content-between align-items-center">
+                                <div class="title text-uppercase">shipping</div>
+                                <div class="shipping-price">Free shipping</div>
+                            </li>
+
+                            <li class="cart-total d-flex justify-content-between align-items-center">
+                                <div class="title text-uppercase">cart total</div>
+                                <div class="price">
+                                    <i class="icon-euro fas fa-euro-sign"></i> <span class="num">0</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="button-area d-flex justify-content-between align-items-center">
+                    <a class="shopping-cart-button update text-uppercase">update total <i class="icon-redo fas fa-sync-alt"></i></a>
+                    <a class="shopping-cart-button proceed text-uppercase" href="checkOut.html">proceed to checkout <i class="icon-check fas fa-check"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="footer-theme-2">
+        <div class="top bg-gray">
+            <!--Footer Info-->
+            <div class="footer-info">
+                <div class="container">
+                    <div class="row">
+                        <!--Schon Info-->
+                        <div class="col-12 col-sm-7 col-md-6 col-lg-3 schon-info">
+                            <img src="img/logo_footer_gray.png" alt="logo">
+                            <p>Exercitation ullamco laboris nisi ut aliquip ex
+                                <br>
+                                commodo consequat. Duis aute irure
+                            </p>
+                            <div class="contact-info">
+                                <div class="address">
+                                    <i class="icon fas fa-map-marker-alt"></i>
+                                    <a href="#">Connaugt Road Central Suite 18B, 148
+                                        New Yankee</a>
+                                </div>
+
+                                <div class="phone">
+                                    <i class="icon fas fa-phone"></i>
+                                    <a href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+                                </div>
+
+                                <div class="email">
+                                    <i class="icon far fa-envelope"></i>
+                                    <a href="mailto:info@schon.chair">info@schon.chair</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Categories-->
+                        <div class="col-12 col-sm-5 col-md-2 col-lg-2 info-block">
+                            <div class="categories">
+                                <h5 class="title">Categories</h5>
+                                <ul>
+                                    <li><a href="#">Chairs</a></li>
+                                    <li><a href="#">Sofas</a></li>
+                                    <li><a href="#">Living</a></li>
+                                    <li><a href="#">Bedroom</a></li>
+                                    <li><a href="#">Tables</a></li>
+                                    <li><a href="#">New</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <!--Information-->
+                        <div class="col-12 col-sm-3 col-md-2 col-lg-2 info-block">
+                            <div class="information">
+                                <h5 class="title">Information</h5>
+                                <ul>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Terms &amp; Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Customer Service</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Account-->
+                        <div class="col-12 col-sm-3 col-md-2 col-lg-2 info-block">
+                            <div class="account">
+                                <h5 class="title">Account</h5>
+                                <ul>
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Order Tracking</a></li>
+                                    <li><a href="#">Wish list</a></li>
+                                    <li><a href="#">Shopping Cart</a></li>
+                                    <li><a href="#">Checkout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Media Info-->
+                        <div class="col-12 col-sm-6 offset-md-6 col-lg-3 offset-lg-0 media-info">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="title">Sing Up Newsletter</h5>
+                                    <div class="content-area">
+                                        <p>Subscribe now to get 15% off</p>
+                                        <p>on any product</p>
+                                    </div>
+
+                                    <div class="newsletter rounded-pill">
+                                        <input type="text" placeholder="Your e-mail">
+                                        <a class="submit" href="#"><i class="icon fas fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 social-media">
+                                    <h5 class="title">Follow Us</h5>
+                                    <ul class="clearfix">
+                                        <li><a href="#"><i class="icon fab fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="icon fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="icon fab fa-google-plus-g"></i></a></li>
+                                        <li><a href="#"><i class="icon fa fa-youtube" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li><a href="#"><i class="icon fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="#"><i class="icon fab fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="container d-sm-flex justify-content-sm-between align-items-sm-center">
+                <div class="copyright">
+                    <div class="title">&copy; <span>schön.</span> - All rights Reserved</div>
+                </div>
+
+                <div class="payment"><img src="img/logo_about_Payment.png" alt="payment"></div>
+            </div>
+        </div>
+    </div>
+
+    <script id="cart-order-template" type="text/x-handlebars-template">
+        <li class="buyer-orders d-flex" data-id="{{id}}">
+            <!--Product Image-->
+            <div class="product-picture">
+                <img src="{{img_url}}" alt="product">
+            </div>
+    
+            <!--Product Detail-->
+            <div class="product-detail">
+                <h3 class="title">{{product_name}}</h3>
+                <div class="price">
+                    <i class="icon fas fa-euro-sign"></i>{{price}}
+                </div>
+                <div class="quanity">Qty: {{quanity}}</div>
+            </div>
+    
+            <!--Delete Product -->
+            <div class="delete-product">
+                <a class="delete" href="#"><i class="icon fas fa-times"></i></a>
+            </div>
+        </li>
+    </script>
+
+    <script id="order-info-template" type="text/x-handlebars-template">
+        <ul class="order-info-area d-flex align-items-center justify-content-start" data-id="{{id}}">
+            <li class="product-image">
+                <a href="#"><img src="{{img_url}}" alt="product"></a>
+            </li>
+
+            <li class="product-name">
+                <a href="#" class="name text-capitalize">{{product_name}}</a>
+            </li>
+
+            <li class="product-price d-flex align-items-center">
+                <i class="icon-euro fas fa-euro-sign"></i> <span class="price">{{price}}</span>
+            </li>
+
+            <li class="buy-quantity">
+                <select class="quantity-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </li>
+
+            <li class="total-price d-flex align-items-center"><i class="icon-euro fas fa-euro-sign"></i> <span class="price"></span>
+            </li>
+
+            <li class="delete-order"><a class="delete" href="#"><i class="icon fas fa-times"></i></a>
+            </li>
+        </ul>
+    </script>
+</body>
+
+</html>

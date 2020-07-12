@@ -1,0 +1,448 @@
+@import "basic.less";
+
+body.checkout-page {
+
+    /*--------------------------------------------------------
+** Checkbox                                            
+--------------------------------------------------------*/
+    input[type="checkbox"] {
+        display: none;
+
+        &:checked+label::before {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 10px;
+            content: "\f00c";
+            color: @text-gray-small-light-shoppingCart;
+            text-align: center;
+        }
+    }
+
+    label.check-label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        color: @text-gray-small-light-shoppingCart;
+        font-size: 16px;
+        font-weight: @fw-Light;
+        line-height: 1.75;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            border: 1px solid #C7C7C7;
+            margin-right: 9px;
+            width: 17px;
+            height: 17px;
+        }
+
+        &.reversed {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+
+            &::before {
+                margin: 0;
+                margin-left: 9px;
+            }
+        }
+    }
+
+
+    /*--------------------------------------------------------
+** Content                                             
+--------------------------------------------------------*/
+    /*----- Billing Details  -----*/
+    .billing-details {
+        .billing-form {
+            margin-top: 24px;
+        }
+
+        /*-- Buyer's Address info Area --*/
+        .buyer-address-info-area {
+            margin-bottom: 52px;
+
+            .ui-selectmenu-button {
+                margin-bottom: 15px;
+                border-color: @border-gray;
+                border-radius: 7px;
+                padding: 5px 0;
+                padding-left: 5px;
+                width: 100%;
+                background: white;
+
+                .ui-selectmenu-text {
+                    &::after {
+                        position: absolute;
+                        top: -1px;
+                        right: -1px;
+                        bottom: -1px;
+                        border: 1px solid @border-gray;
+                        border-radius: 0 7px 7px 0;
+                        padding: 5px 22px;
+                        color: @text-gray-shoppingCart;
+                        line-height: 21px;
+                    }
+
+                    &:hover {
+                        &::after {
+                            background: @branding-color;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            input {
+                margin-bottom: 15px;
+                border-color: @border-gray;
+                border-radius: 7px;
+                padding: 5px;
+                height: auto;
+                font-size: 14px;
+                color: @text-gray-shoppingCart;
+
+                &::placeholder {
+                    color: @text-gray-shoppingCart;
+                }
+
+                &::-webkit-input-placeholder {
+                    color: @text-gray-shoppingCart;
+                }
+
+                &::-ms-input-placeholder {
+                    color: @text-gray-shoppingCart;
+                }
+
+                &::-moz-placeholder {
+                    color: @text-gray-shoppingCart;
+                }
+            }
+
+            textarea {
+                resize: none;
+                margin-bottom: 15px;
+                border-color: @border-gray;
+                border-radius: 7px;
+                padding: 5px;
+                color: @text-gray-shoppingCart;
+                font-size: 14px;
+
+                &::placeholder {
+                    color: @text-gray-shoppingCart;
+                }
+
+                &::-webkit-input-placeholder {
+                    color: @text-gray-shoppingCart;
+                }
+
+                &::-ms-input-placeholder {
+                    color: @text-gray-shoppingCart;
+                }
+
+                &::-moz-placeholder {
+                    color: @text-gray-shoppingCart;
+                }
+
+                &.order-notes {
+                    margin: 0;
+                }
+            }
+        }
+
+        /*-- Billing Detail Area --*/
+        .billing-detail-area {
+            margin-bottom: 52px;
+
+            .top {
+                padding: 30px;
+                background: @bg-gray;
+
+                h3.title{
+                    font-weight: normal;
+                }
+
+                h4.title {
+                    color: @text-gray-small-light-shoppingCart;
+                    font-size: 12px;
+                }
+
+                h5.title {
+                    margin: 0;
+                    color: #AAAAAA;
+                    font-size: 10px;
+                    line-height: 2;
+                }
+
+                .order-detail {
+                    padding-top: 31px;
+
+                    .total {
+                        color: #636363;
+                        font-weight: bold;
+                        line-height: 2;
+
+                        .icon-euro {
+                            padding-right: 3px;
+                            font-size: 10px;
+                        }
+                    }
+
+                    .order-detail-item {
+                        padding: 12px 0;
+                        border-bottom: 1px solid #CCCCCC;
+                    }
+
+                    .product-detail {
+                        margin-top: 7px;
+                        
+                        .quantity {
+                            padding-left: 10px;
+                            color: #AAAAAA;
+                            font-size: 10px;
+                            font-weight: bold;
+                            line-height: 2;
+
+                            .qty {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+
+                /* Payment Methods */
+                .payment-methods {
+                    padding-top: 87px;
+
+                    .accordion {
+                        padding-top: 34px;
+
+                        .card {
+                            border-bottom: 1px solid #CCCCCC;
+                        }
+
+                        .card-header {
+                            border: 0;
+                            padding: 12px 0;
+
+                            label.check-label {
+                                font-size: 12px;
+                                font-weight: bold;
+                            }
+                        }
+
+                        .card-body {
+                            padding: 0;
+                            padding-bottom: 12px;
+                            background: @bg-gray;
+                            color: @text-gray-small-light-shoppingCart;
+                            font-size: 8px;
+                            line-height: 1.3;
+                        }
+                    }
+                }
+
+            }
+            
+            /*- check Terms & Conditions -*/
+            .bottom {
+                padding: 33px 30px 0;
+
+                .rule {
+                    font-size: 10px;
+
+                    a.terms-conditions {
+                        color: black;
+                        font-size: 10px;
+
+                        &:hover {
+                            color: @branding-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .button-area {
+            padding-right: 15px;
+        }
+    }
+
+    /*--------------------------------------------------------
+** Footer                                         
+--------------------------------------------------------*/
+
+    #footer.footer-theme-2 .services {
+        border: none;
+    }
+
+
+    /*--------------------------------------------------------
+** Media Query                                          
+--------------------------------------------------------*/
+
+    /*----- Width > 575px sm -----*/
+    @media(min-width: 576px) {
+        /*--------------------
+    ** Content ---------*/
+
+        /*----- Billing Details  -----*/
+        .billing-details .billing-detail-area{
+            .top{
+                padding: 50px;
+            }
+
+            .bottom {
+                padding-left: 50px;
+                padding-right: 50px;
+
+                .rule {
+                    font-size: 16px;
+    
+                    a.terms-conditions {
+                        font-size: 16px;
+                    }
+                }
+            }
+        } 
+    }
+
+    /*----- Width > 767px md -----*/
+    @media(min-width: 768px) {
+
+        /*----- Billing Details  -----*/
+        .billing-details {
+            /*-- Buyer's Address info Area --*/
+            .buyer-address-info-area {
+                .ui-selectmenu-button {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+
+                    .ui-selectmenu-text::after {
+                        padding-top: 12px;
+                        padding-bottom: 12px;
+                    }
+                }
+
+                input {
+                    padding: 12px;
+                    padding-left: 18px;
+                }
+
+                textarea {
+                    padding: 12px;
+                    padding-left: 18px;
+                }
+            }
+
+            /*- check Terms & Conditions -*/
+            .billing-detail-area{
+                .bottom {
+                    .rule {
+                        font-size: 12px;
+    
+                        a.terms-conditions {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            } 
+        }
+    }
+
+    /*----- Width > 991px lg -----*/
+    @media(min-width: 992px) {
+        /*--------------------
+    ** Content ---------*/
+
+        /*----- Billing Details  -----*/
+        .billing-details {
+            h3.title {
+                font-size: 18px;
+            }
+
+            /*-- Buyer's Address info Area --*/
+            .buyer-address-info-area {
+                .ui-selectmenu-button {
+                    padding-top: 17px;
+                    padding-bottom: 17px;
+
+                    .ui-selectmenu-text::after {
+                        padding-top: 17px;
+                        padding-bottom: 17px;
+                    }
+                }
+
+                input {
+                    padding-top: 17px;
+                    padding-bottom: 17px;
+                }
+
+                textarea{
+                    padding-top: 17px;
+                    padding-bottom: 17px;
+                }
+            }
+
+            /*-- Billing Detail Area --*/
+            .billing-detail-area{
+                .top{
+                    h4.title{
+                        font-size: 16px;
+                    }
+
+                    h5.title{
+                        font-size: 14px;
+                    }
+
+                    /* Buyer Order Detail */
+                    .order-detail{
+                        .total{
+                            font-size: 16px;
+
+                            .icon-euro{ font-size: 13px; } 
+
+                            .num{ font-size: 16px; }
+                        } 
+
+                        .product-detail{
+                            .quantity{
+                                font-size: 14px;
+
+                                .qty{ font-size: 14px; }
+                            }
+                        }
+                    }
+
+                    /* Payment Methods */
+                    .payment-methods{
+                        .accordion .card{
+                            .card-header label.check-label{
+                                font-size: 16px;
+                            }
+                            
+                            .card-body{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+
+                /*-- check Terms & Conditions --*/
+                .bottom .rule{
+                    font-size: 16px;
+                    a.terms-conditions{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        /*--------------------
+    ** Footer ---------*/
+    #footer.footer-theme-2 .services{
+        padding-top: 190px;
+    }
+    }
+}

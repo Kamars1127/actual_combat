@@ -7,32 +7,12 @@ body.pd-list {
         line-height: 1.2;
     }
 
-    /*----- jQuery UI - Selectmenu-----*/
-    .ui-selectmenu-menu {
-        transition: none;
-
-        .ui-menu {
-            border-radius: 3px;
-
-            .ui-menu-item-wrapper {
-                font-size: 14px;
-
-                &.ui-state-active {
-                    border: none;
-                    background-color: @branding-color;
-                }
-            }
-        }
-    }
-
     /*------ Card ------*/
-    a.card{
-        text-decoration: none;
-
-        &:hover{
-            border: 2px solid @branding-color;
-        }
+    a.card:hover{
+        border: 2px solid @branding-color;
     }
+        
+    
     /*--------------------------------------------------------
 ** Content                                              
 --------------------------------------------------------*/
@@ -206,7 +186,6 @@ body.pd-list {
                     font-family: @font1;
                     font-size: 16px;
                     font-weight: bold;
-                    text-decoration: none;
 
                     &:hover {
                         color: @branding-color;
@@ -339,7 +318,6 @@ body.pd-list {
 
                         &::after {
                             position: absolute;
-                            position: absolute;
                             top: 50%;
                             right: 13%;
                             transform: translateY(-50%);
@@ -358,7 +336,6 @@ body.pd-list {
                         width: 40px;
                         height: 40px;
                         text-align: center;
-                        text-decoration: none;
 
                         .icon {
                             font-size: 14px;

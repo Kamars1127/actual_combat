@@ -14,9 +14,11 @@
     <link rel="stylesheet" href="css/main.css">
 
     <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/plugins/handlebars-v4.4.3.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/plugins/jquery-ui.min.js"></script>
     <script src="js/action.js"></script>
+    <script src="js/jqueryUI.js"></script>
 </head>
 
 <body class="pd-list">
@@ -87,23 +89,41 @@
 
                 <!--Shopping Area-->
                 <div class="shopping-area">
-                    <ul class="clearfix">
-                        <!--Search-->
-                        <li class="search">
-                            <a href="#"><i class="icon fas fa-search"></i></a>
-                        </li>
-                        <!--Favorite-->
-                        <li class="favorite">
-                            <a href="#"><i class="icon far fa-heart"></i></a>
-                        </li>
-                        <!--Cart-->
+                    <ul class="shopping-bar clearfix">
+                        <li class="search"><a href=""><i class="icon icon-sea fas fa-search"></i></a></li>
+                        <li class="favorite"><a href=""><i class="icon icon-fav far fa-heart"></i></a></li>
                         <li class="cart">
-                            <a href="#">
-                                <i class="icon fas fa-shopping-bag"></i>
+                            <a class="cart-btn" href="#cart-detail" data-toggle="collapse">
+                                <i class="icon icon-cart fas fa-shopping-bag"></i>
                                 <div class="item rounded-circle">
-                                    <span class="badge">3</span>
+                                    <span class="badge ">3</span>
                                 </div>
                             </a>
+
+                            <!--Cart Collapse-->
+                            <div id="cart-detail" class="collapse">
+                                <!--Close Collapse-->
+                                <div class="close-cart rounded-circle">
+                                    <i class="icon fas fa-times"></i>
+                                </div>
+
+                                <!-- Buyer's Orders -->
+                                <ul class="cart-order-area"></ul>
+
+                                <!--Total Price-->
+                                <div class="cart-total-price">
+                                    <h3 class="title text-capitalize">sub total</h3>
+                                    <div class="price">
+                                        <i class="fas fa-euro-sign"></i> <span class="num">0</span>,00
+                                    </div>
+                                </div>
+
+                                <!--Action Button-->
+                                <div class="cart-button-area">
+                                    <a class="view-cart rounded-pill text-capitalize" href="shoppingCart.html">view cart</a>
+                                    <a class="checkout rounded-pill text-capitalize color-black" href="checkOut.html">checkout</a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -1133,6 +1153,27 @@
         </div>
     </div>
 
+    <script id="cart-order-template" type="text/x-handlebars-template">
+        <li class="buyer-orders d-flex" data-id="{{id}}">
+            <!--Product Image-->
+            <div class="product-picture">
+                <img src="{{img_url}}" alt="product">
+            </div>
+    
+            <!--Product Detail-->
+            <div class="product-detail">
+                <h3 class="title">{{product_name}}</h3>
+                <div class="price">
+                    <i class="icon fas fa-euro-sign"></i>{{price}}
+                </div>
+                <div class="quanity">Qty: {{quanity}}</div>
+            </div>
+    
+            <!--Delete Product -->
+            <div class="delete-product">
+                <a class="delete" href="#"><i class="icon fas fa-times"></i></a>
+            </div>
+        </li>
+    </script>
 </body>
-
 </html>

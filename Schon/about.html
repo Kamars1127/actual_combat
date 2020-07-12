@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/main.css">
 
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/handlebars-v4.4.3.js"></script>
+    <script src="js/plugins/handlebars-v4.4.3.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/action.js"></script>
 </head>
@@ -99,14 +99,14 @@
                                 <div class="cart-total-price">
                                     <h3 class="title text-capitalize">sub total</h3>
                                     <div class="price">
-                                        <i class="fas fa-euro-sign"></i> 
+                                        <i class="fas fa-euro-sign"></i> <span class="num">0</span>,00
                                     </div>
                                 </div>
 
                                 <!--Action Button-->
                                 <div class="cart-button-area">
-                                    <button class="view-cart rounded-pill text-capitalize">view cart</button>
-                                    <button class="checkout rounded-pill text-capitalize color-black">checkout</button>
+                                    <a class="view-cart rounded-pill text-capitalize" href="shoppingCart.html">view cart</a>
+                                    <a class="checkout rounded-pill text-capitalize color-black" href="checkOut.html">checkout</a>
                                 </div>
                             </div>
                         </li>
@@ -789,10 +789,10 @@
             <!--Product Detail-->
             <div class="product-detail">
                 <h3 class="title">{{product_name}}</h3>
-            <div class="price">
-                <i class="icon fas fa-euro-sign"></i> {{price}}
-            </div>
-            <div class="quanity">Qty: {{quanity}}</div>
+                <div class="price">
+                    <i class="icon fas fa-euro-sign"></i>{{price}}
+                </div>
+                <div class="quanity">Qty: {{quanity}}</div>
             </div>
     
             <!--Delete Product -->
