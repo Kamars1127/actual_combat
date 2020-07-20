@@ -92,7 +92,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "get",
-        url: "http://127.0.0.1:5500/data/data.json",
+        url: "../data/data.json",
         data: "",
         dataType: "json",
         success: function (data) {
@@ -229,7 +229,7 @@ $(document).ready(function () {
             if (doDelete) {
                 $.ajax({
                     type: "get",
-                    url: "http://127.0.0.1:5500/data/data.json",
+                    url: "../data/data.json",
                     dataType: "json",
                     success: function (data) {
 
@@ -388,7 +388,7 @@ $(document).ready(function () {
             if (doDelete) {
                 $.ajax({
                     type: "get",
-                    url: "http://127.0.0.1:5500/data/data.json",
+                    url: "../data/data.json",
                     dataType: "json",
                     success: function (data) {
                         totalPrice = calTotalPrice(buyerOrder_id, totalPrice, data);
