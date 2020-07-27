@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog List Sidebar 2</title>
+
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/handlebars-v4.4.3.js"></script>
+    <script src="js/action.js"></script>
+</head>
+
+<body class="blog-page blog-list-page">
+    <div id="header">
+        <!--Navigation Bar-->
+        <nav class="navbar navbar-expand-lg fixed-top theme-2 theme-3">
+            <div class="container">
+                <div class="navbar-brand clearfix">
+                    <a class="float-left" href="index.html"><img src="img/logo_navbar_home.png" alt="logo"></a>
+                    <!--Phone Number-->
+                    <a class="float-left phone" href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+
+                </div>
+
+                <!--Hamburger Menu-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hamburger-menu">
+                    <!--Hamburger Menu Icon-->
+                    <div id="menu-toggle" class="d-flex align-items-start">
+                        <div id="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div id="cross">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </button>
+
+                <div class="collapse navbar-collapse" id="hamburger-menu">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="index.html">home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="about.html">
+                                products
+                                <i class="icon fas fa-angle-down"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="">
+                                collections
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="">pages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="about.html">about</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="#">contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Shopping Area-->
+                <div class="shopping-area">
+                    <ul class="shopping-bar clearfix">
+                        <li class="search"><a href="#"><i class="icon icon-sea fas fa-search"></i></a></li>
+                        <li class="favorite"><a href="#"><i class="icon icon-fav far fa-heart"></i></a></li>
+                        <li class="cart">
+                            <a class="cart-btn" href="#cart-detail" data-toggle="collapse">
+                                <i class="icon icon-cart fas fa-shopping-bag"></i>
+                                <div class="item rounded-circle">
+                                    <span class="badge ">3</span>
+                                </div>
+                            </a>
+
+                            <!--Cart Collapse-->
+                            <div id="cart-detail" class="collapse">
+                                <!--Close Collapse-->
+                                <div class="close-cart rounded-circle">
+                                    <i class="icon fas fa-times"></i>
+                                </div>
+
+                                <!-- Buyer's Orders -->
+                                <ul class="cart-order-area"></ul>
+
+                                <!--Total Price-->
+                                <div class="cart-total-price">
+                                    <h3 class="title text-capitalize">sub total</h3>
+                                    <div class="price">
+                                        <i class="fas fa-euro-sign"></i> <span class="num">0</span>,00
+                                    </div>
+                                </div>
+
+                                <!--Action Button-->
+                                <div class="cart-button-area">
+                                    <a class="view-cart rounded-pill text-capitalize" href="shoppingCart.html">view
+                                        cart</a>
+                                    <a class="checkout rounded-pill text-capitalize color-black"
+                                        href="checkOut.html">checkout</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-button rounded-circle">
+                            <div class="icon-menu">
+                                <span class="rounded-pill"></span>
+                                <span class="rounded-pill short"></span>
+                                <span class="rounded-pill"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="content">
+        <!--Banner-->
+        <div class="banner">
+            <div class="container-fluid clearfix">
+                <h2 class="title text-uppercase">blog list sidebar 2</h2>
+
+                <nav id="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item text-capitalize float-left bounded">
+                            <a href="index.html">home</a>
+                        </li>
+
+                        <li class="breadcrumb-item text-capitalize float-left bounded">
+                            <a href="#">blog</a>
+                        </li>
+                        <li class="breadcrumb-item active text-capitalize float-left">category</li>
+                    </ol>
+                </nav>
+
+                <!--Search-->
+                <div class="search align-self-start d-flex align-items-center float-left">
+                    <input type="text" class="search-input" placeholder="Search">
+                    <button class="search-btn"><i class="icon-search fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!--Blog Area-->
+        <div class="blog-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-8 blog-post-area">
+                        <div id="post-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <!--Blog Post-->
+                                        <div class="col-12">
+                                            <div class="card blog-post">
+                                                <!--Blog Post Picture-->
+                                                <img src="https://dummyimage.com/760x350/F4F4F4/F4F4F4"
+                                                    class="card-img-top" alt="blog-post-picture">
+
+                                                <div class="card-body">
+                                                    <!--Blog Post Title-->
+                                                    <div class="blog-post-title text-uppercase">ideas for living rooms
+                                                    </div>
+
+                                                    <!--Blog Post Info-->
+                                                    <ul class="blog-post-info d-flex align-items-center">
+                                                        <li class="day d-flex align-items-center">
+                                                            <i class="icon icon-clock far fa-clock"></i>
+                                                            <div class="info">20 April 2015</div>
+                                                        </li>
+                                                        <li class="category d-flex align-items-center">
+                                                            <i class="icon icon-list fas fa-th-list"></i>
+                                                            <div class="info text-capitalize">design</div>
+                                                        </li>
+                                                        <li class="comment d-flex align-items-center">
+                                                            <i class="icon icon-comment fas fa-comment"></i>
+                                                            <div class="info text-capitalize">2 comments</div>
+                                                        </li>
+                                                    </ul>
+
+                                                    <!--Blog Post Content-->
+                                                    <p class="blog-post-content">Fusce mattis nunc lacus, vulputate
+                                                        facilisis
+                                                        dui
+                                                        efficitur
+                                                        ut. Vestibulum sit
+                                                        amet metus euismod, condimentum lectus id, ultrices sem. Morbi
+                                                        in erat
+                                                        malesuada, sollicitudin massa at, tristique nisl. Maecenas id
+                                                        eros
+                                                        scelerisque,
+                                                        vulputate tortor quis, efficitur arcu
+                                                    </p>
+
+                                                    <!--Read More-->
+                                                    <div class="read-more"><a href="blogDetail.html" class="text-uppercase">read
+                                                            more</a>
+                                                    </div>
+
+                                                    <!--Blog Post Date-->
+                                                    <div class="blog-post-date">
+                                                        <div class="date">25</div>
+                                                        <div class="month text-capitalize">april</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--Blog Post-->
+                                        <div class="col-12">
+                                            <div class="card blog-post">
+                                                <!--Blog Post Picture-->
+                                                <img src="https://dummyimage.com/760x350/F4F4F4/F4F4F4"
+                                                    class="card-img-top" alt="blog-post-picture">
+
+                                                <div class="card-body">
+                                                    <!--Blog Post Title-->
+                                                    <div class="blog-post-title text-uppercase">ideas for living rooms
+                                                    </div>
+
+                                                    <!--Blog Post Info-->
+                                                    <ul class="blog-post-info d-flex align-items-center">
+                                                        <li class="day d-flex align-items-center">
+                                                            <i class="icon icon-clock far fa-clock"></i>
+                                                            <div class="info">20 April 2015</div>
+                                                        </li>
+                                                        <li class="category d-flex align-items-center">
+                                                            <i class="icon icon-list fas fa-th-list"></i>
+                                                            <div class="info text-capitalize">design</div>
+                                                        </li>
+                                                        <li class="comment d-flex align-items-center">
+                                                            <i class="icon icon-comment fas fa-comment"></i>
+                                                            <div class="info text-capitalize">2 comments</div>
+                                                        </li>
+                                                    </ul>
+
+                                                    <!--Blog Post Content-->
+                                                    <p class="blog-post-content">Fusce mattis nunc lacus, vulputate
+                                                        facilisis
+                                                        dui
+                                                        efficitur
+                                                        ut. Vestibulum sit
+                                                        amet metus euismod, condimentum lectus id, ultrices sem. Morbi
+                                                        in erat
+                                                        malesuada, sollicitudin massa at, tristique nisl. Maecenas id
+                                                        eros
+                                                        scelerisque,
+                                                        vulputate tortor quis, efficitur arcu
+                                                    </p>
+
+                                                    <!--Read More-->
+                                                    <div class="read-more"><a href="blogDetail.html" class="text-uppercase">read
+                                                            more</a>
+                                                    </div>
+
+                                                    <!--Blog Post Date-->
+                                                    <div class="blog-post-date">
+                                                        <div class="date">25</div>
+                                                        <div class="month text-capitalize">april</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--Blog Post-->
+                                        <div class="col-12">
+                                            <div class="card blog-post">
+                                                <!--Blog Post Picture-->
+                                                <img src="https://dummyimage.com/760x350/F4F4F4/F4F4F4"
+                                                    class="card-img-top" alt="blog-post-picture">
+
+                                                <div class="card-body">
+                                                    <!--Blog Post Title-->
+                                                    <div class="blog-post-title text-uppercase">ideas for living rooms
+                                                    </div>
+
+                                                    <!--Blog Post Info-->
+                                                    <ul class="blog-post-info d-flex align-items-center">
+                                                        <li class="day d-flex align-items-center">
+                                                            <i class="icon icon-clock far fa-clock"></i>
+                                                            <div class="info">20 April 2015</div>
+                                                        </li>
+                                                        <li class="category d-flex align-items-center">
+                                                            <i class="icon icon-list fas fa-th-list"></i>
+                                                            <div class="info text-capitalize">design</div>
+                                                        </li>
+                                                        <li class="comment d-flex align-items-center">
+                                                            <i class="icon icon-comment fas fa-comment"></i>
+                                                            <div class="info text-capitalize">2 comments</div>
+                                                        </li>
+                                                    </ul>
+
+                                                    <!--Blog Post Content-->
+                                                    <p class="blog-post-content">Fusce mattis nunc lacus, vulputate
+                                                        facilisis
+                                                        dui
+                                                        efficitur
+                                                        ut. Vestibulum sit
+                                                        amet metus euismod, condimentum lectus id, ultrices sem. Morbi
+                                                        in erat
+                                                        malesuada, sollicitudin massa at, tristique nisl. Maecenas id
+                                                        eros
+                                                        scelerisque,
+                                                        vulputate tortor quis, efficitur arcu
+                                                    </p>
+
+                                                    <!--Read More-->
+                                                    <div class="read-more"><a href="blogDetail.html" class="text-uppercase">read
+                                                            more</a>
+                                                    </div>
+
+                                                    <!--Blog Post Date-->
+                                                    <div class="blog-post-date">
+                                                        <div class="date">25</div>
+                                                        <div class="month text-capitalize">april</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <!--Blog Post-->
+                                    <div class="col-12">
+                                        <div class="card blog-post">
+                                            <!--Blog Post Picture-->
+                                            <img src="https://dummyimage.com/760x350/F4F4F4/F4F4F4" class="card-img-top"
+                                                alt="blog-post-picture">
+
+                                            <div class="card-body">
+                                                <!--Blog Post Title-->
+                                                <div class="blog-post-title text-uppercase">ideas for living rooms
+                                                </div>
+
+                                                <!--Blog Post Info-->
+                                                <ul class="blog-post-info d-flex align-items-center">
+                                                    <li class="day d-flex align-items-center">
+                                                        <i class="icon icon-clock far fa-clock"></i>
+                                                        <div class="info">20 April 2015</div>
+                                                    </li>
+                                                    <li class="category d-flex align-items-center">
+                                                        <i class="icon icon-list fas fa-th-list"></i>
+                                                        <div class="info text-capitalize">design</div>
+                                                    </li>
+                                                    <li class="comment d-flex align-items-center">
+                                                        <i class="icon icon-comment fas fa-comment"></i>
+                                                        <div class="info text-capitalize">2 comments</div>
+                                                    </li>
+                                                </ul>
+
+                                                <!--Blog Post Content-->
+                                                <p class="blog-post-content">Fusce mattis nunc lacus, vulputate
+                                                    facilisis
+                                                    dui
+                                                    efficitur
+                                                    ut. Vestibulum sit
+                                                    amet metus euismod, condimentum lectus id, ultrices sem. Morbi
+                                                    in erat
+                                                    malesuada, sollicitudin massa at, tristique nisl. Maecenas id
+                                                    eros
+                                                    scelerisque,
+                                                    vulputate tortor quis, efficitur arcu
+                                                </p>
+
+                                                <!--Read More-->
+                                                <div class="read-more"><a href="blogDetail.html" class="text-uppercase">read
+                                                        more</a>
+                                                </div>
+
+                                                <!--Blog Post Date-->
+                                                <div class="blog-post-date">
+                                                    <div class="date">25</div>
+                                                    <div class="month text-capitalize">april</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Pagination-->
+                        <nav class="page-nav" aria-label="Page navigation">
+                            <ul class="pagination justify-content-between">
+                                <li class="page-item left-item disabled"><a class="page-link arrow-left text-uppercase"
+                                        href="#post-carousel" data-slide="prev">Previous</a></li>
+
+                                <li class="page-item right-item"><a class="page-link arrow-right text-uppercase"
+                                        href="#post-carousel" data-slide="next">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="col-12 col-md-4 right-column">
+                        <!--categories-->
+                        <div class="col-12 column-1 categories text-right">
+                            <h3 class="title text-uppercase">categories</h3>
+                            <ul class="listmenu">
+                                <li class="text-capitalize"><a href="#">design</a></li>
+                                <li class="text-capitalize"><a href="#">future</a></li>
+                                <li class="text-capitalize"><a href="#">kitchen</a></li>
+                                <li class="text-capitalize"><a href="#">photography</a></li>
+                            </ul>
+                        </div>
+
+                        <!--popular post-->
+                        <div class="col-12 column-1 popular-post text-right">
+                            <h3 class="title text-uppercase">popular post</h3>
+
+                            <a class="row justify-content-end post-list" href="#">
+                                <div class="col-9 post-content d-flex flex-column justify-content-between">
+                                    <div class="content">
+                                        <p>Vestibulum sit amet metus euismod amet</p>
+                                        <p>metus euismod</p>
+                                    </div>
+
+                                    <div class="date">24.09.2015</div>
+                                </div>
+                                <div class="col-3 post-picture"><img src="https://dummyimage.com/64x64/F4F4F4/F4F4F4"
+                                        alt="post-picture"></div>
+                            </a>
+
+                            <a class="row justify-content-end post-list" href="#">
+                                <div class="col-9 post-content d-flex flex-column justify-content-between">
+                                    <div class="content">
+                                        <p>Vestibulum sit amet metus euismod amet</p>
+                                        <p>metus euismod</p>
+                                    </div>
+
+                                    <div class="date">24.09.2015</div>
+                                </div>
+                                <div class="col-3 post-picture"><img src="https://dummyimage.com/64x64/F4F4F4/F4F4F4"
+                                        alt="post-picture"></div>
+                            </a>
+
+                            <a class="row justify-content-end post-list" href="#">
+                                <div class="col-9 post-content d-flex flex-column justify-content-between">
+                                    <div class="content">
+                                        <p>Vestibulum sit amet metus euismod amet</p>
+                                        <p>metus euismod</p>
+                                    </div>
+
+                                    <div class="date">24.09.2015</div>
+                                </div>
+                                <div class="col-3 post-picture"><img src="https://dummyimage.com/64x64/F4F4F4/F4F4F4"
+                                        alt="post-picture"></div>
+                            </a>
+
+                            <a class="row justify-content-end post-list" href="#">
+                                <div class="col-9 post-content d-flex flex-column justify-content-between">
+                                    <div class="content">
+                                        <p>Vestibulum sit amet metus euismod amet</p>
+                                        <p>metus euismod</p>
+                                    </div>
+
+                                    <div class="date">24.09.2015</div>
+                                </div>
+                                <div class="col-3 post-picture"><img src="https://dummyimage.com/64x64/F4F4F4/F4F4F4"
+                                        alt="post-picture"></div>
+                            </a>
+                        </div>
+
+                        <!--Tags-->
+                        <div class="col-12 column-1 tags text-right">
+                            <h3 class="title text-uppercase">tags</h3>
+                            <ul class="listmenu">
+                                <li>Fusce,mattis,nunc,lacus,</li>
+                                <li>vulputate,facilisis,dui,</li>
+                                <li>efficitur,ut</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="footer-theme-3">
+        <div class="top bg-color-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-sm-3 col-lg-2 info-block">
+                        <div class="products">
+                            <h5 class="title text-uppercase">products</h5>
+                            <ul>
+                                <li><a href="#">All</a></li>
+                                <li><a href="#">Chairs</a></li>
+                                <li><a href="#">Sofas</a></li>
+                                <li><a href="#">Living</a></li>
+                                <li><a href="#">Bedroom</a></li>
+                                <li><a href="#">Tables</a></li>
+                                <li><a href="#">New</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-lg-2 info-block">
+                        <div class="costomer">
+                            <h5 class="title text-uppercase">costomer</h5>
+                            <ul>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Repair Center</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-lg-2 info-block">
+                        <div class="pages">
+                            <h5 class="title text-uppercase">pages</h5>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Product</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="#">Terms</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-lg-2 info-block">
+                        <div class="socials">
+                            <h5 class="title text-uppercase">socials</h5>
+                            <ul>
+                                <li><a href="#">twitter</a></li>
+                                <li><a href="#">facebook</a></li>
+                                <li><a href="#">google+</a></li>
+                                <li><a href="#">pinterest</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-8 offset-sm-4 col-lg-4 offset-lg-0 schon-info">
+                        <img src="img/logo_footer_gray.png" alt="logo">
+                        <div class="schon-contact-info">
+                            <div class="address">
+                                <a class="address-link" href="#">
+                                    Suite 18B, 148 Connaught Road Central
+                                    New Yankee
+                                </a>
+                                <i class="icon fas fa-map-marker-alt map-maker"></i>
+                            </div>
+
+                            <div class="phone">
+                                <a href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+                                <i class="icon fas fa-phone"></i>
+                            </div>
+                            <div class="email">
+                                <a href="mailto:info@schon.chair">info@schon.chair</a>
+                                <i class="icon far fa-envelope"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="payment">
+                <img src="img/logo_about_Payment.png" alt="payment">
+            </div>
+
+            <div class="copyright">
+                <div class="title">Copyright shön. All right recerved</div>
+            </div>
+        </div>
+    </div>
+
+    <script id="cart-order-template" type="text/x-handlebars-template">
+        <li class="buyer-orders d-flex" data-id="{{id}}">
+            <!--Product Image-->
+            <div class="product-picture">
+                <img src="{{img_url}}" alt="product">
+            </div>
+    
+            <!--Product Detail-->
+            <div class="product-detail">
+                <h3 class="title">{{product_name}}</h3>
+                <div class="price">
+                    <i class="icon fas fa-euro-sign"></i>{{price}}
+                </div>
+                <div class="quanity">Qty: {{quanity}}</div>
+            </div>
+    
+            <!--Delete Product -->
+            <div class="delete-product">
+                <a class="delete" href="#"><i class="icon fas fa-times"></i></a>
+            </div>
+        </li>
+    </script>
+</body>
+
+</html>

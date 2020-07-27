@@ -1,0 +1,63 @@
+/*--- Background Color ---*/
+/*--- Text Color ---*/
+/* About Page */
+/* Contact Page */
+/* ProduceList Page */
+/* shoppingCart Page */
+/*Font Family*/
+/*Hover Color*/
+/*Font Weight*/
+body.blog-masonry {
+  /*--------------------------------------------------------
+** Content                                              
+--------------------------------------------------------*/
+  /*----- Banner -----*/
+  /*----- Page Intro -----*/
+  /*----- Blog Post Waterfall -----*/
+}
+body.blog-masonry .banner {
+  margin: 0;
+}
+body.blog-masonry .page-intro {
+  padding-bottom: 50px;
+}
+body.blog-masonry .page-intro .title {
+  padding-bottom: 10px;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: bold;
+  color: #939393;
+  text-align: center;
+}
+body.blog-masonry .page-intro .content {
+  font-weight: 300;
+  color: #939393;
+}
+body.blog-masonry .blog-post-waterfall .card-img-top {
+  position: relative;
+  /*-- Blog Post Status --*/
+  /*-- Blog Post Date --*/
+}
+body.blog-masonry .blog-post-waterfall .card-img-top .title {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: bold;
+  color: #494949;
+}
+body.blog-masonry .blog-post-waterfall .card-img-top .status-bar {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+}
+body.blog-masonry .blog-post-waterfall .card-img-top .status-bar li {
+  padding-right: 6px;
+}
+body.blog-masonry .blog-post-waterfall .card-img-top .status-bar a {
+  color: #7A7A7A;
+}
+body.blog-masonry .blog-post-waterfall .card-img-top .blog-post-date {
+  padding: 9px 20px;
+}

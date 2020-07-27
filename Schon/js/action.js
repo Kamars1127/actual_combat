@@ -144,7 +144,7 @@ $(document).ready(function () {
                     orderQty.prop('selected', true);
 
                     /* set order one of product total price*/
-                    orderId.find('.total-price .price').text(unitPrice*dataQty);
+                    orderId.find('.total-price .price').text(unitPrice * dataQty);
                 });
 
                 $('.calculate-shopping .checkout-info .num').text(totalPrice + ",00");
@@ -154,31 +154,31 @@ $(document).ready(function () {
                     select: function (e, ui) {
                         var value = $(this).siblings('.ui-selectmenu-button').children('.ui-selectmenu-text').text();
                         var product_unitPrice = $(this).closest('.order-info-area').find('.product-price .price').text();
-                        var product_price = value*product_unitPrice;
-                        $(this).closest('.order-info-area').find('.total-price .price').text(product_price+",00");
+                        var product_price = value * product_unitPrice;
+                        $(this).closest('.order-info-area').find('.total-price .price').text(product_price + ",00");
                     }
                 });
             }
 
 
             /* when is checkout page*/
-            if(is_existCheckOutPage > 0){
+            if (is_existCheckOutPage > 0) {
                 var orderSrc = $('#checkout-page-template').html();
                 var orderTemplate = Handlebars.compile(orderSrc);
                 var dataId, orderId;
 
-                $.each(data.shoppingCart, function (index, product) { 
+                $.each(data.shoppingCart, function (index, product) {
                     dataId = data.shoppingCart[index].id;
                     dataQty = data.shoppingCart[index].quanity;
                     unitPrice = parseInt(data.shoppingCart[index].price);
 
-                     /* show orders at front-rnd */
+                    /* show orders at front-rnd */
                     cartPageOrderUI = orderTemplate(product);
                     $('.billing-details .product-detail').append(cartPageOrderUI);
 
                     /* set order one of product total price*/
                     orderId = $('.billing-details .product-detail .product-detail-item[data-id="' + dataId + '"]');
-                    orderId.find('.total .num').text(unitPrice*dataQty+",00");
+                    orderId.find('.total .num').text(unitPrice * dataQty + ",00");
                 });
 
                 $('.billing-details .order-detail .orders-total-price .num').text(totalPrice + ",00");
@@ -409,4 +409,98 @@ $(document).ready(function () {
 
         });
     }
+
+
+
+    /*------------------------------------------------------------------------------------
+    ** Blog Page                    
+    -------------------------------------------------------------------------------------*/
+    if($('body.blog-page').length > 0){
+        /*--- When click other place to close category menu ---*/
+        $(document).mouseup(function (e) {
+            var categoryBtn = $('.banner-bar .category-btn');
+
+            if (!categoryBtn.is(e.target) && categoryBtn.has(e.target).length === 0) {
+                categoryBtn.siblings('.category-menu').removeClass('show');
+            }
+        });
+    }
+
+    /*------------------------------------------------------------------------------------
+    ** Blog List Sidebar 2 Page                    
+    -------------------------------------------------------------------------------------*/
+    $('#post-carousel').on('slid.bs.carousel', function (e) {
+        var fitstItem = $(this).find('.carousel-item:first-child');
+        var lastItem = $(this).find('.carousel-item:last-child');
+        var previous = $(this).siblings('.page-nav').find('li.left-item');
+        var next = $(this).siblings('.page-nav').find('li.right-item')
+
+        if (fitstItem.hasClass('active')) {
+            previous.addClass('disabled');
+        } else {
+            previous.removeClass('disabled');
+        }
+
+        if (lastItem.hasClass('active')) {
+            next.addClass('disabled');
+        } else {
+            next.removeClass('disabled');
+        }
+    });
+
+    /*------------------------------------------------------------------------------------
+    ** Blog Masonry
+    -------------------------------------------------------------------------------------*/
+    if ($('body.blog-masonry').length > 0) {
+        /*------ Pagination ------*/
+        var pageTotal = 0;
+
+        $('nav.page-nav').on('click', '.page-item .page-link', function (e) {
+            e.preventDefault();
+
+            var pageItem = $(this).closest('.pagination').children('.page-item');
+            var nowPage = pageItem.children('.page-link.active');
+            pageTotal = $(pageItem).length - 1; // next button is one of pageItem
+            var pageNum = parseInt(nowPage.text()) + 1; // when click on next button, what page number is now
+            var isNextBtn = $(this).hasClass('next'); // judgment is not click on next button ?
+
+            /** judgment is click on page number or on next button **/
+            if (!isNextBtn) {
+                /* click page number */
+                var clickPageNum = parseInt($(this).text());
+                /* next button has no disabled class*/
+                $(this).parent().siblings('.page-item.disabled').removeClass('disabled');
+
+                /* when is last page has to add disabled class on next button */
+                if (clickPageNum === pageTotal) {
+                    $(this).parent().next().addClass('disabled');
+                }
+            } else {
+                 /* now page remove active class */
+                 nowPage.removeClass('active');
+                 /* next page add active class */
+                 nowPage.parent().next().children().addClass('active');
+                
+                 /* when is last page has to add disabled class on next button */
+                if (pageNum === (pageTotal)) {
+                    $(this).parent().addClass('disabled');
+                }
+            }
+        });
+
+        /*------ Lord more ------*/
+        $('.blog-post-waterfall .blog-post').slice(3).hide();
+        
+        if($('.blog-post-waterfall .blog-post:hidden').length > 0){
+            $('.blog-post-waterfall .load-more').show();
+        }else{
+            $('.blog-post-waterfall .load-more').hide();
+        }
+
+        $('.blog-post-waterfall').on('click', '.load-more-btn', function(e){
+            $(this).closest('.blog-post-waterfall').find('.blog-post:hidden').show();
+            $(this).parent('.load-more').hide();
+        });
+    }
+
 });

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Masonry</title>
+
+    <link rel="icon" sizes="32x32" type="image/png" href="img/favicon-32x32.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/handlebars-v4.4.3.js"></script>
+    <script src="js/action.js"></script>
+</head>
+
+<body class="blog-page blog-masonry">
+    <div id="header">
+        <!--Navigation Bar-->
+        <nav class="navbar navbar-expand-lg fixed-top theme-2 theme-3">
+            <div class="container">
+                <div class="navbar-brand clearfix">
+                    <a class="float-left" href="index.html"><img src="img/logo_navbar_home.png" alt="logo"></a>
+                    <!--Phone Number-->
+                    <a class="float-left phone" href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+
+                </div>
+
+                <!--Hamburger Menu-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hamburger-menu">
+                    <!--Hamburger Menu Icon-->
+                    <div id="menu-toggle" class="d-flex align-items-start">
+                        <div id="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div id="cross">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </button>
+
+                <div class="collapse navbar-collapse" id="hamburger-menu">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="index.html">home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="about.html">
+                                products
+                                <i class="icon fas fa-angle-down"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="">
+                                collections
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="">pages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="about.html">about</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="#">contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Shopping Area-->
+                <div class="shopping-area">
+                    <ul class="shopping-bar clearfix">
+                        <li class="search"><a href="#"><i class="icon icon-sea fas fa-search"></i></a></li>
+                        <li class="favorite"><a href="#"><i class="icon icon-fav far fa-heart"></i></a></li>
+                        <li class="cart">
+                            <a class="cart-btn" href="#cart-detail" data-toggle="collapse">
+                                <i class="icon icon-cart fas fa-shopping-bag"></i>
+                                <div class="item rounded-circle">
+                                    <span class="badge ">3</span>
+                                </div>
+                            </a>
+
+                            <!--Cart Collapse-->
+                            <div id="cart-detail" class="collapse">
+                                <!--Close Collapse-->
+                                <div class="close-cart rounded-circle">
+                                    <i class="icon fas fa-times"></i>
+                                </div>
+
+                                <!-- Buyer's Orders -->
+                                <ul class="cart-order-area"></ul>
+
+                                <!--Total Price-->
+                                <div class="cart-total-price">
+                                    <h3 class="title text-capitalize">sub total</h3>
+                                    <div class="price">
+                                        <i class="fas fa-euro-sign"></i> <span class="num">0</span>,00
+                                    </div>
+                                </div>
+
+                                <!--Action Button-->
+                                <div class="cart-button-area">
+                                    <a class="view-cart rounded-pill text-capitalize" href="shoppingCart.html">view
+                                        cart</a>
+                                    <a class="checkout rounded-pill text-capitalize color-black"
+                                        href="checkOut.html">checkout</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-button rounded-circle">
+                            <div class="icon-menu">
+                                <span class="rounded-pill"></span>
+                                <span class="rounded-pill short"></span>
+                                <span class="rounded-pill"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="content">
+        <!--Banner-->
+        <div class="banner">
+            <div class="container-fluid clearfix">
+                <h2 class="title text-uppercase">blog masonry</h2>
+            </div>
+        </div>
+
+        <!--Banner Bar-->
+        <div class="banner-bar">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <nav id="breadcrumb" class="left-area">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item text-capitalize float-left bounded">
+                            <a href="index.html">home</a>
+                        </li>
+
+                        <li class="breadcrumb-item active text-capitalize float-left">blog</li>
+                    </ol>
+                </nav>
+
+                <a href="#" class="center-area"><i class="icon fas fa-th"></i></a>
+
+                <ul class="right-area d-flex">
+                    <li class="search">
+                        <button class="search-btn">
+                            <div class="title text-capitalize">search</div>
+                            <i class="icon fas fa-search"></i>
+                        </button>
+                    </li>
+
+                    <li class="category">
+                        <div class="collapse category-menu" id="collapse-category">
+                            <div class="category-item"><a class="text-capitalize" href="blogListSidebar.html">design</a></div>
+                            <div class="category-item"><a class="text-capitalize" href="#">future</a></div>
+                            <div class="category-item"><a class="text-capitalize" href="#">kitchen</a></div>
+                            <div class="category-item"><a class="text-capitalize" href="#">photography</a></div>
+                        </div>
+
+                        <button class="category-btn" data-toggle="collapse" data-target="#collapse-category">
+                            <div class="title text-capitalize">categories</div>
+                            <i class="icon fas fa-bars"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Page Intro-->
+        <div class="page-intro">
+            <div class="container">
+                <div class="title text-uppercase">masonry list type</div>
+                <p class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                </p>
+            </div>
+        </div>
+
+        <!--Blog Post Waterfall-->
+        <div class="blog-post-waterfall">
+            <div class="container">
+                <div class="tab-content">
+                    <div id="blog-post-page-1" class="card-columns tab-pane fade show active">
+                        <div class="card blog-post">
+                            <div class="card-img-top">
+                                <img src="https://dummyimage.com/375x295/F8F8F8/F8F8F8" alt="picture">
+                                <div class="title text-uppercase">ideas for living rooms</div>
+    
+                                <!--Blog Post Status-->
+                                <ul class="status-bar d-flex">
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-comments"></i>
+                                            <div class="badge">12</div>
+                                        </a></li>
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-share-alt"></i>
+                                            <div class="badge">14</div>
+                                        </a></li>
+                                </ul>
+    
+                                <!--Blog Post Date-->
+                                <div class="blog-post-date">
+                                    <div class="date">17</div>
+                                    <div class="month text-capitalize">april</div>
+                                </div>
+                            </div>
+    
+                            <div class="card-body">
+                                <!--Blog Post Content-->
+                                <p class="blog-post-content">
+                                    Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                    est laborum.
+                                </p>
+    
+                                <div class="more-detail">
+                                    <a class="text-capitalize" href="#">more detail</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="card blog-post">
+                            <div class="card-img-top">
+                                <img src="https://dummyimage.com/375x295/F8F8F8/F8F8F8" alt="picture">
+                                <div class="title text-uppercase">ideas for living rooms</div>
+    
+                                <!--Blog Post Status-->
+                                <ul class="status-bar d-flex">
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-comments"></i>
+                                            <div class="badge">12</div>
+                                        </a></li>
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-share-alt"></i>
+                                            <div class="badge">14</div>
+                                        </a></li>
+                                </ul>
+    
+                                <!--Blog Post Date-->
+                                <div class="blog-post-date">
+                                    <div class="date">17</div>
+                                    <div class="month text-capitalize">april</div>
+                                </div>
+                            </div>
+    
+                            <div class="card-body">
+                                <!--Blog Post Content-->
+                                <p class="blog-post-content">
+                                    Minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                    est laborum.
+                                </p>
+    
+                                <div class="more-detail">
+                                    <a class="text-capitalize" href="#">more detail</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="card blog-post">
+                            <div class="card-img-top">
+                                <img src="https://dummyimage.com/375x295/F8F8F8/F8F8F8" alt="picture">
+                                <div class="title text-uppercase">ideas for living rooms</div>
+    
+                                <!--Blog Post Status-->
+                                <ul class="status-bar d-flex">
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-comments"></i>
+                                            <div class="badge">12</div>
+                                        </a></li>
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-share-alt"></i>
+                                            <div class="badge">14</div>
+                                        </a></li>
+                                </ul>
+    
+                                <!--Blog Post Date-->
+                                <div class="blog-post-date">
+                                    <div class="date">17</div>
+                                    <div class="month text-capitalize">april</div>
+                                </div>
+                            </div>
+    
+                            <div class="card-body">
+                                <!--Blog Post Content-->
+                                <p class="blog-post-content">
+                                    Quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                    est laborum.
+                                </p>
+    
+                                <div class="more-detail">
+                                    <a class="text-capitalize" href="#">more detail</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="card blog-post">
+                            <div class="card-img-top">
+                                <img src="https://dummyimage.com/375x295/F8F8F8/F8F8F8" alt="picture">
+                                <div class="title text-uppercase">ideas for living rooms</div>
+    
+                                <!--Blog Post Status-->
+                                <ul class="status-bar d-flex">
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-comments"></i>
+                                            <div class="badge">12</div>
+                                        </a></li>
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-share-alt"></i>
+                                            <div class="badge">14</div>
+                                        </a></li>
+                                </ul>
+    
+                                <!--Blog Post Date-->
+                                <div class="blog-post-date">
+                                    <div class="date">17</div>
+                                    <div class="month text-capitalize">april</div>
+                                </div>
+                            </div>
+    
+                            <div class="card-body">
+                                <!--Blog Post Content-->
+                                <p class="blog-post-content">
+                                    Beim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                    est laborum.
+                                </p>
+    
+                                <div class="more-detail">
+                                    <a class="text-capitalize" href="#">more detail</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="card blog-post">
+                            <div class="card-img-top">
+                                <img src="https://dummyimage.com/375x295/F8F8F8/F8F8F8" alt="picture">
+                                <div class="title text-uppercase">ideas for living rooms</div>
+    
+                                <!--Blog Post Status-->
+                                <ul class="status-bar d-flex">
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-comments"></i>
+                                            <div class="badge">12</div>
+                                        </a></li>
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-share-alt"></i>
+                                            <div class="badge">14</div>
+                                        </a></li>
+                                </ul>
+    
+                                <!--Blog Post Date-->
+                                <div class="blog-post-date">
+                                    <div class="date">17</div>
+                                    <div class="month text-capitalize">april</div>
+                                </div>
+                            </div>
+    
+                            <div class="card-body">
+                                <!--Blog Post Content-->
+                                <p class="blog-post-content">
+                                    Veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                    est laborum.
+                                </p>
+    
+                                <div class="more-detail">
+                                    <a class="text-capitalize" href="#">more detail</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="card blog-post">
+                            <div class="card-img-top">
+                                <img src="https://dummyimage.com/375x295/F8F8F8/F8F8F8" alt="picture">
+                                <div class="title text-uppercase">ideas for living rooms</div>
+    
+                                <!--Blog Post Status-->
+                                <ul class="status-bar d-flex">
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-comments"></i>
+                                            <div class="badge">12</div>
+                                        </a></li>
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-share-alt"></i>
+                                            <div class="badge">14</div>
+                                        </a></li>
+                                </ul>
+    
+                                <!--Blog Post Date-->
+                                <div class="blog-post-date">
+                                    <div class="date">17</div>
+                                    <div class="month text-capitalize">april</div>
+                                </div>
+                            </div>
+    
+                            <div class="card-body">
+                                <!--Blog Post Content-->
+                                <p class="blog-post-content">
+                                    Nim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                    est laborum.
+                                </p>
+    
+                                <div class="more-detail">
+                                    <a class="text-capitalize" href="#">more detail</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="card blog-post">
+                            <div class="card-img-top">
+                                <img src="https://dummyimage.com/375x295/F8F8F8/F8F8F8" alt="picture">
+                                <div class="title text-uppercase">ideas for living rooms</div>
+    
+                                <!--Blog Post Status-->
+                                <ul class="status-bar d-flex">
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-comments"></i>
+                                            <div class="badge">12</div>
+                                        </a></li>
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-share-alt"></i>
+                                            <div class="badge">14</div>
+                                        </a></li>
+                                </ul>
+    
+                                <!--Blog Post Date-->
+                                <div class="blog-post-date">
+                                    <div class="date">17</div>
+                                    <div class="month text-capitalize">april</div>
+                                </div>
+                            </div>
+    
+                            <div class="card-body">
+                                <!--Blog Post Content-->
+                                <p class="blog-post-content">
+                                    Beim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                    est laborum.
+                                </p>
+    
+                                <div class="more-detail">
+                                    <a class="text-capitalize" href="#">more detail</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="card blog-post">
+                            <div class="card-img-top">
+                                <img src="https://dummyimage.com/375x295/F8F8F8/F8F8F8" alt="picture">
+                                <div class="title text-uppercase">ideas for living rooms</div>
+    
+                                <!--Blog Post Status-->
+                                <ul class="status-bar d-flex">
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-comments"></i>
+                                            <div class="badge">12</div>
+                                        </a></li>
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-share-alt"></i>
+                                            <div class="badge">14</div>
+                                        </a></li>
+                                </ul>
+    
+                                <!--Blog Post Date-->
+                                <div class="blog-post-date">
+                                    <div class="date">17</div>
+                                    <div class="month text-capitalize">april</div>
+                                </div>
+                            </div>
+    
+                            <div class="card-body">
+                                <!--Blog Post Content-->
+                                <p class="blog-post-content">
+                                    Veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                    est laborum.
+                                </p>
+    
+                                <div class="more-detail">
+                                    <a class="text-capitalize" href="#">more detail</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="card blog-post">
+                            <div class="card-img-top">
+                                <img src="https://dummyimage.com/375x295/F8F8F8/F8F8F8" alt="picture">
+                                <div class="title text-uppercase">ideas for living rooms</div>
+    
+                                <!--Blog Post Status-->
+                                <ul class="status-bar d-flex">
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-comments"></i>
+                                            <div class="badge">12</div>
+                                        </a></li>
+                                    <li class="d-flex"><a href="#">
+                                            <i class="icon fas fa-share-alt"></i>
+                                            <div class="badge">14</div>
+                                        </a></li>
+                                </ul>
+    
+                                <!--Blog Post Date-->
+                                <div class="blog-post-date">
+                                    <div class="date">17</div>
+                                    <div class="month text-capitalize">april</div>
+                                </div>
+                            </div>
+    
+                            <div class="card-body">
+                                <!--Blog Post Content-->
+                                <p class="blog-post-content">
+                                    Nim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                    est laborum.
+                                </p>
+    
+                                <div class="more-detail">
+                                    <a class="text-capitalize" href="#">more detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="blog-post-page-2" class="tab-pane fade">dd</div>
+                </div>
+                
+                <!--Load More Button-->
+                <div class="load-more">
+                    <a class="load-more-btn text-uppercase" href="#">load more <i class="icon-redo fas fa-sync-alt"></i></a>
+                </div>
+
+                <!--Pagination-->
+                <nav class="page-nav">
+                    <ul class="nav pagination">
+                        <li class="nav-item page-item"><a class="nav-link page-link active" data-toggle="tab" href="#blog-post-page-1">1</a></li>
+                        <li class="nav-item page-item"><a class="nav-link page-link " data-toggle="tab" href="#blog-post-page-2">2</a></li>
+                        <li class="nav-item page-item"><a class="nav-link page-link " data-toggle="tab" href="#">3</a></li>
+                        <li class="nav-item page-item"><a class="nav-link page-link " data-toggle="tab" href="#">4</a></li>
+                        <li class="nav-item page-item"><a class="nav-link page-link " data-toggle="tab" href="#">5</a></li>
+                        <li class="nav-item page-item"><a class="nav-link page-link " data-toggle="tab" href="#">6</a></li>
+                        <li class="nav-item page-item"><a class="nav-link page-link " data-toggle="tab" href="#">7</a></li>
+                        <li class="page-item text-uppercase"><a class="page-link next" href="#">next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="footer-theme-3">
+        <div class="top bg-color-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-sm-3 col-lg-2 info-block">
+                        <div class="products">
+                            <h5 class="title text-uppercase">products</h5>
+                            <ul>
+                                <li><a href="#">All</a></li>
+                                <li><a href="#">Chairs</a></li>
+                                <li><a href="#">Sofas</a></li>
+                                <li><a href="#">Living</a></li>
+                                <li><a href="#">Bedroom</a></li>
+                                <li><a href="#">Tables</a></li>
+                                <li><a href="#">New</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-lg-2 info-block">
+                        <div class="costomer">
+                            <h5 class="title text-uppercase">costomer</h5>
+                            <ul>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Repair Center</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-lg-2 info-block">
+                        <div class="pages">
+                            <h5 class="title text-uppercase">pages</h5>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Product</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="#">Terms</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-lg-2 info-block">
+                        <div class="socials">
+                            <h5 class="title text-uppercase">socials</h5>
+                            <ul>
+                                <li><a href="#">twitter</a></li>
+                                <li><a href="#">facebook</a></li>
+                                <li><a href="#">google+</a></li>
+                                <li><a href="#">pinterest</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-8 offset-sm-4 col-lg-4 offset-lg-0 schon-info">
+                        <img src="img/logo_footer_gray.png" alt="logo">
+                        <div class="schon-contact-info">
+                            <div class="address">
+                                <a class="address-link" href="#">
+                                    Suite 18B, 148 Connaught Road Central
+                                    New Yankee
+                                </a>
+                                <i class="icon fas fa-map-marker-alt map-maker"></i>
+                            </div>
+
+                            <div class="phone">
+                                <a href="tel:+1-555-333-22-11">+1 (555) 333 22 11</a>
+                                <i class="icon fas fa-phone"></i>
+                            </div>
+                            <div class="email">
+                                <a href="mailto:info@schon.chair">info@schon.chair</a>
+                                <i class="icon far fa-envelope"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="payment">
+                <img src="img/logo_about_Payment.png" alt="payment">
+            </div>
+
+            <div class="copyright">
+                <div class="title">Copyright shön. All right recerved</div>
+            </div>
+        </div>
+    </div>
+
+    <script id="cart-order-template" type="text/x-handlebars-template">
+        <li class="buyer-orders d-flex" data-id="{{id}}">
+            <!--Product Image-->
+            <div class="product-picture">
+                <img src="{{img_url}}" alt="product">
+            </div>
+    
+            <!--Product Detail-->
+            <div class="product-detail">
+                <h3 class="title">{{product_name}}</h3>
+                <div class="price">
+                    <i class="icon fas fa-euro-sign"></i>{{price}}
+                </div>
+                <div class="quanity">Qty: {{quanity}}</div>
+            </div>
+    
+            <!--Delete Product -->
+            <div class="delete-product">
+                <a class="delete" href="#"><i class="icon fas fa-times"></i></a>
+            </div>
+        </li>
+    </script>
+</body>
+
+</html>

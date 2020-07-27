@@ -1,0 +1,348 @@
+@import "basic.less";
+
+body.blog-masonry {
+    /*--------------------------------------------------------
+** Content                                              
+--------------------------------------------------------*/
+
+    /*----- Banner -----*/
+    .banner {
+        margin: 0;
+    }
+
+    /*----- Page Intro -----*/
+    .page-intro {
+        padding-bottom: 50px;
+
+        .title {
+            padding-bottom: 10px;
+            font-family: @font1;
+            font-size: 18px;
+            font-weight: bold;
+            color: #939393;
+            text-align: center;
+        }
+
+        .content {
+            margin: 0;
+            font-weight: @fw-Light;
+            color: #939393;
+            line-height: 1.5;
+        }
+    }
+
+    /*----- Blog Post Waterfall -----*/
+    .blog-post-waterfall {
+        padding-bottom: 88px;
+
+        .card-columns {
+            padding-bottom: 70px;
+
+            .blog-post {
+                margin-bottom: 24px;
+            }
+
+            .card-img-top {
+                position: relative;
+                max-width: 375px;
+                max-height: 295px;
+                .title {
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                    font-family: @font1;
+                    font-size: 23px;
+                    font-weight: bold;
+                    color: @text-black-light;
+                }
+
+                /*-- Blog Post Status --*/
+                .status-bar {
+                    position: absolute;
+                    right: 15px;
+                    bottom: 10px;
+
+                    li {
+                        padding-right: 6px;
+                    }
+
+                    a {
+                        color: #7A7A7A;
+                    }
+                }
+
+                /*-- Blog Post Date --*/
+                .blog-post-date {
+                    top: unset;
+                    bottom: -28px;
+                    left: 15px;
+                    padding: 8px 20px;
+                    background: #f4f4f4;
+
+                    .date {
+                        color: @text-black-light;
+                        font-size: 24px;
+                    }
+
+                    .month {
+                        color: @text-black-light;
+                        font-size: 14px;
+                        font-weight: @fw-ExtraLight;
+                    }
+                }
+            }
+
+            .card-body {
+                margin-top: 35px;
+
+                /*-- Blog Post Content --*/
+                .blog-post-content {
+                    margin-bottom: 16px;
+                    max-height: 108px;
+                    color: #939393;
+                    font-size: 16px;
+                    line-height: 1.18;
+                    overflow: hidden;
+                }
+
+                .more-detail {
+                    width: 68px;
+
+                    a {
+                        color: @text-black-light;
+                    }
+
+                    &::before {
+                        font-family: 'Font Awesome 5 Free';
+                        font-weight: 900;
+                        content: "\f105";
+                        color: @text-black-light;
+                    }
+
+                    &:hover {
+
+                        a,
+                        &::before {
+                            color: @branding-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        /*--- Load More Button ---*/
+        .load-more {
+            margin-bottom: 45px;
+            border-top: 1px solid #d4d4d4;
+            border-bottom: 1px solid #d4d4d4;
+            padding: 17px 0;
+            text-align: center;
+
+            a {
+                font-family: @font1;
+                font-size: 18px;
+                font-weight: bold;
+                color: @text-gray-small-dark;
+                letter-spacing: 1.44px;
+
+                &:hover {
+                    color: @branding-color;
+                }
+            }
+
+            .icon-redo {
+                font-size: 18px;
+            }
+        }
+
+        /*--- Pagination ---*/
+        .page-nav {
+            display: flex;
+            justify-content: center;
+
+            .page-item.disabled .next {
+                color: #EDECEC;
+            }
+
+            .page-link {
+                margin: 0 5px;
+                border: none;
+                border-bottom: 4px solid transparent;
+                border-radius: unset;
+                padding: 0 2px;
+                box-shadow: unset;
+                font-family: @font1;
+                font-weight: bold;
+                font-size: 16px;
+                color: #BABABA;
+
+                &:hover {
+                    background: unset;
+                }
+
+                &.active {
+                    border-bottom: 4px solid #6D6D6D;
+                    color: #6D6D6D;
+                }
+
+                &.next {
+
+                    &:hover {
+                        color: @branding-color;
+                    }
+                }
+            }
+        }
+    }
+
+    /*--------------------------------------------------------
+** Media Query                                              
+--------------------------------------------------------*/
+    /*----- width > 575 sm -----*/
+    @media(min-width: 576px) {
+
+        /*--- Page Intro ---*/
+        .page-intro {
+            .container {
+                display: flex;
+                align-items: center;
+            }
+
+            .title {
+                padding: 15px 0;
+                padding-right: 15px;
+                width: 30%;
+            }
+
+            .content {
+                border-left: 1px solid #DADADA;
+                padding-left: 24px;
+                width: 70%;
+            }
+        }
+
+        /*--- Blog Post Waterfall ---*/
+        .blog-post-waterfall {
+            .card-columns {
+                column-count: 2;
+
+                .card-img-top .title {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+
+    /*----- width > 767 md -----*/
+    @media(min-width: 768px) {
+
+        /*--- Page Intro ---*/
+        .page-intro .container {
+            padding: 0 55px;
+
+            .title {
+                width: 35%;
+            }
+
+            .content {
+                width: 65%;
+            }
+        }
+
+        /*--- Blog Post Waterfall ---*/
+        .blog-post-waterfall {
+            .card-columns {
+                column-count: 3;
+            }
+
+            /*- Pagination -*/
+            .page-nav .page-link {
+                font-size: 22px;
+            }
+        }
+    }
+
+    /*----- width > 991 lg -----*/
+    @media(min-width: 992px) {
+
+        /*--- Banner Bar ---*/
+        .banner-bar {
+            margin-bottom: 76px;
+        }
+
+        /*--- Page Intro ---*/
+        .page-intro {
+            padding-bottom: 108px;
+
+            .title {
+                padding-right: 29px;
+                font-size: 24px;
+            }
+
+            .content {
+                padding-left: 47px;
+                font-size: 16px;
+            }
+        }
+
+        /*--- Blog Post Waterfall ---*/
+        .blog-post-waterfall {
+            padding-bottom: 176px;
+
+            .card-columns {
+                padding-bottom: 92px;
+
+                .blog-post {
+                    margin-bottom: 48px;
+                }
+
+                .card-img-top {
+                    .title {
+                        font-size: 24px;
+                    }
+
+                    /* Blog Post Status */
+                    .status-bar li {
+                        padding-right: 10px;
+
+                        .icon {
+                            font-size: 18px;
+                        }
+
+                        .badge {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            /*-- Load More Button --*/
+            .load-more {
+                margin-bottom: 90px;
+            }
+        }
+    }
+
+    /*----- width > 1199 xl -----*/
+    @media(min-width: 1200px) {
+
+        /*--- Page Intro ---*/
+        .page-intro .container {
+            padding: 0 100px;
+
+            .title {
+                font-size: 27px;
+            }
+        }
+
+        /*--- Blog Post Waterfall ---*/
+        .blog-post-waterfall{
+            .card-columns .card-img-top{
+                .title{
+                    top: 38px;
+                    left: 45px;
+                }
+            }
+        }
+    }
+}
