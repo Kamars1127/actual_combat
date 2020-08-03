@@ -44,7 +44,8 @@ a:hover {
 /*--------------------------------------------------------
 ** Let web don't scroll                                              
 --------------------------------------------------------*/
-.no-scroll {
+.no-scroll,
+.focus-newsletter {
     overflow: hidden;
 }
 
@@ -606,6 +607,57 @@ a.product-anchor {
     }
 }
 
+
+
+/*--------------------------------------------------------
+** Checkbox                                            
+--------------------------------------------------------*/
+input[type="checkbox"].custom-style {
+    display: none;
+
+    &:checked+label::before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 10px;
+        content: "\f00c";
+        color: @text-gray-small-light-shoppingCart;
+        text-align: center;
+    }
+}
+
+label.check-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: @text-gray-small-light-shoppingCart;
+    font-size: 16px;
+    font-weight: @fw-Light;
+    line-height: 1.75;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        border: 1px solid #C7C7C7;
+        margin-right: 9px;
+        width: 17px;
+        height: 17px;
+    }
+
+    &.reversed {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+
+        &::before {
+            margin: 0;
+            margin-left: 9px;
+        }
+    }
+}
+
+
+
 /*--------------------------------------------------------
 ** Animation                                             
 --------------------------------------------------------*/
@@ -837,6 +889,8 @@ nav.navbar {
     .navbar-collapse {
         padding-top: 10px;
         padding-bottom: 20px;
+        max-height: 100vh;
+        overflow: auto;
 
         .nav-link {
             color: #313131;
@@ -851,6 +905,132 @@ nav.navbar {
 
             &:hover {
                 color: @branding-color
+            }
+        }
+
+        /* products menu */
+        .products-menu {
+            padding: 10px 10px 30px;
+
+            h5.title {
+                position: relative;
+                display: inline;
+                margin: 0;
+                padding-bottom: 4px;
+                font-family: @font1;
+                font-size: 16px;
+                font-weight: bold;
+                color: @text-gray-dark;
+                letter-spacing: -0.12px;
+
+                &.baseline::after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    content: "";
+                    width: 50%;
+                    height: 2px;
+                    background: #5a5a5a;
+                }
+            }
+
+            /*Products Categories*/
+            .top {
+                margin-bottom: 58px;
+
+                .sofas-armchairs,
+                .tables-chairs,
+                .kitchen,
+                .office {
+                    margin-bottom: 30px;
+                }
+
+                ul {
+                    padding-top: 19px;
+
+                    li {
+                        padding-bottom: 14px;
+
+                        &:last-child {
+                            padding: 0;
+                        }
+                    }
+
+                    a {
+                        font-size: 14px;
+                        font-weight: @fw-Light;
+                        color: @text-gray-small-dark;
+
+                        &:hover {
+                            color: @branding-color;
+                        }
+                    }
+                }
+            }
+
+            /*Advertising*/
+            .bottom {
+                .ad {
+                    position: relative;
+
+                    .info {
+                        position: absolute;
+                        top: 50%;
+
+                        .title,
+                        .subtitle {
+                            font-family: @font1;
+                            font-weight: bold;
+                            color: #5E5E5E;
+                        }
+                    }
+
+                    /* Left ad */
+                    &.ad-left {
+                        margin-bottom: 25px;
+
+                        .info {
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            text-align: center;
+
+                            .title {
+                                margin-right: -20.2px;
+                                font-size: 20px;
+                                letter-spacing: 20.2px;
+                            }
+
+                            .subtitle {
+                                padding-top: 6px;
+                                font-size: 16px;
+                                letter-spacing: -0.16px;
+                            }
+                        }
+                    }
+
+                    /* Right ad */
+                    &.ad-right .info {
+                        right: 15px;
+                        transform: translateY(-50%);
+                        text-align: right;
+
+                        .title {
+                            margin-right: -1.4px;
+                            font-size: 14px;
+                            color: @text-gray-dark;
+                            letter-spacing: 1.4px;
+                        }
+
+                        .subtitle {
+                            margin-right: 0.22px;
+                            padding-top: 10px;
+                            font-size: 11px;
+                            font-weight: normal;
+                            color: #979797;
+                            letter-spacing: -0.22px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -882,6 +1062,59 @@ nav.navbar {
 
         .search {
             padding-bottom: 15px;
+
+            #search-collapse {
+                z-index: 1;
+                position: fixed;
+                top: 130px;
+                left: 0;
+                right: 0;
+                height: 50%;
+                background: #F6F6F6;
+
+                button {
+                    outline: none;
+                    border: none;
+                    background: unset;
+                    color: #9D9D9D;
+
+                    &:hover{
+                        color: @branding-color;
+                    }
+                }
+
+                .search-bar{
+                    margin: 100px 0;
+
+                    input{
+                        margin-right: 10px;
+                        border: unset;
+                        border-left: 1px solid #BDBDBD;
+                        border-radius: unset;
+                        padding: 6px 11px;
+                        background: transparent;
+                        font-size: 18px;
+                        color: #9D9D9D;
+
+                        &::placeholder, &::-moz-placeholder, &::-webkit-input-placeholder, &::-ms-input-placeholder{
+                            color: #9D9D9D;
+                        }
+
+                    }
+                    .icon-search, .icon-voice{
+                        font-size: 18px;
+                    }
+                }
+
+                .close-btn{
+                    display: flex;
+                    margin: 0 auto;
+                    
+                    .icon-close{
+                        font-size: 16px;
+                    }
+                }
+            }
         }
 
         .icon-sea,
@@ -2193,6 +2426,164 @@ nav.navbar {
     }
 }
 
+
+/*--------------------------------------------------------
+** Popup Newsletter                                             
+--------------------------------------------------------*/
+#popup-newsletter {
+    z-index: 2000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .6);
+
+    &.close {
+        display: none;
+    }
+
+    .container {
+        position: absolute;
+        top: 16%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /*--- newsletter background image ---*/
+    .newsletter-bg {
+        position: relative;
+        height: 200px;
+        background-image: url(../img/bg_newsletter.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-color: white;
+    }
+
+    /*--- close window button ---*/
+    .close-btn {
+        position: absolute;
+        right: 0;
+        padding: 10px;
+        color: #C3C3C3;
+
+        .icon {
+            font-size: 16px;
+        }
+
+        &:hover {
+            color: @branding-color;
+        }
+    }
+
+    /*--- newsletter information ---*/
+    .newsletter-info {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        width: 54%;
+
+        .title {
+            font-size: 12px;
+            color: black;
+            letter-spacing: normal;
+        }
+
+        .subtitle {
+            padding-top: 5px;
+            padding-bottom: 22px;
+            font-size: 7px;
+            color: @text-gray-small-dark;
+
+            span {
+                font-size: 7px;
+                font-weight: bold;
+                color: #F53434;
+            }
+        }
+
+        /*- input email -*/
+        .input-mail {
+            border: none;
+            background: #F2F2F2;
+            font-size: 6px;
+            color: @text-gray-small-dark;
+
+            &::placeholder {
+                color: @text-gray-small-dark;
+            }
+
+            &::-moz-placeholder {
+                color: @text-gray-small-dark;
+            }
+
+            &::-ms-input-placeholder {
+                color: @text-gray-small-dark;
+            }
+
+            &::-webkit-input-placeholder {
+                color: @text-gray-small-dark;
+            }
+        }
+
+        /*- subscribe button -*/
+        .subscribe {
+            outline: unset;
+            margin-top: 6px;
+            margin-bottom: 13px;
+            border: none;
+            padding: 4px 8px;
+            background: #FF8283;
+            font-family: @font1;
+            font-weight: bold;
+            font-size: 6px;
+            color: white;
+            line-height: 1.5;
+            letter-spacing: 0.24px;
+
+            &:hover {
+                background: white;
+                color: #FF8283;
+            }
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            padding: 0;
+
+            #popup-check {
+                border: none;
+                width: 8px;
+                height: 8px;
+                background: #DADADA;
+
+                &:checked+label::before {
+                    font-size: 6px;
+                    color: white;
+                }
+            }
+
+            label.check-label {
+                margin: 0;
+                padding-left: 6px;
+                font-family: @font3;
+                font-size: 6px;
+                color: #9A9A9A;
+
+                &::before {
+                    margin-right: 6px;
+                    border: none;
+                    width: 8px;
+                    height: 8px;
+                    background: #DADADA;
+                }
+            }
+        }
+    }
+}
+
+
 /*--------------------------------------------------------
 ** Media Query                                              
 --------------------------------------------------------*/
@@ -2236,39 +2627,95 @@ nav.navbar {
     ** Navigation Bar ---*/
     nav.navbar {
 
-        /*  Shopping Area  */
-        .shopping-area .cart #cart-detail {
-            position: absolute;
-            top: -18px;
-            right: unset;
-            bottom: unset;
-            left: -344px;
-            box-shadow: 0px 1px 2px #9E9E9E;
-            background-color: white;
-            transition: unset;
+        /*- products menu Advertising -*/
+        .navbar-collapse .products-menu .bottom {
 
-            &::before,
-            &::after {
-                position: absolute;
-                content: " ";
-                border-style: solid;
-                border-width: 15px;
-                height: 0px;
-                width: 0px;
+            /* Left ad */
+            .ad.ad-left .info {
+                .title {
+                    margin-right: -28.28px;
+                    font-size: 28px;
+                    letter-spacing: 28.28px;
+                }
+
+                .subtitle {
+                    margin-right: 0.19px;
+                    font-size: 19px;
+                    letter-spacing: -0.19px;
+                }
             }
 
-            &::before {
-                top: 20px;
-                right: -30px;
-                border-color: transparent transparent transparent rgba(158, 158, 158, .2);
-            }
+            /* Right ad */
+            .ad.ad-right .info {
+                .title {
+                    margin-right: -1.9px;
+                    font-size: 19px;
+                    letter-spacing: 1.9px;
+                }
 
-            &::after {
-                top: 20px;
-                right: -29px;
-                border-color: transparent transparent transparent white;
+                .subtitle {
+                    margin-right: 0.28px;
+                    font-size: 14px;
+                    letter-spacing: -0.28px;
+                }
             }
         }
+
+        /*  Shopping Area  */
+        .shopping-area{
+            .search #search-collapse{
+                
+                .search-bar{
+                    input{
+                        width: 65%;
+                        font-size: 24px;
+                    }
+
+                    button.voice-btn{
+                        margin-right: 5px;
+                    }
+
+                    .icon-search, .icon-voice{
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            .cart #cart-detail {
+                position: absolute;
+                top: -18px;
+                right: unset;
+                bottom: unset;
+                left: -344px;
+                box-shadow: 0px 1px 2px #9E9E9E;
+                background-color: white;
+                transition: unset;
+    
+                &::before,
+                &::after {
+                    position: absolute;
+                    content: " ";
+                    border-style: solid;
+                    border-width: 15px;
+                    height: 0px;
+                    width: 0px;
+                }
+    
+                &::before {
+                    top: 20px;
+                    right: -30px;
+                    border-color: transparent transparent transparent rgba(158, 158, 158, .2);
+                }
+    
+                &::after {
+                    top: 20px;
+                    right: -29px;
+                    border-color: transparent transparent transparent white;
+                }
+    
+    
+            }
+        } 
 
         &.theme-2 {
             .navbar-brand .phone {
@@ -2382,7 +2829,7 @@ nav.navbar {
     }
 
     /*-- Banner --*/
-    .banner h2.title{
+    .banner h2.title {
         font-size: 30px;
     }
 
@@ -2560,6 +3007,66 @@ nav.navbar {
         }
     }
 
+
+    /*--------------------
+    ** Popup Newsletter ---*/
+
+    #popup-newsletter {
+
+        /*- newsletter background image -*/
+        .newsletter-bg {
+            height: 270px;
+        }
+
+        /*- newsletter information -*/
+        .newsletter-info {
+            top: 50px;
+            left: 50px;
+
+            .title {
+                font-size: 21px;
+            }
+
+            .subtitle {
+                padding-top: 15px;
+                padding-bottom: 25px;
+                font-size: 13px;
+
+                span {
+                    font-size: 13px;
+                }
+            }
+
+            /* input email */
+            .input-mail {
+                padding: 6px 11px;
+                font-size: 14px;
+            }
+
+            /* subscribe button */
+            .subscribe {
+                margin-top: 9px;
+                margin-bottom: 35px;
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .form-check {
+                #popup-check:checked+label::before {
+                    font-size: 10px;
+                }
+
+                label.check-label {
+                    font-size: 11px;
+
+                    &::before {
+                        width: 14px;
+                        height: 14px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 /*----- Width > 767 md-----*/
@@ -2570,6 +3077,24 @@ nav.navbar {
         top: 40px;
         padding-left: 40px;
         padding-right: 40px;
+
+        /*- products menu Advertising -*/
+        .navbar-collapse .products-menu .bottom {
+            display: flex;
+            justify-content: space-between;
+
+            /* Left ad */
+            .ad.ad-left {
+                margin: 0;
+                margin-right: 25px;
+            }
+        }
+
+        /*- Shopping Area - search collapse -*/
+        .shopping-area .search #search-collapse{
+            top: 90px;
+            height: 30%;
+        }
     }
 
 
@@ -2602,6 +3127,48 @@ nav.navbar {
             font-size: 44px;
         }
     }
+
+
+    /*--------------------
+    ** Popup Newsletter ---*/
+    #popup-newsletter {
+
+        /*- newsletter background image -*/
+        .newsletter-bg {
+            height: 365px;
+        }
+
+        /*- newsletter information -*/
+        .newsletter-info {
+            top: 70px;
+            left: 70px;
+            width: 50%;
+
+            .title {
+                font-size: 27px;
+            }
+
+            .subtitle {
+                padding-bottom: 44px;
+                font-size: 16px;
+
+                span {
+                    font-size: 16px;
+                }
+            }
+
+            /* input email */
+            .input-mail {
+                padding: 13px 22px;
+                height: 47px;
+            }
+
+            /* subscribe button */
+            .subscribe {
+                margin-bottom: 50px;
+            }
+        }
+    }
 }
 
 /*----- Width > 991 lg-----*/
@@ -2620,6 +3187,46 @@ nav.navbar {
             ul {
                 width: 100%;
                 justify-content: space-between;
+            }
+
+            /*- products menu -*/
+            .products-menu {
+                position: absolute;
+                top: 100px;
+                right: 50%;
+                padding: 50px;
+                width: 85%;
+                background: white;
+                transform: translateX(50%);
+                box-shadow: 0px 1px 2px #9E9E9E;
+
+                &::before,
+                &::after {
+                    position: absolute;
+                    content: " ";
+                    border-style: solid;
+                    border-width: 15px;
+                    height: 0px;
+                    width: 0px;
+                }
+
+                &::before {
+                    top: -30px;
+                    left: 33%;
+                    border-color: transparent transparent rgba(158, 158, 158, .2) transparent;
+                }
+
+                &::after {
+                    top: -29px;
+                    left: 33%;
+                    border-color: transparent transparent white transparent;
+                }
+
+                /*Products Categories*/
+                .top {
+                    display: flex;
+                    justify-content: space-between;
+                }
             }
         }
 
@@ -2645,6 +3252,11 @@ nav.navbar {
             .search {
                 padding-left: 28px;
                 padding-right: 18px;
+
+                #search-collapse{
+                    top: 139px;
+                    height: 40%;
+                }
             }
 
             .cart {
@@ -2799,13 +3411,13 @@ nav.navbar {
     }
 
     /*----- Banner Theme 2-----*/
-    .banner{
+    .banner {
         &.banner-theme-2 {
             padding-top: 230px;
             padding-bottom: 52px;
         }
 
-        h2.title{
+        h2.title {
             font-size: 44px;
         }
     }
@@ -2819,8 +3431,8 @@ nav.navbar {
     }
 
 
-    /*-- Footer --*/
-
+    /*--------------------
+    ** Footer ---*/
     #footer {
         .schon-info br {
             display: none;
@@ -2840,6 +3452,43 @@ nav.navbar {
             }
         }
     }
+
+
+    /*--------------------
+    ** Popup Newsletter ---*/
+    #popup-newsletter {
+
+        /*- newsletter background image -*/
+        .newsletter-bg {
+            margin: 0 auto;
+            max-width: 792px;
+            height: 420px;
+        }
+
+        /*- newsletter information -*/
+        .newsletter-info {
+            top: 80px;
+            left: 80px;
+            width: 48%;
+
+            .title {
+                font-size: 30px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+
+                span {
+                    font-size: 18px;
+                }
+            }
+
+            /* subscribe button */
+            .subscribe {
+                margin-bottom: 70px;
+            }
+        }
+    }
 }
 
 /*----- Width > 1999px xl-----*/
@@ -2849,10 +3498,27 @@ nav.navbar {
             margin-right: 221px;
         }
 
+        /*- products menu -*/
+        .navbar-collapse .products-menu {
+
+            &::before,
+            &::after {
+                left: 40%;
+            }
+        }
+
         .shopping-area {
             .search {
                 padding-left: 56px;
                 padding-right: 36px;
+
+                #search-collapse{
+                    height: 50%;
+
+                    .search-bar input{
+                        width: 45%;
+                    }
+                }
             }
         }
 

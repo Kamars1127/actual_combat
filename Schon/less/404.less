@@ -1,0 +1,201 @@
+@import "basic.less";
+
+* {
+    color: white;
+    font-family: @font2;
+    font-size: 12px;
+}
+
+.title {
+    font-family: @font1;
+    font-weight: bold;
+}
+
+.banner {
+    height: 100vh;
+    background-image: url(../img/404/404_bg.png);
+    background-color: rgba(0, 0, 0, .5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .block{
+        padding: 0 15px;
+    }
+
+    /*--- Left Block ---*/
+    .left-block {
+
+        .title {
+            font-size: 28px;
+            letter-spacing: -1.68px;
+        }
+
+        .subtitle {
+            padding-top: 12px;
+            font-size: 18px;
+            font-weight: @fw-Light;
+            letter-spacing: -0.36px;
+        }
+
+        .action-bar {
+            margin-top: 40px;
+
+            .home-btn {
+                margin-right: 9px;
+                padding: 7.5px 10px;
+                background: white;
+                font-weight: bold;
+                color: #545454;
+                text-align: center;
+                text-decoration: none;
+                line-height: 1;
+                letter-spacing: -0.72px;
+
+                &:hover {
+                    color: @branding-color;
+                    box-shadow: 1px 1px 5px 0px #545454;
+                }
+            }
+
+            .search-input {
+                outline: none;
+                border: 2px solid white;
+                padding: 4px 23px 4px 9px;
+                height: 27px;
+                background: transparent;
+                letter-spacing: -0.72px;
+
+                &::placeholder {
+                    color: white;
+                }
+
+                &::-moz-placeholder {
+                    color: white;
+                }
+
+                &::-webkit-input-placeholder {
+                    color: white;
+                }
+
+                &::-ms-input-placeholder {
+                    color: white;
+                }
+            }
+
+            .search-bar {
+                position: relative;
+
+                .search-btn {
+                    outline: unset;
+                    position: absolute;
+                    display: flex;
+                    right: 9px;
+                    border: unset;
+                    padding: 0;
+                    background: unset;
+
+                    .icon {
+                        font-size: 14px;
+                    }
+
+                    &:hover .icon {
+                        color: @branding-color;
+                    }
+                }
+            }
+        }
+    }
+
+    /*--- Right Block ---*/
+    .right-block {
+        text-align: right;
+
+        .title {
+            font-size: 100px;
+            letter-spacing: -6px;
+        }
+    }
+}
+
+
+/*--------------------------------------------------------
+** Media Query                                              
+--------------------------------------------------------*/
+/*----- width > 575 sm -----*/
+@media(min-width: 576px) {
+    .banner {
+        /*--- Left Block ---*/
+        .left-block {
+            margin-bottom: 100px;
+
+            .title {
+                font-size: 36px;
+                letter-spacing: -2.16px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+                letter-spacing: -0.4px;
+            }
+
+            .action-bar {
+                .home-btn {
+                    padding: 10.7px 20px;
+                    width: 25%;
+                    font-size: 14px;
+                }
+
+                .search-bar {
+                    width: 75%;
+
+                    .search-input {
+                        padding: 9px 17px;
+                        padding-right: 35px;
+                        width: 100%;
+                        height: 35px;
+                        font-size: 14px;
+                        letter-spacing: -0.84px;
+                    }
+
+                    .search-btn {
+                        right: 21px;
+                    }
+                }
+            }
+        }
+
+        /*--- Right Block ---*/
+        .right-block .title{
+            font-size: 165px;
+            letter-spacing: -9.9px;
+        }
+    }
+}
+
+/*----- width > 991 lg -----*/
+@media(min-width: 992px){
+    .banner{
+        .block{
+            padding: 0 30px;
+        }
+
+        .left-block{
+            margin: 0;
+        }
+    } 
+}
+
+/*----- width > 1199 xl -----*/
+@media(min-width: 1200px){
+    .banner{
+        .left-block{
+            margin-right: 100px;
+        }
+
+        .right-block .title{
+            font-size: 253px;
+            letter-spacing: -15.18px;
+        }
+    } 
+}
