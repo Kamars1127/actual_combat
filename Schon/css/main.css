@@ -740,6 +740,9 @@ body.pd-detail .main-product p.section-1 {
 }
 body.pd-detail .main-product .price {
   margin-bottom: 31px;
+}
+body.pd-detail .main-product .price .special-price {
+  display: inline;
   font-family: "Montserrat";
   font-size: 30px;
   color: #010101;
@@ -4677,6 +4680,7 @@ nav.navbar .shopping-area .cart #cart-detail .buyer-orders:last-child {
 }
 nav.navbar .shopping-area .cart #cart-detail .product-picture {
   min-width: 74px;
+  max-width: 74px;
   max-height: 74px;
 }
 nav.navbar .shopping-area .cart #cart-detail .product-detail {

@@ -199,7 +199,7 @@ $(document).ready(function () {
                 unitPrice = parseInt(data.shoppingCart[index].price);
                 dataQty = data.shoppingCart[index].quanity;
                 price = unitPrice * dataQty;
-
+                
                 /* Connect order's info*/
                 orderUI += template(product);
 
@@ -211,7 +211,7 @@ $(document).ready(function () {
             cart.find('.cart-order-area').append(orderUI);
 
             /* Add order's total price to cart */
-            cart.find('.cart-total-price').find('span.num').text(totalPrice + ",00");
+            cart.find('.cart-total-price').find('span.num').text(totalPrice);
 
             /* when is index page or other's pages*/
             buyerOrder_amount = setCartInfo(false, is_existHomePage, cart, buyerOrder_amount, totalPrice);
@@ -282,7 +282,22 @@ $(document).ready(function () {
         }
     });
 
-    $('.cart').on('click', '.delete-product .delete', function (e) {
+    $('.cart')
+    .on('click', '.close-cart', function(e){
+        /*----- when device width < 1024 .close-cart is appear, so must to do it's close cart function -----*/
+
+        /*--- Close Cart ---*/
+        $(this).parent().removeClass('show');
+
+        /*--- remove cart icon color ---*/
+        $(this).closest('.cart').find('.icon').removeClass('active-branding-color');
+        $(this).closest('.cart').find('.item').removeClass('active-bg-branding');
+
+        /*--- Let web scroll ---*/
+        $('body').removeClass('no-scroll');
+    })
+
+    .on('click', '.delete-product .delete', function (e) {
         e.preventDefault();
 
         var buyerOrder = $(e.currentTarget).closest('li');
@@ -339,6 +354,35 @@ $(document).ready(function () {
                     $(this).siblings('input').val(qty);
                 }
             });
+
+            /* Add products to cart */
+        $('.order-area').on('click', '.place-order', function(e){
+            var productPicture = $('.product-picture .big-picture .main').children().attr('src');
+            var productName = $(this).parent().siblings('.title').text(); //product name
+            var unitPriceDOM = $(this).parent().siblings('.price').children('.special-price').text();
+            var productUnitPrice = parseInt(unitPriceDOM.substring(2)); //product unit price
+            var productQty = $(this).siblings('.quantity-select').children('input').val(); //product quantity
+            var productTotal = productUnitPrice*productQty;
+            var cartTotal = parseInt($('#cart-detail').find('.cart-total-price .price').find('.num').text()); //original cat total price
+            var newCartTotal = cartTotal+productTotal; // new cart total price after add product to cart 
+            
+
+            var productInfo = {
+                id : 5,
+                img_url: productPicture,
+                product_name: productName,
+                price: productUnitPrice,
+                quanity: productQty,
+            }
+            
+            var productUI = template(productInfo);
+            /*--- Add products to cart ---*/
+            $('.cart-order-area').append(productUI);
+            
+
+            /*--- modify cart total price ---*/
+            $('#cart-detail .cart-total-price .num').text(newCartTotal);
+        });
     }
 
 
